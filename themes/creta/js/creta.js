@@ -25,18 +25,4 @@ jQuery(document).ready(function() {
     jQuery('.submit-edit-comment-button').addClass('bottom');
     jQuery('.submit-edit-comment-button-text').addClass('btn btn-info');
     jQuery('.delibera-edit-comment-form').addClass('clearfix');
-
-
-    if (jQuery('#delibera_commentform input[type=radio]:checked' || '#delibera_commentform input[type=checkbox]:checked').length == 0) {
-        jQuery('#nenhum-voto').show('slow').delay(5000).hide('slow');
-        return false;
-    }
-
-
-    if(jQuery('#votacao_simples').is(":checked"))
-        jQuery('#votacao_simples').attr("value","S");
-    else
-        jQuery('#votacao_simples').attr("value","N");
-
-
 });

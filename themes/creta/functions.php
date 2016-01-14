@@ -231,24 +231,20 @@ function delibera_comment_form($defaults)
                         }
                         
                         $form .= '<div id="nenhum-voto" class="error" style="display: none;"><p><strong>' . __('Você precisa selecionar um encaminhamento.', 'delibera') . '</strong></p></div>';
-                        $form .= '<div class="instrucoes-votacao">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</div>';
-                        $form .= '<ol class="encaminhamentos">';
-                        
+
+                        $form .= '<select name="votacao_simples" id="votacao_simples">
+                        <option value="">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</option>';
                         $i = 0;
                         foreach ($encaminhamentos as $encaminhamento) {
                             $tipo = get_comment_meta($encaminhamento->comment_ID, 'delibera_comment_tipo', true);
-                            //TODO colocar dropdown
-                            $form .= '<li class="encaminhamento clearfix' . (($tipo == 'encaminhamento_selecionado') ? ' encaminhamentos-selecionados ' : '') . '">
-                                <div class="alignleft  radio">
-                                    <input type="radio" name="delibera_voto" id="delibera_voto" value="'.$encaminhamento->comment_ID.'" />
-                                </div>
-                                <div class="alignleft content">
-                                    <label for="delibera_voto" class="label-voto">'.$encaminhamento->comment_content.'</label>
-                                </div>
-                            </li>';
+                            $form .= '<option value="'.$encaminhamento->comment_ID.'" "'. (($tipo == 'encaminhamento_selecionado') ? ' encaminhamentos-selecionados ' : '') . '">
+                                    <label>'.$encaminhamento->comment_content.'</label>
+                            </option>';
                         }
                         
-                        $form .= '</ol>';
+                        $form .= '</select>';
+
+
                         $form .= '
                                 <input name="delibera_comment_tipo" value="voto" style="display:none;" />
                                 <input name="comment" value="O voto de '.$current_user->display_name.' foi registrado no sistema" style="display:none;" />
@@ -258,6 +254,8 @@ function delibera_comment_form($defaults)
                         $defaults['comment_field'] = $form;
                         $defaults['logged_in_as'] = "";
                         $defaults['label_submit'] = __('Votar','delibera');
+                        $defaults['id_submit'] = 'submit_votacao_simples';
+                        $defaults['class_submit'] = 'btn btn-success';
                         $defaults['comment_notes_after'] = '<ol class="encaminhamentos"><li class="submit">';
                         $comment_footer = "</li></ol>";
                     } else {
