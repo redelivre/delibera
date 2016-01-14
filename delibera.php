@@ -690,9 +690,10 @@ function delibera_pauta_meta()
 
 	//se custom votação simples existe colocamos custom votação se não colocamos o valor padrão.
 	$votacao_simples= array_key_exists("votacao_simples", $custom) ?  $custom["votacao_simples"][0] : htmlentities($options_plugin_delibera['votacao_simples']);
-
-	//Se a votação simples esta global o checkbox sempre será checked se não fica vázia
-	$votacao_simples_checked =  $votacao_simples == "S"?"checked":"";
+	$votacao_simples= $options_plugin_delibera['votacao_simples'] == 'S'?  'S' : $votacao_simples;
+	//Se a votação simples esta global o checkbox sempre será checked e disable se não fica vázia
+	$votacao_simples_checked_disable = $options_plugin_delibera['votacao_simples'] == 'S'? "disabled ":"";
+	$votacao_simples_checked_disable .=  $votacao_simples == "S"?"checked":"";
 
 	$situacao = delibera_get_situacao($post->ID);
 
@@ -812,11 +813,20 @@ function delibera_pauta_meta()
 		<input <?php echo $disable_edicao ?> id="prazo_votacao" name="prazo_votacao" class="prazo_votacao widefat hasdatepicker" value="<?php echo $prazo_votacao; ?>"/>
 	</p>
 	<p>
-		<input <?php echo $disable_edicao ?> value="<?php echo $votacao_simples ?>" type="checkbox" class="votacao_simples widefat" name="votacao_simples" id="votacao_simples" <?php echo $votacao_simples_checked ?>/>
-		<label for="votacao_simples" class="label_votacao_simples"><?php _e('Habilitar votação simples') ?></label>
-	</p>
-
 	<?php
+	$situacao = delibera_get_situacao($post->ID);
+	if(!($options_plugin_delibera['impedir_mudar_metodo_votacao'] && $situacao->slug == "emvotacao")){
+		if($options_plugin_delibera['remover_votacao_simples'] == "N") {
+			?>
+			<input value="<?php echo $votacao_simples ?>" type="checkbox" class="votacao_simples widefat"
+				   name="votacao_simples" id="votacao_simples" <?php echo $votacao_simples_checked_disable ?>/>
+			<label for="votacao_simples"
+				   class="label_votacao_simples"><?php _e('Habilitar votação simples') ?></label>
+			</p>
+
+			<?php
+		}
+	}
 }
 
 function delibera_tratar_data($data, $int = true, $full = true)
@@ -2023,7 +2033,10 @@ function delibera_admin_scripts()
 		wp_enqueue_script('jquery-ui-datepicker-ptbr', WP_CONTENT_URL.'/plugins/delibera/js/jquery.ui.datepicker-pt-BR.js', array('jquery-ui-datepicker'));
 		wp_enqueue_script('delibera-admin',WP_CONTENT_URL.'/plugins/delibera/js/admin_scripts.js', array( 'jquery-ui-datepicker-ptbr'));
 	}
-	
+	if((isset($_REQUEST['page']) && $_REQUEST['page'] == 'delibera-config'))
+	{
+		wp_enqueue_script('delibera-configuracoes-admin',WP_CONTENT_URL.'/plugins/delibera/js/admin_configuracoes_scripts.js');
+	}
 	if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'delibera-notifications')
 	{
 		wp_enqueue_script('delibera-admin-notifica',WP_CONTENT_URL.'/plugins/delibera/js/admin_notifica_scripts.js', array('jquery'));

@@ -42,6 +42,8 @@ function delibera_get_main_config($config = array()) {
     $opt['dias_votacao'] = '5';
     $opt['criar_pauta_pelo_front_end'] = 'N';
 	$opt['votacao_simples'] = 'N';
+	$opt['remover_votacao_simples'] = 'N';
+	$opt['impedir_mudar_metodo_votacao'] = 'N';
     $opt['representante_define_prazos'] = 'N';
     $opt['pauta_suporta_encaminhamento'] = 'S';
     $opt['dias_novo_prazo'] = '2';
@@ -69,7 +71,7 @@ add_filter('delibera_get_config', 'delibera_get_main_config');
 function delibera_conf_page()
 {
     global $deliberaThemes;
-    
+
     $mensagem = '';
 
     if ($_SERVER['REQUEST_METHOD']=='POST') {
@@ -146,6 +148,16 @@ function delibera_conf_page()
 					"id" => "votacao_simples",
 					"label" => __('Todas as propostas de encaminhamento devem ser por votação simples?', 'delibera'),
 					"content" => '<input type="checkbox" name="votacao_simples" id="votacao_simples" value="S" '. ( htmlspecialchars_decode($opt['votacao_simples']) == "S" ? "checked='checked'" : "" ).'/>',
+				);
+				$rows[] = array(
+					"id" => "remover_votacao_simples",
+					"label" => __('Remover opção de votação simples das propostas de encaminhamento nas pautas?', 'delibera'),
+					"content" => '<input type="checkbox" name="remover_votacao_simples" id="remover_votacao_simples" value="S" '. ( htmlspecialchars_decode($opt['remover_votacao_simples']) == "S" ? "checked='checked'" : "" ).'/>',
+				);
+				$rows[] = array(
+					"id" => "impedir_mudar_metodo_votacao",
+					"label" => __('Impedir mudança de metodo de votação durante etapa de votação das propostas de encaminhamento?', 'delibera'),
+					"content" => '<input type="checkbox" name="impedir_mudar_metodo_votacao" id="impedir_mudar_metodo_votacao" value="S" '. ( htmlspecialchars_decode($opt['impedir_mudar_metodo_votacao']) == "S" ? "checked='checked'" : "" ).'/>',
 				);
 				$rows[] = array(
 					"id" => "representante_define_prazos",

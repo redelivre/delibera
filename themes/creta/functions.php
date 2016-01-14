@@ -232,8 +232,10 @@ function delibera_comment_form($defaults)
                         
                         $form .= '<div id="nenhum-voto" class="error" style="display: none;"><p><strong>' . __('Você precisa selecionar um encaminhamento.', 'delibera') . '</strong></p></div>';
 
-                        $form .= '<select name="votacao_simples" id="votacao_simples">
-                        <option value="">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</option>';
+                        $form .= '<div class="form-group">
+                                    <label for="votacao_simples">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</label>
+                                    <select class="form-control" name="votacao_simples" id="votacao_simples">
+                                    <option value=""></option>';
                         $i = 0;
                         foreach ($encaminhamentos as $encaminhamento) {
                             $tipo = get_comment_meta($encaminhamento->comment_ID, 'delibera_comment_tipo', true);
@@ -254,8 +256,10 @@ function delibera_comment_form($defaults)
                         $defaults['comment_field'] = $form;
                         $defaults['logged_in_as'] = "";
                         $defaults['label_submit'] = __('Votar','delibera');
+                        // define nova classe diferente da classe submit evitando conflito no js
                         $defaults['id_submit'] = 'submit_votacao_simples';
-                        $defaults['class_submit'] = 'btn btn-success';
+                        //insere nova classe e estilo do bootstrap
+                        $defaults['class_submit'] = 'submit_votacao_simples btn btn-success';
                         $defaults['comment_notes_after'] = '<ol class="encaminhamentos"><li class="submit">';
                         $comment_footer = "</li></ol>";
                     } else {
