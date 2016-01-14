@@ -27,6 +27,13 @@ jQuery(document).ready(function()
     jQuery(window).resize(function(){
         delibera_setpdf_size("#pauta-pdf-content");
     });
+
+	jQuery("input#votacao_simples").on("change",function(){
+		if(jQuery(this).is(":checked"))
+			jQuery(this).val("S");
+		else
+			jQuery(this).val("N");
+	});
 });
 
 function delibera_setpdf_size(element) {
@@ -46,3 +53,7 @@ function delibera_edit_comment_show(comment)
 	jQuery('#delibera-comment-text-'+comment).toggle();
 	jQuery('#delibera-edit-comment-'+comment).toggle();
 }
+
+
+
+

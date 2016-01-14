@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77bb1f76-911b-428e-baa7-2ba87f445324" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delibera.php" afterPath="$PROJECT_DIR$/delibera.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delibera_conf.php" afterPath="$PROJECT_DIR$/delibera_conf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/scripts.js" afterPath="$PROJECT_DIR$/js/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/creta/functions.php" afterPath="$PROJECT_DIR$/themes/creta/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/creta/js/creta-votacao.js" afterPath="$PROJECT_DIR$/themes/creta/js/creta-votacao.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/themes/creta/js/creta.js" afterPath="$PROJECT_DIR$/themes/creta/js/creta.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/widgets/WidgetListaPropostas/view.php" afterPath="$PROJECT_DIR$/widgets/WidgetListaPropostas/view.php" />
+    </list>
+    <ignored path="delibera.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="delibera" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="delibera.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/delibera.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="658" column="18" selection-start-line="658" selection-start-column="2" selection-end-line="658" selection-end-column="18" />
+              <folding>
+                <marker date="1452783977748" expanded="true" signature="22744:22832" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="25750:25766" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="25750:25821" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="26035:26107" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="26352:26423" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="26781:26866" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="27148:27220" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="27464:27531" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="27750:27962" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="45509:45518" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="47443:47478" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="47538:47712" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="47832:47865" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="56992:57102" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="57032:57087" placeholder="{...}" />
+                <marker date="1452783977748" expanded="true" signature="83307:83413" placeholder="SELECT count... ${$wpdb-&gt;usermeta}" />
+                <marker date="1452783977748" expanded="true" signature="89298:89311" placeholder="..." />
+                <marker date="1452783977748" expanded="true" signature="90319:90385" placeholder="SELECT ID FR... ${$wpdb-&gt;posts}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/creta/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2830188">
+              <caret line="235" column="24" selection-start-line="235" selection-start-column="24" selection-end-line="235" selection-end-column="24" />
+              <folding>
+                <marker date="1452786659972" expanded="true" signature="4027:4273" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="4091:4238" placeholder="{...}" />
+                <marker date="1452786659972" expanded="true" signature="4849:5415" placeholder="..." />
+                <marker date="1452786659972" expanded="false" signature="5253:5266" placeholder="..." />
+                <marker date="1452786659972" expanded="false" signature="5364:5377" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="7141:7154" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="7385:7398" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="10089:10357" placeholder="..." />
+                <marker date="1452786659972" expanded="false" signature="10193:10207" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="10516:10529" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="10887:10901" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="12371:12543" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="13811:13825" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="14680:14858" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="14718:14853" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="14922:15088" placeholder="..." />
+                <marker date="1452786659972" expanded="false" signature="15342:15355" placeholder="..." />
+                <marker date="1452786659972" expanded="false" signature="15497:15510" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="17774:17788" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="19244:19257" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="19399:19412" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="20938:21086" placeholder="..." />
+                <marker date="1452786659972" expanded="true" signature="21425:21569" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delibera_conf.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/delibera_conf.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3483146">
+              <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/scripts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.638889">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="creta.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/creta/js/creta.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/themes/creta/delibera_comments_template.php" />
+        <option value="$PROJECT_DIR$/themes/creta/js/creta-votacao.js" />
+        <option value="$PROJECT_DIR$/widgets/WidgetListaPropostas/view.php" />
+        <option value="$PROJECT_DIR$/themes/creta/js/creta.js" />
+        <option value="$PROJECT_DIR$/js/scripts.js" />
+        <option value="$PROJECT_DIR$/delibera.php" />
+        <option value="$PROJECT_DIR$/themes/creta/functions.php" />
+        <option value="$PROJECT_DIR$/delibera_conf.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="27" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="widgets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WidgetListaPropostas" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="creta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="creta" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="delibera" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77bb1f76-911b-428e-baa7-2ba87f445324" name="Default" comment="" />
+      <created>1452684915652</created>
+      <option name="number" value="Default" />
+      <updated>1452684915652</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1440" height="873" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26597223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/delibera.php</url>
+          <line>814</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/delibera.php</url>
+          <line>768</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/delibera.php</url>
+          <line>1159</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/themes/creta/delibera_comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/delibera_comments_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="622" column="0" selection-start-line="622" selection-start-column="0" selection-end-line="622" selection-end-column="0" />
+          <folding>
+            <marker date="1452783977748" expanded="true" signature="22744:22832" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="25750:25766" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="25750:25821" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26035:26107" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26352:26423" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26781:26866" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27148:27220" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27464:27531" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27750:27962" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="45509:45518" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47443:47478" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47538:47712" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47832:47865" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="56992:57102" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="57032:57087" placeholder="{...}" />
+            <marker date="1452783977748" expanded="true" signature="83307:83413" placeholder="SELECT count... ${$wpdb-&gt;usermeta}" />
+            <marker date="1452783977748" expanded="true" signature="89298:89311" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="90319:90385" placeholder="SELECT ID FR... ${$wpdb-&gt;posts}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/WidgetListaPropostas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="504" column="38" selection-start-line="504" selection-start-column="38" selection-end-line="504" selection-end-column="38" />
+          <folding>
+            <marker date="1452783977748" expanded="true" signature="22744:22832" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="25750:25766" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="25750:25821" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26035:26107" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26352:26423" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26781:26866" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27148:27220" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27464:27531" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27750:27962" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="45509:45518" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47443:47478" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47538:47712" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47832:47865" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="56992:57102" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="57032:57087" placeholder="{...}" />
+            <marker date="1452783977748" expanded="true" signature="83307:83413" placeholder="SELECT count... ${$wpdb-&gt;usermeta}" />
+            <marker date="1452783977748" expanded="true" signature="89298:89311" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="90319:90385" placeholder="SELECT ID FR... ${$wpdb-&gt;posts}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_curtir.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_discordar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_widgets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/WidgetListaPropostas.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_curtir.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31276298">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_discordar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/delibera_comments_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.375">
+          <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/atenas/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8934082">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1452682293256" expanded="true" signature="4107:4279" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="4863:5615" placeholder="..." />
+            <marker date="1452682293256" expanded="false" signature="5453:5466" placeholder="..." />
+            <marker date="1452682293256" expanded="false" signature="5564:5577" placeholder="..." />
+            <marker date="1452682293256" expanded="false" signature="7405:7418" placeholder="..." />
+            <marker date="1452682293256" expanded="false" signature="7692:7705" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="10706:10878" placeholder="..." />
+            <marker date="1452682293256" expanded="false" signature="12426:12439" placeholder="..." />
+            <marker date="1452682293256" expanded="false" signature="12581:12594" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="14156:14304" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="14661:14805" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="16078:16536" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="18252:18266" placeholder="..." />
+            <marker date="1452682293256" expanded="true" signature="18554:18568" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/js/creta-votacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14246947">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/_superglobals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3436185">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_widgets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10518934">
+          <caret line="5" column="64" selection-start-line="5" selection-start-column="64" selection-end-line="5" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_fake_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9214587">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_roles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.74614304">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_filtros.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_loop_pauta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="14.041667">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_admin_functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera-edit-form-comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.34642357">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/delibera_comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.33660588">
+          <caret line="50" column="39" selection-start-line="50" selection-start-column="39" selection-end-line="50" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/admin_scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.101763904">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/js/creta-filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/js/creta.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="53" selection-start-line="38" selection-start-column="53" selection-end-line="38" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.638889">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/WidgetListaPropostas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06311361">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/widgets/WidgetListaPropostas/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42075735">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/creta/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2830188">
+          <caret line="235" column="24" selection-start-line="235" selection-start-column="24" selection-end-line="235" selection-end-column="24" />
+          <folding>
+            <marker date="1452786659972" expanded="true" signature="4027:4273" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="4091:4238" placeholder="{...}" />
+            <marker date="1452786659972" expanded="true" signature="4849:5415" placeholder="..." />
+            <marker date="1452786659972" expanded="false" signature="5253:5266" placeholder="..." />
+            <marker date="1452786659972" expanded="false" signature="5364:5377" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="7141:7154" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="7385:7398" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="10089:10357" placeholder="..." />
+            <marker date="1452786659972" expanded="false" signature="10193:10207" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="10516:10529" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="10887:10901" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="12371:12543" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="13811:13825" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="14680:14858" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="14718:14853" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="14922:15088" placeholder="..." />
+            <marker date="1452786659972" expanded="false" signature="15342:15355" placeholder="..." />
+            <marker date="1452786659972" expanded="false" signature="15497:15510" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="17774:17788" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="19244:19257" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="19399:19412" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="20938:21086" placeholder="..." />
+            <marker date="1452786659972" expanded="true" signature="21425:21569" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera_conf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3483146">
+          <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delibera.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="658" column="18" selection-start-line="658" selection-start-column="2" selection-end-line="658" selection-end-column="18" />
+          <folding>
+            <marker date="1452783977748" expanded="true" signature="22744:22832" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="25750:25766" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="25750:25821" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26035:26107" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26352:26423" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="26781:26866" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27148:27220" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27464:27531" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="27750:27962" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="45509:45518" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47443:47478" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47538:47712" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="47832:47865" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="56992:57102" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="57032:57087" placeholder="{...}" />
+            <marker date="1452783977748" expanded="true" signature="83307:83413" placeholder="SELECT count... ${$wpdb-&gt;usermeta}" />
+            <marker date="1452783977748" expanded="true" signature="89298:89311" placeholder="..." />
+            <marker date="1452783977748" expanded="true" signature="90319:90385" placeholder="SELECT ID FR... ${$wpdb-&gt;posts}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
