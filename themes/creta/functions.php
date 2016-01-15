@@ -506,8 +506,6 @@ function delibera_gerar_discordar($ID, $type ='pauta')
     }
 }
 
-//TODO ver se posso filtrar a quantidade para apenas 1 nesse arquivo
-
 /**
  * Salva quais encaminhamentos o relator escolheu para
  * serem usados na votação.
