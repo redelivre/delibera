@@ -687,9 +687,16 @@ function delibera_pauta_meta()
 	$validacoes = array_key_exists("numero_validacoes", $custom) ?  $custom["numero_validacoes"][0] : 0;
 	
 	$min_validacoes = array_key_exists("min_validacoes", $custom) ?  $custom["min_validacoes"][0] : htmlentities($options_plugin_delibera['minimo_validacao']);
-	
+
+	//se custom votação simples existe colocamos custom votação se não colocamos o valor padrão.
+	$votacao_simples= array_key_exists("votacao_simples", $custom) ?  $custom["votacao_simples"][0] : htmlentities($options_plugin_delibera['votacao_simples']);
+	$votacao_simples= $options_plugin_delibera['votacao_simples'] == 'S'?  'S' : $votacao_simples;
+	//Se a votação simples esta global o checkbox sempre será checked e disable se não fica vázia
+	$votacao_simples_checked_disable = $options_plugin_delibera['votacao_simples'] == 'S'? "disabled ":"";
+	$votacao_simples_checked_disable .=  $votacao_simples == "S"?"checked":"";
+
 	$situacao = delibera_get_situacao($post->ID);
-	
+
 	$dias_validacao = intval(htmlentities($options_plugin_delibera['dias_validacao']));
 	$dias_discussao = intval(htmlentities($options_plugin_delibera['dias_discussao']));
 	$dias_relatoria = intval(htmlentities($options_plugin_delibera['dias_relatoria']));
@@ -759,6 +766,7 @@ function delibera_pauta_meta()
 		$prazo_eleicao_relator = array_key_exists("prazo_eleicao_relator", $custom) ?  $custom["prazo_eleicao_relator"][0] : $prazo_eleicao_relator;
 		$prazo_relatoria = array_key_exists("prazo_relatoria", $custom) ?  $custom["prazo_relatoria"][0] : $prazo_relatoria; 
 		$prazo_votacao = array_key_exists("prazo_votacao", $custom) ?  $custom["prazo_votacao"][0] : $prazo_votacao;
+		$votacao_simples = array_key_exists("votacao_simples", $custom) ?  $custom["votacao_simples"][0] : $votacao_simples;
 	}
 
 	if($options_plugin_delibera['validacao'] == "S")
@@ -803,7 +811,22 @@ function delibera_pauta_meta()
 		<label for="prazo_votacao" class="label_prazo_votacao"><?php _e('Prazo para Votações','delibera') ?>:</label>
 		<input <?php echo $disable_edicao ?> id="prazo_votacao" name="prazo_votacao" class="prazo_votacao widefat hasdatepicker" value="<?php echo $prazo_votacao; ?>"/>
 	</p>
+	<p>
 	<?php
+
+	$situacao = delibera_get_situacao($post->ID);
+	if(!($options_plugin_delibera['impedir_mudar_metodo_votacao'] == 'S' && $situacao->slug == "emvotacao")){
+		if($options_plugin_delibera['remover_votacao_simples'] == "N") {
+			?>
+			<input value="<?php echo $votacao_simples ?>" type="checkbox" class="votacao_simples widefat"
+				   name="votacao_simples" id="votacao_simples" <?php echo $votacao_simples_checked_disable ?>/>
+			<label for="votacao_simples"
+				   class="label_votacao_simples"><?php _e('Habilitar votação simples') ?></label>
+			</p>
+
+			<?php
+		}
+	}
 }
 
 function delibera_tratar_data($data, $int = true, $full = true)
@@ -1055,7 +1078,7 @@ function delibera_save_post($post_id, $post)
 	}
 	$opt = delibera_get_config();
 	$autosave = ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE );
-    
+
 	if(
 		( // Se tem validação, tem que ter o prazo
 			$opt['validacao'] == 'N' || 
@@ -1101,6 +1124,14 @@ function delibera_save_post($post_id, $post)
 		$events_meta['prazo_eleicao_relator'] = $opt['relatoria'] == 'S' && $opt['eleicao_relator'] == 'S' ? $_POST['prazo_eleicao_relator'] : date('d/m/Y');
 		$events_meta['prazo_votacao'] = $_POST['prazo_votacao'];
 		$events_meta['min_validacoes'] = $opt['validacao'] == 'S' ? $_POST['min_validacoes'] : 10;
+
+		if( $opt['votacao_simples'] == 'S'){
+			$events_meta['votacao_simples'] = $opt['votacao_simples'];
+		}else if (array_key_exists('votacao_simples', $_POST)){
+			$events_meta['votacao_simples'] = $_POST['votacao_simples'];
+		}else{
+			$events_meta['votacao_simples'] = 'N';
+		}
 
         /* ######### START ######### */
         /* ######### FOR PDF UPLOAD FILE ######### */
@@ -1184,7 +1215,7 @@ function delibera_publish_pauta($postID, $post, $alterar = false)
 	{
 		return $postID;
 	}
-    
+
 	if ( 
 			$alterar ||	(
 				($post->post_status == 'publish' || $_POST['publish'] == 'Publicar') && 
@@ -1211,8 +1242,9 @@ function delibera_publish_pauta($postID, $post, $alterar = false)
 		$prazo_relatoria =  get_post_meta($postID, 'prazo_relatoria', true);
 		$prazo_eleicao_relator =  get_post_meta($postID, 'prazo_eleicao_relator', true);
 		$prazo_votacao =  get_post_meta($postID, 'prazo_votacao', true);
+
 		$opt = delibera_get_config();
-		
+
 		if(!array_key_exists('validacao', $opt) || $opt['validacao'] == 'S' )
 		{
 			if(!$alterar)
@@ -1998,7 +2030,10 @@ function delibera_admin_scripts()
 		wp_enqueue_script('jquery-ui-datepicker-ptbr', WP_CONTENT_URL.'/plugins/delibera/js/jquery.ui.datepicker-pt-BR.js', array('jquery-ui-datepicker'));
 		wp_enqueue_script('delibera-admin',WP_CONTENT_URL.'/plugins/delibera/js/admin_scripts.js', array( 'jquery-ui-datepicker-ptbr'));
 	}
-	
+	if((isset($_REQUEST['page']) && $_REQUEST['page'] == 'delibera-config'))
+	{
+		wp_enqueue_script('delibera-config-admin',WP_CONTENT_URL.'/plugins/delibera/js/admin_config_scripts.js');
+	}
 	if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'delibera-notifications')
 	{
 		wp_enqueue_script('delibera-admin-notifica',WP_CONTENT_URL.'/plugins/delibera/js/admin_notifica_scripts.js', array('jquery'));

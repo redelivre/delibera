@@ -205,7 +205,9 @@ function delibera_comment_form($defaults)
                         break;
                     }
                 }
-                
+                $custom = get_post_custom($post->ID);
+                $options_plugin_delibera = delibera_get_config();
+
                 if ($temvoto) {
                     $defaults['comment_notes_after'] = '
                         <script type="text/javascript">
@@ -213,8 +215,8 @@ function delibera_comment_form($defaults)
                             formdiv.style.display = "none";
                         </script>
                     ';
-                } else {
-                    $defaults['title_reply'] = __('Votação dos encaminhamentos propostos', 'delibera');
+                } else if ($custom['votacao_simples'][0] == 'S' || $options_plugin_delibera['votacao_simples'] == 'S') {
+                    $defaults['title_reply'] = __('Votação do encaminhamento proposto', 'delibera');
                     $defaults['must_log_in'] = sprintf(__('Você precisar <a href="%s">estar logado</a> e ter permissão para votar.'), wp_login_url(apply_filters('the_permalink', get_permalink($post->ID))));
                     $encaminhamentos = array();
                     
@@ -228,14 +230,68 @@ function delibera_comment_form($defaults)
                             $encaminhamentos = delibera_get_comments_encaminhamentos($post->ID);
                         }
                         
-                        $form .= '<div id="nenhum-voto" class="error" style="display: none;"><p><strong>' . __('Você precisa selecionar pelo menos um encaminhamento.', 'delibera') . '</strong></p></div>';
-                        $form .= '<div class="instrucoes-votacao">'.__('Escolha os encaminhamentos que deseja aprovar e depois clique em "Votar":','delibera').'</div>';
-                        $form .= '<ol class="encaminhamentos">';
-                        
+                        $form .= '<div id="nenhum-voto" class="error" style="display: none;"><p><strong>' . __('Você precisa selecionar um encaminhamento.', 'delibera') . '</strong></p></div>';
+
+                        $form .= '<div class="form-group">
+                                    <label for="votacao_simples">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</label>
+                                    <select class="form-control" name="votacao_simples" id="votacao_simples">
+                                    <option value=""></option>';
                         $i = 0;
                         foreach ($encaminhamentos as $encaminhamento) {
                             $tipo = get_comment_meta($encaminhamento->comment_ID, 'delibera_comment_tipo', true);
-                            
+                            $form .= '<option value="'.$encaminhamento->comment_ID.'" "'. (($tipo == 'encaminhamento_selecionado') ? ' encaminhamentos-selecionados ' : '') . '">
+                                    <label>'.$encaminhamento->comment_content.'</label>
+                            </option>';
+                        }
+                        
+                        $form .= '</select>';
+
+
+                        $form .= '
+                                <input name="delibera_comment_tipo" value="voto" style="display:none;" />
+                                <input name="comment" value="O voto de '.$current_user->display_name.' foi registrado no sistema" style="display:none;" />
+                            </div>'
+                        ;
+                        
+                        $defaults['comment_field'] = $form;
+                        $defaults['logged_in_as'] = "";
+                        $defaults['label_submit'] = __('Votar','delibera');
+                        // define nova classe diferente da classe submit evitando conflito no js
+                        $defaults['id_submit'] = 'submit_votacao_simples';
+                        //insere nova classe e estilo do bootstrap
+                        $defaults['class_submit'] = 'submit_votacao_simples btn btn-success';
+                        $defaults['comment_notes_after'] = '<ol class="encaminhamentos"><li class="submit">';
+                        $comment_footer = "</li></ol>";
+                    } else {
+                        $defaults['comment_field'] = "";
+                        $defaults['logged_in_as'] = '<p class="logged-in-as">' . sprintf( __('Você está logado como <a href="%1$s">%2$s</a> que não é um usuário autorizado a votar. <a href="%3$s" title="Sair desta conta?">Sair desta conta</a> e logar com um usuário com permisão para votar?','delibera') , admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post->ID ) ) ) ) . '</p>';
+                        $defaults['comment_notes_after'] = "";
+                        $defaults['label_submit'] = "";
+                        $defaults['id_submit'] = "botao-oculto";
+                    }
+                } else {
+                    $defaults['title_reply'] = __('Votação dos encaminhamentos propostos', 'delibera');
+                    $defaults['must_log_in'] = sprintf(__('Você precisar <a href="%s">estar logado</a> e ter permissão para votar.'), wp_login_url(apply_filters('the_permalink', get_permalink($post->ID))));
+                    $encaminhamentos = array();
+
+                    if (delibera_current_user_can_participate()) {
+                        $form = '<div id="encaminhamentos" class="delibera_checkbox_voto">';
+                        $encaminhamentos = delibera_get_comments_encaminhamentos_selecionados($post->ID);
+
+                        if (empty($encaminhamentos)) {
+                            // se acabar o prazo e o relator não selecionar nenhum encaminhamento
+                            // coloca todos os encaminhamentos para votacao
+                            $encaminhamentos = delibera_get_comments_encaminhamentos($post->ID);
+                        }
+
+                        $form .= '<div id="nenhum-voto" class="error" style="display: none;"><p><strong>' . __('Você precisa selecionar pelo menos um encaminhamento.', 'delibera') . '</strong></p></div>';
+                        $form .= '<div class="instrucoes-votacao">'.__('Escolha os encaminhamentos que deseja aprovar e depois clique em "Votar":','delibera').'</div>';
+                        $form .= '<ol class="encaminhamentos">';
+
+                        $i = 0;
+                        foreach ($encaminhamentos as $encaminhamento) {
+                            $tipo = get_comment_meta($encaminhamento->comment_ID, 'delibera_comment_tipo', true);
+
                             $form .= '<li class="encaminhamento clearfix' . (($tipo == 'encaminhamento_selecionado') ? ' encaminhamentos-selecionados ' : '') . '">
                                 <div class="alignleft checkbox">
                                     <input type="checkbox" name="delibera_voto'.$i.'" id="delibera_voto'.$i.'" value="'.$encaminhamento->comment_ID.'" />
@@ -245,14 +301,14 @@ function delibera_comment_form($defaults)
                                 </div>
                             </li>';
                         }
-                        
+
                         $form .= '</ol>';
                         $form .= '
                                 <input name="delibera_comment_tipo" value="voto" style="display:none;" />
                                 <input name="comment" value="O voto de '.$current_user->display_name.' foi registrado no sistema" style="display:none;" />
                             </div>'
                         ;
-                        
+
                         $defaults['comment_field'] = $form;
                         $defaults['logged_in_as'] = "";
                         $defaults['label_submit'] = __('Votar','delibera');
