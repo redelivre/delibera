@@ -766,7 +766,6 @@ function delibera_pauta_meta()
 		$prazo_eleicao_relator = array_key_exists("prazo_eleicao_relator", $custom) ?  $custom["prazo_eleicao_relator"][0] : $prazo_eleicao_relator;
 		$prazo_relatoria = array_key_exists("prazo_relatoria", $custom) ?  $custom["prazo_relatoria"][0] : $prazo_relatoria; 
 		$prazo_votacao = array_key_exists("prazo_votacao", $custom) ?  $custom["prazo_votacao"][0] : $prazo_votacao;
-		//se custom votação simples existe colocamos custom votação se não colocamos o valor padrão.
 		$votacao_simples = array_key_exists("votacao_simples", $custom) ?  $custom["votacao_simples"][0] : $votacao_simples;
 	}
 
@@ -814,8 +813,9 @@ function delibera_pauta_meta()
 	</p>
 	<p>
 	<?php
+
 	$situacao = delibera_get_situacao($post->ID);
-	if(!($options_plugin_delibera['impedir_mudar_metodo_votacao'] && $situacao->slug == "emvotacao")){
+	if(!($options_plugin_delibera['impedir_mudar_metodo_votacao'] == 'S' && $situacao->slug == "emvotacao")){
 		if($options_plugin_delibera['remover_votacao_simples'] == "N") {
 			?>
 			<input value="<?php echo $votacao_simples ?>" type="checkbox" class="votacao_simples widefat"
@@ -1125,7 +1125,6 @@ function delibera_save_post($post_id, $post)
 		$events_meta['prazo_votacao'] = $_POST['prazo_votacao'];
 		$events_meta['min_validacoes'] = $opt['validacao'] == 'S' ? $_POST['min_validacoes'] : 10;
 
-		//TODO pensar em como a validação pode ter a ver com a votação simples
 		if( $opt['votacao_simples'] == 'S'){
 			$events_meta['votacao_simples'] = $opt['votacao_simples'];
 		}else if (array_key_exists('votacao_simples', $_POST)){
@@ -1291,8 +1290,6 @@ function delibera_publish_pauta($postID, $post, $alterar = false)
 }
 
 add_action ('publish_pauta', 'delibera_publish_pauta', 1, 2);
-
-//TODO definir erros para quando estiver votação simples global.
 
 function delibera_check_post_data($data, $postarr)
 {
@@ -2035,7 +2032,7 @@ function delibera_admin_scripts()
 	}
 	if((isset($_REQUEST['page']) && $_REQUEST['page'] == 'delibera-config'))
 	{
-		wp_enqueue_script('delibera-configuracoes-admin',WP_CONTENT_URL.'/plugins/delibera/js/admin_configuracoes_scripts.js');
+		wp_enqueue_script('delibera-config-admin',WP_CONTENT_URL.'/plugins/delibera/js/admin_config_scripts.js');
 	}
 	if(isset($_REQUEST['page']) && $_REQUEST['page'] == 'delibera-notifications')
 	{
@@ -3091,8 +3088,6 @@ function delibera_nova_pauta_create_action(){
 				$_POST['prazo_discussao'] = date('d/m/Y', strtotime ('+'.$opt['dias_discussao'].' DAYS'));
 				$_POST['prazo_votacao'] = date('d/m/Y', strtotime ('+'.$opt['dias_votacao'].' DAYS'));
 			}
-			//XXX ele não colocou isso como um lugar para modificar
-			//$_POST['votacao_simples'] = $opt['votacao_simples'];
 
             // isto é necessário por causa do if da função delibera_publish_pauta()
             $_POST['publish'] = 'Publicar';
