@@ -1,0 +1,8 @@
+.htaccess
+*swp
+.DS*Store
+Thumbs.db
+.project
+.settings
+.buildpath
+

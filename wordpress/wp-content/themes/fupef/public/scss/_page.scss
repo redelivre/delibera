@@ -1,0 +1,28 @@
+/*-------------------------------------------------
+    Singles and Pages
+-------------------------------------------------*/
+.singles {
+	margin-top: 20px;
+	min-height: 500px;
+
+	h1 {
+		color:$tertiary-color;
+		font-size: 35px;
+		@include font(bold);
+		margin:0 0 20px 0;
+		padding: 5px 0;
+	}
+
+	.info {
+		color: #777;
+		font-size: 13px;		
+		margin-bottom: 20px;
+
+		a {
+			color: #777;
+			@include fade;
+
+			&:hover {color:$secondary-color;}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+/*-------------------------------------------
+    Variáveis
+-------------------------------------------*/
+$main-font:'Lato', sans-serif;
+
+$main-color:#f5f5f5;
+$secondary-color:#78A300;
+$tertiary-color:#158ec2;
+
+/*-------------------------------------------
+    Mixins
+-------------------------------------------*/
+
+// Quebra Galho para tamanhos
+@mixin size($width: auto, $height: auto) {
+	width:$width;
+	height:$height;
+}
+
+
+// Cortar Imagens
+@mixin crop($width: auto, $height: auto, $img_height:auto ) {
+	width:$width;
+	height:$height;
+	overflow: hidden;
+
+	img {
+		@include size(100%, $img_height);
+	}
+}
+
+
+// Tipos de Fontes
+@mixin font($tipo) { 
+	@if $tipo == light {
+		font-family: 'Lato';
+		font-style: normal;
+		font-weight: 300;
+	}
+	@if $tipo == normal {
+		font-family: 'Lato';
+		font-style: normal;
+		font-weight: 400;
+	}
+	@if $tipo == bold {
+		font-family: 'Lato';
+		font-style: normal;
+		font-weight: 700;
+	}
+}
+
+
+// Para debugar o Layout
+@mixin debug($color:red) { outline: 1px solid $color; }
+
+
+// Efeito bacana em 'tudo' que precisarmos
+@mixin fade {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+
+@mixin left {float: left !important;}
+@mixin right {float: right !important;}
+@mixin clear {clear: both !important;}
+
+.debug { outline: 1px solid red; }
+.bgbug {background:red;}
+.clear { @include clear; }
+
+.relative { position: relative;}
+.absolute { position: absolute;}
+
+.left { @include left; }
+.right { @include right; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }

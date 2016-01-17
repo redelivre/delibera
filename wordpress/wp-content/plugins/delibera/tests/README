@@ -1,0 +1,7 @@
+Para rodar os testes a partir da raiz do repositório rode o comando:
+
+export WP_TESTS_DIR=~/devel/wordpress-tests phpunit
+
+Onde WP_TESTS_DIR é o caminho para o diretório dos testes do WP. Para mais informações:
+
+http://wp-cli.org/blog/plugin-unit-tests.html

@@ -1,0 +1,47 @@
+/*-------------------------------------------------
+    Sidebar
+-------------------------------------------------*/
+
+// não sei o porque a sidebar #lista-de-pautas não recebeu a class widgets 
+
+.widgets, #lista-de-pautas {
+	border:1px solid $main-color;
+	padding: 20px;
+	margin-bottom:20px; 
+
+	h2 a {
+		color:$tertiary-color;
+		font-size: 13px;
+		display: block;
+
+
+		&:hover {
+			color: $secondary-color;
+			text-decoration: underline;
+		}
+	}
+
+	.delibera-widget-archive-situacao {color: #888; font-size: 12px; margin-bottom: 20px; display: block;}
+
+	p { font-size: 13px; margin-bottom: 20px }
+	
+	ul {
+		display: block;
+
+		li {
+			color: $main-color;
+			font-size: 13px;
+			display: block;
+			padding: 10px 0;
+
+			a {
+				color: $main-color;
+				@include fade;
+
+				&:hover {
+					color: $secondary-color;
+				}
+			}
+		}
+	}
+}

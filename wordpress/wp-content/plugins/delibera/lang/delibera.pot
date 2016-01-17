@@ -1,0 +1,826 @@
+# Copyright (C) 2010 Delibera
+# This file is distributed under the same license as the Delibera package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Delibera 0.2\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/delibera\n"
+"POT-Creation-Date: 2011-06-22 18:10:33+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: delibera_comments_template.php:66 print/print-comments.php:49
+msgid "Seu comentário está aguardando moderação."
+msgstr ""
+
+#: delibera_comments_template.php:79
+msgid "há %s"
+msgstr ""
+
+#: delibera_comments_template.php:81 print/print-posts.php:47
+#: print/print-comments.php:45
+msgid "em"
+msgstr ""
+
+#: delibera_comments_template.php:87 delibera_comments_template.php:198
+msgid "(Edit)"
+msgstr ""
+
+#: delibera_comments_template.php:93
+msgid "Encaminhamento"
+msgstr ""
+
+#: delibera_comments_template.php:110 delibera.php:1359
+msgid "Proposta baseada em:"
+msgstr ""
+
+#: delibera_comments_template.php:117
+msgid "basear-se neste encaminhamento?"
+msgstr ""
+
+#: delibera_comments_template.php:127
+msgid "Editar Encaminhamento"
+msgstr ""
+
+#: delibera_comments_template.php:132
+msgid "Responda este comentário"
+msgstr ""
+
+#: delibera_comments_template.php:188
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr ""
+
+#: delibera_comments_template.php:191
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: delibera_comments_template.php:198
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: delibera_comments.php:11
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: delibera_comments.php:20
+msgid "No responses"
+msgstr ""
+
+#: delibera_comments.php:20
+msgid "One response"
+msgstr ""
+
+#: delibera_comments.php:20
+msgid "% responses"
+msgstr ""
+
+#: delibera_comments.php:25 delibera_comments.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr ""
+
+#: delibera_comments.php:26 delibera_comments.php:40
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: delibera_comments.php:48
+msgid "Comments are closed."
+msgstr ""
+
+#: print/wp-print.php:104 print/wp-print.php:169
+msgid "Image"
+msgstr ""
+
+#: print/wp-print.php:124
+msgid ","
+msgstr ""
+
+#: print/wp-print.php:192
+msgid "Sem Interações"
+msgstr ""
+
+#: print/wp-print.php:194
+msgid "%s Interação"
+msgid_plural "%s Interações"
+msgstr[0] ""
+msgstr[1] ""
+
+#: print/wp-print.php:197
+msgid "Interações Desativadas"
+msgstr ""
+
+#: print/wp-print.php:200
+msgid "Interações Escondidas"
+msgstr ""
+
+#: print/wp-print.php:211
+msgid "URLs in this post:"
+msgstr ""
+
+#: print/wp-print.php:231
+msgid "Print"
+msgstr ""
+
+#: print/print-posts.php:47
+msgid "Postado por"
+msgstr ""
+
+#: print/print-posts.php:47 print/print-comments.php:45
+msgid "%s @ %s"
+msgstr ""
+
+#: print/print-posts.php:47
+msgid "na"
+msgstr ""
+
+#: print/print-posts.php:54
+msgid "Pauta impressa de"
+msgstr ""
+
+#: print/print-posts.php:55
+msgid "URL da pauta"
+msgstr ""
+
+#: print/print-posts.php:59
+msgid "Click"
+msgstr ""
+
+#: print/print-posts.php:59
+msgid "Click aqui para imprimir."
+msgstr ""
+
+#: print/print-posts.php:59
+msgid "aqui"
+msgstr ""
+
+#: print/print-posts.php:59
+msgid "para imprimir."
+msgstr ""
+
+#: print/print-posts.php:61
+msgid "Não há pautas relacionadas a esse critério."
+msgstr ""
+
+#: print/print-comments.php:23
+msgid "Mostrar"
+msgstr ""
+
+#: print/print-comments.php:23
+msgid "Esconder"
+msgstr ""
+
+#: print/print-comments.php:33
+msgid "para"
+msgstr ""
+
+#: print/print-comments.php:34
+msgid "%s Validação"
+msgid_plural "%s Validações"
+msgstr[0] ""
+msgstr[1] ""
+
+#: print/print-comments.php:35
+msgid "%s Opnião"
+msgid_plural "%s Opniões"
+msgstr[0] ""
+msgstr[1] ""
+
+#: print/print-comments.php:36
+msgid "%s Proposta"
+msgid_plural "%s Propostas"
+msgstr[0] ""
+msgstr[1] ""
+
+#: print/print-comments.php:37
+msgid "%s Voto"
+msgid_plural "%s Votos"
+msgstr[0] ""
+msgstr[1] ""
+
+#: print/print-comments.php:38
+msgid "%s Resolução"
+msgid_plural "%s Resoluções"
+msgstr[0] ""
+msgstr[1] ""
+
+#: print/print-comments.php:45
+msgid "de"
+msgstr ""
+
+#: print/print-comments.php:45 delibera_curtir.php:129 delibera_curtir.php:146
+msgid "concordou"
+msgid_plural "concordaram"
+msgstr[0] ""
+msgstr[1] ""
+
+#: delibera_shortcodes.php:75
+msgid "Desconhecido"
+msgstr ""
+
+#: delibera_taxs.php:5 delibera_taxs.php:19 delibera_taxs.php:24
+msgid "Idiomas"
+msgstr ""
+
+#: delibera_taxs.php:6
+msgid "Idioma"
+msgstr ""
+
+#: delibera_taxs.php:7
+msgid "Procurar por Idioma"
+msgstr ""
+
+#: delibera_taxs.php:8
+msgid "Todos os Idiomas"
+msgstr ""
+
+#: delibera_taxs.php:9
+msgid "Idioma Pai"
+msgstr ""
+
+#: delibera_taxs.php:10
+msgid "Idioma Pai:"
+msgstr ""
+
+#: delibera_taxs.php:11
+msgid "Editar Idioma"
+msgstr ""
+
+#: delibera_taxs.php:12
+msgid "Atualizar um Idioma"
+msgstr ""
+
+#: delibera_taxs.php:13
+msgid "Adicionar Novo Idioma"
+msgstr ""
+
+#: delibera_taxs.php:14 delibera.php:193
+msgid "Adicionar Novo"
+msgstr ""
+
+#: delibera_taxs.php:15
+msgid "Novo Idioma"
+msgstr ""
+
+#: delibera_taxs.php:16
+msgid "Visualizar Idioma"
+msgstr ""
+
+#: delibera_taxs.php:17
+msgid "Nenhum Idioma localizado"
+msgstr ""
+
+#: delibera_taxs.php:18
+msgid "Nenhum Idioma localizado na lixeira"
+msgstr ""
+
+#: delibera_taxs.php:43 delibera_taxs.php:44
+msgid "English"
+msgstr ""
+
+#: delibera_taxs.php:51 delibera_taxs.php:52
+msgid "Español"
+msgstr ""
+
+#: delibera_taxs.php:59 delibera_taxs.php:60
+msgid "Português"
+msgstr ""
+
+#: delibera_taxs.php:69 delibera_taxs.php:83 delibera_taxs.php:88
+msgid "Regiões"
+msgstr ""
+
+#: delibera_taxs.php:70
+msgid "Região"
+msgstr ""
+
+#: delibera_taxs.php:71
+msgid "Procurar por Região"
+msgstr ""
+
+#: delibera_taxs.php:72
+msgid "Todas as Regiões"
+msgstr ""
+
+#: delibera_taxs.php:73
+msgid "Região Pai"
+msgstr ""
+
+#: delibera_taxs.php:74
+msgid "Região Pai:"
+msgstr ""
+
+#: delibera_taxs.php:75
+msgid "Editar Região"
+msgstr ""
+
+#: delibera_taxs.php:76
+msgid "Atualizar uma Região"
+msgstr ""
+
+#: delibera_taxs.php:77
+msgid "Adicionar Nova Região"
+msgstr ""
+
+#: delibera_taxs.php:78 delibera.php:114 delibera.php:230
+msgid "Adicionar Nova"
+msgstr ""
+
+#: delibera_taxs.php:79
+msgid "Nova Região"
+msgstr ""
+
+#: delibera_taxs.php:80
+msgid "Visualizar Região"
+msgstr ""
+
+#: delibera_taxs.php:81
+msgid "Nenhuma Região localizada"
+msgstr ""
+
+#: delibera_taxs.php:82
+msgid "Nenhuma Região localizada na lixeira"
+msgstr ""
+
+#: delibera_cron.php:41
+msgid "Erro no cron Delibera: "
+msgstr ""
+
+#: delibera.php:112 delibera.php:123 delibera.php:129
+msgid "Pautas"
+msgstr ""
+
+#: delibera.php:113
+msgid "Pauta"
+msgstr ""
+
+#: delibera.php:115
+msgid "Adicionar nova pauta"
+msgstr ""
+
+#: delibera.php:116
+msgid "Editar Pauta"
+msgstr ""
+
+#: delibera.php:117
+msgid "Nova Pauta"
+msgstr ""
+
+#: delibera.php:118
+msgid "Visualizar Pauta"
+msgstr ""
+
+#: delibera.php:119
+msgid "Procurar Pautas"
+msgstr ""
+
+#: delibera.php:120
+msgid "Nenhuma Pauta localizada"
+msgstr ""
+
+#: delibera.php:121
+msgid "Nenhuma Pauta localizada na lixeira"
+msgstr ""
+
+#: delibera.php:131
+msgid "Pauta de discussão"
+msgstr ""
+
+#: delibera.php:184 delibera.php:198 delibera.php:203
+msgid "Temas"
+msgstr ""
+
+#: delibera.php:185 delibera.php:2323
+msgid "Tema"
+msgstr ""
+
+#: delibera.php:186
+msgid "Procurar por Temas"
+msgstr ""
+
+#: delibera.php:187
+msgid "Todos os Temas"
+msgstr ""
+
+#: delibera.php:188
+msgid "Tema Pai"
+msgstr ""
+
+#: delibera.php:189
+msgid "Tema Pai:"
+msgstr ""
+
+#: delibera.php:190
+msgid "Editar Tema"
+msgstr ""
+
+#: delibera.php:191
+msgid "Atualizar um Tema"
+msgstr ""
+
+#: delibera.php:192
+msgid "Adicionar Novo Tema"
+msgstr ""
+
+#: delibera.php:194
+msgid "Novo Tema"
+msgstr ""
+
+#: delibera.php:195
+msgid "Visualizar Tema"
+msgstr ""
+
+#: delibera.php:196
+msgid "Nenhum Tema localizado"
+msgstr ""
+
+#: delibera.php:197
+msgid "Nenhum Tema localizado na lixeira"
+msgstr ""
+
+#: delibera.php:221 delibera.php:235 delibera.php:240
+msgid "Situações"
+msgstr ""
+
+#: delibera.php:222 delibera.php:2324
+msgid "Situação"
+msgstr ""
+
+#: delibera.php:223
+msgid "Procurar por Situação"
+msgstr ""
+
+#: delibera.php:224
+msgid "Todas as Situações"
+msgstr ""
+
+#: delibera.php:227
+msgid "Editar Situação"
+msgstr ""
+
+#: delibera.php:228
+msgid "Atualizar uma Situação"
+msgstr ""
+
+#: delibera.php:229
+msgid "Adicionar Nova Situação"
+msgstr ""
+
+#: delibera.php:231
+msgid "Nova Situação"
+msgstr ""
+
+#: delibera.php:232
+msgid "Visualizar Situação"
+msgstr ""
+
+#: delibera.php:233
+msgid "Nenhuma Situação localizado"
+msgstr ""
+
+#: delibera.php:234
+msgid "Nenhuma Situação localizada na lixeira"
+msgstr ""
+
+#: delibera.php:393 delibera.php:394
+msgid "Validação"
+msgstr ""
+
+#: delibera.php:397 delibera.php:398
+msgid "Proposta"
+msgstr ""
+
+#: delibera.php:401 delibera.php:402 delibera.php:1136 delibera.php:1151
+msgid "Voto"
+msgstr ""
+
+#: delibera.php:405 delibera.php:406
+msgid "Resolução"
+msgstr ""
+
+#: delibera.php:409 delibera.php:410 delibera.php:1366
+msgid "Opinião"
+msgstr ""
+
+#: delibera.php:459
+msgid "Forçar fim de prazo"
+msgstr ""
+
+#: delibera.php:463
+msgid "Invalidar"
+msgstr ""
+
+#: delibera.php:470
+msgid "Reabrir"
+msgstr ""
+
+#: delibera.php:491
+msgid "Você não tem permissão para forçar um prazo"
+msgstr ""
+
+#: delibera.php:491 delibera.php:506 delibera.php:521
+msgid "Sem permissão"
+msgstr ""
+
+#: delibera.php:506
+msgid "Você não tem permissão para invalidar uma pauta"
+msgstr ""
+
+#: delibera.php:521
+msgid "Você não tem permissão para re-abrir discussão sobre uma pauta"
+msgstr ""
+
+#: delibera.php:623
+msgid "Mínimo de Validações"
+msgstr ""
+
+#: delibera.php:627
+msgid "Prazo para Validação"
+msgstr ""
+
+#: delibera.php:634
+msgid "Prazo para Discussões"
+msgstr ""
+
+#: delibera.php:644 delibera.php:1767
+msgid "Prazo para Eleição de Relator"
+msgstr ""
+
+#: delibera.php:651 delibera.php:1757
+msgid "Prazo para Relatoria"
+msgstr ""
+
+#: delibera.php:658
+msgid "Prazo para Votações"
+msgstr ""
+
+#: delibera.php:1055
+msgid ""
+"Erro ao salvar dados da pauta, faltando informações de prazos e validações "
+"mínimas!"
+msgstr ""
+
+#: delibera.php:1104 delibera.php:1237
+msgid "Aceitou"
+msgstr ""
+
+#: delibera.php:1106 delibera.php:1239
+msgid "Rejeitou"
+msgstr ""
+
+#: delibera.php:1136 delibera.php:1151
+msgid "Votos"
+msgstr ""
+
+#: delibera.php:1196
+msgid "Continue lendo este comentário"
+msgstr ""
+
+#: delibera.php:1254
+msgid "proposta de encaminhamento"
+msgstr ""
+
+#: delibera.php:1320
+msgid "Você quer ver essa pauta posta em discussão?"
+msgstr ""
+
+#: delibera.php:1321 delibera.php:1404
+msgid ""
+"Você precisar <a href=\"%s\">estar logado</a> e ter permissão para votar."
+msgstr ""
+
+#: delibera.php:1325
+msgid "Aceitar"
+msgstr ""
+
+#: delibera.php:1326
+msgid "Rejeitar"
+msgstr ""
+
+#: delibera.php:1334 delibera.php:1426
+msgid "Votar"
+msgstr ""
+
+#: delibera.php:1338
+msgid ""
+"Você está logado como <a href=\"%1$s\">%2$s</a> que não é um usuário "
+"autorizado a votar. <a href=\"%3$s\" title=\"Sair desta conta?\">Sair desta "
+"conta</a> e logar com um usuário com permissão de votar?"
+msgstr ""
+
+#: delibera.php:1348
+msgid "Discussão em torno de \"%s\""
+msgstr ""
+
+#: delibera.php:1349
+msgid ""
+"Você precisar <a href=\"%s\">estar logado</a> para contribuir com a "
+"discussão."
+msgstr ""
+
+#: delibera.php:1367
+msgid "Proposta de encaminhamento"
+msgstr ""
+
+#: delibera.php:1374
+msgid ""
+"Você está logado como <a href=\"%1$s\">%2$s</a> que não é um usuário "
+"autorizado a votar. <a href=\"%3$s\" title=\"Sair desta conta?\">Sair desta "
+"conta</a> e logar com usuário que possa votar?"
+msgstr ""
+
+#: delibera.php:1403
+msgid "Regime de votação para a pauta \"%s\""
+msgstr ""
+
+#: delibera.php:1409
+msgid ""
+"Escolha os encaminhamentos que deseja aprovar e depois clique em \"Votar\":"
+msgstr ""
+
+#: delibera.php:1431
+msgid ""
+"Você está logado como <a href=\"%1$s\">%2$s</a> que não é um usuário "
+"autorizado a votar. <a href=\"%3$s\" title=\"Sair desta conta?\">Sair desta "
+"conta</a> e logar com um usuário com permisão para votar?"
+msgstr ""
+
+#: delibera.php:1586
+msgid "Você não pode Editar esse tipo de comentário"
+msgstr ""
+
+#. #-#-#-#-#  delibera.pot (Delibera 0.2)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: delibera.php:1611
+msgid "Delibera"
+msgstr ""
+
+#: delibera.php:1611
+msgid "Delibera plugin"
+msgstr ""
+
+#: delibera.php:1656
+msgid "Você não pode editar as configurações do delibera."
+msgstr ""
+
+#: delibera.php:1688
+msgid "Configurações salvas!"
+msgstr ""
+
+#: delibera.php:1690
+msgid ""
+"Erro ao salvar as configurações. Verifique os valores inseridos e tente "
+"novamente!"
+msgstr ""
+
+#: delibera.php:1713
+msgid "Representante define prazos?"
+msgstr ""
+
+#: delibera.php:1718
+msgid "É Necessário Validação?"
+msgstr ""
+
+#: delibera.php:1723
+msgid "Mínimo de adesões para pauta"
+msgstr ""
+
+#: delibera.php:1729
+msgid "Dias para validação da pauta"
+msgstr ""
+
+#: delibera.php:1735
+msgid "Dias para discussão da pauta"
+msgstr ""
+
+#: delibera.php:1741
+msgid "Dias para votação de encaminhamentos"
+msgstr ""
+
+#: delibera.php:1747
+msgid "Dias para novo prazo"
+msgstr ""
+
+#: delibera.php:1752
+msgid "Necessário Relatoria?"
+msgstr ""
+
+#: delibera.php:1762
+msgid "Necessário Eleição de Relator?"
+msgstr ""
+
+#: delibera.php:1772
+msgid "Necessário Limitar o Tamanho do comentário visível?"
+msgstr ""
+
+#: delibera.php:1777
+msgid "Número máximo de caracteres por comentário"
+msgstr ""
+
+#: delibera.php:1782
+msgid "Assunto da mensagem padrão de notificação de criação de pauta"
+msgstr ""
+
+#: delibera.php:1787
+msgid "Mensagem padrão de notificação de criação de pauta"
+msgstr ""
+
+#: delibera.php:1792
+msgid "Assunto da mensagem padrão de notificação de mudança de situação"
+msgstr ""
+
+#: delibera.php:1797
+msgid "Mensagem padrão de notificação de mudança de situação"
+msgstr ""
+
+#: delibera.php:1802
+msgid "Assunto da mensagem padrão de notificação final de prazo"
+msgstr ""
+
+#: delibera.php:1807
+msgid "Mensagem padrão de notificação final de prazo"
+msgstr ""
+
+#: delibera.php:1812
+msgid "Importar novas configurações de arquivo externo?"
+msgstr ""
+
+#: delibera.php:1819
+msgid "Configurações para o plugin Delibera"
+msgstr ""
+
+#: delibera.php:1819
+msgid "Salvar as configurações do Delibera"
+msgstr ""
+
+#: delibera.php:1885
+msgid "Nova Pauta Criada"
+msgstr ""
+
+#: delibera.php:1886
+msgid "Nova Pauta:"
+msgstr ""
+
+#: delibera.php:1887
+msgid "Situação de Pauta modificada"
+msgstr ""
+
+#: delibera.php:1888
+msgid "Nova situação da Pauta:"
+msgstr ""
+
+#: delibera.php:1889
+msgid "Fim de prazo próximo"
+msgstr ""
+
+#: delibera.php:1890
+msgid "Fim de prazo próximo para a pauta a seguir: "
+msgstr ""
+
+#: delibera.php:1924
+msgid "Permissão original (%s) não localizada"
+msgstr ""
+
+#: delibera.php:1934 delibera.php:1959
+msgid "Permissão %s não localizada"
+msgstr ""
+
+#: delibera.php:2325
+msgid "Prazo"
+msgstr ""
+
+#: delibera.php:2423
+msgid "Mostrar todas as %s"
+msgstr ""
+
+#: delibera.php:2695
+msgid "Sua contribuição foi registrada no sistema"
+msgstr ""
+
+#: delibera_curtir.php:108
+msgid "Concordo"
+msgstr ""
+
+#: delibera_curtir.php:129 delibera_curtir.php:146
+msgid "concordaram"
+msgstr ""
+
+#. #-#-#-#-#  delibera.pot (Delibera 0.2)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  delibera.pot (Delibera 0.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.ethymos.com.br"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"O Plugin Delibera extende as funções padrão do WordPress e cria um ambiente "
+"de deliberação."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Ethymos"
+msgstr ""

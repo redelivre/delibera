@@ -1,0 +1,86 @@
+/*-------------------------------------------------
+    Posts Delibera - HomePage
+-------------------------------------------------*/
+
+.posts-delibera {
+
+	.h2 {color:$secondary-color;}
+
+	article {
+		padding: 20px;
+		border:1px solid $main-color;
+		margin: 0 0 20px 0;
+
+		small {color: #777; font-size: 12px; }
+
+		h3 a {
+			color:$tertiary-color;
+			font-size: 18px;
+			@include font(normal);
+			margin-bottom: 10px;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		a {
+			color: #888;
+			font-size: 14px;
+			display: block;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&:nth-child(even) {
+			background:$main-color;
+		}
+	}
+}
+
+aside {
+	.h2 {color:$secondary-color;}
+}
+
+
+/*-------------------------------------------------
+    Para o Delibera
+-------------------------------------------------*/
+.meta-tags li  {
+	color:$tertiary-color !important;
+	a {color:$secondary-color !important;}
+}
+.meta-social {
+	padding: 14px 0;
+	border-top: 1px solid #EEE;
+	border-bottom: 1px solid #EEE;
+}
+
+
+
+
+// Box TextArea em /nova-pauta/
+#nova-pauta-form input[type="text"] {
+	padding: 10px 5px !important;
+	margin-bottom: 20px !important;
+}
+
+#nova-pauta-conteudo_ifr{ 
+	border:1px solid #EEE;
+}
+
+.status{ @include left; }
+.deadline { @include right; }
+
+.votes {
+	padding: 20px 0;
+	clear: both;
+}
+
+
+
+
+
+
+
+

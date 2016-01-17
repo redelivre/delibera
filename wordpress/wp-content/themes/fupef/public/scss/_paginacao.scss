@@ -1,0 +1,30 @@
+.paginacao {
+	text-align: center;
+	padding: 20px 0;
+	border-top:1px solid #EEE;
+	border-bottom:1px solid #EEE;
+	overflow: hidden;
+
+	.current {
+		color: #FFF;
+		font-size: 13px;
+		padding: 7px;
+		background:$main-color;
+		margin:0 7px;
+	}		
+
+	a {
+		color: $main-color;
+		font-size: 13px;
+		border:1px solid #EEE;
+		padding: 7px;
+		margin-right: 20px;
+		margin:0 7px;
+		@include fade;
+
+		&:hover {
+			color: $secondary-color;
+			background:$main-color;
+		}
+	}
+}

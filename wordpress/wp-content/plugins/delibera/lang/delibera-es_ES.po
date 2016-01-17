@@ -1,0 +1,985 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugin Delibera\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-12 15:15-0300\n"
+"PO-Revision-Date: 2011-09-12 15:25-0300\n"
+"Last-Translator: Jacson <jacson@ethymos.com.br>\n"
+"Language-Team: Marco Konopacki <marco@ethymos.com.br>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Potuguese\n"
+"X-Poedit-Country: Brasil\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../delibera_comments.php:11
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Este texto es protegido por contraseña. Introduzca la contraseña para ver los comentarios."
+
+#: ../delibera_comments.php:20
+msgid "No responses"
+msgstr "No hay respuestas"
+
+#: ../delibera_comments.php:20
+msgid "One response"
+msgstr "Una respuesta"
+
+#: ../delibera_comments.php:20
+msgid "% responses"
+msgstr "% respuestas"
+
+#: ../delibera_comments.php:25
+#: ../delibera_comments.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Comentarios antiguos"
+
+#: ../delibera_comments.php:26
+#: ../delibera_comments.php:40
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Nuevos comentarios <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../delibera_comments.php:48
+msgid "Comments are closed."
+msgstr "Los comentarios están cerrados"
+
+#: ../delibera_curtir.php:141
+#: ../delibera_curtir.php:190
+msgid "Concordo"
+msgstr "De acuerdo"
+
+#: ../delibera_curtir.php:142
+#: ../delibera_curtir.php:163
+#: ../delibera_curtir.php:179
+#: ../delibera_curtir.php:192
+msgid "concordaram"
+msgstr "convenido"
+
+#: ../delibera_curtir.php:142
+#: ../delibera_curtir.php:163
+#: ../delibera_curtir.php:179
+#: ../delibera_curtir.php:192
+msgid "concordou"
+msgstr "convenido"
+
+#: ../delibera_notifica.php:142
+msgid "Autor"
+msgstr "Autor"
+
+#: ../delibera_taxs.php:5
+#: ../delibera_taxs.php:19
+#: ../delibera_taxs.php:24
+msgid "Idiomas"
+msgstr "Idiomas"
+
+#: ../delibera_taxs.php:6
+msgid "Idioma"
+msgstr "Idioma"
+
+#: ../delibera_taxs.php:7
+msgid "Procurar por Idioma"
+msgstr "Buscar por Idioma"
+
+#: ../delibera_taxs.php:8
+msgid "Todos os Idiomas"
+msgstr "Todos los idiomas"
+
+#: ../delibera_taxs.php:9
+msgid "Idioma Pai"
+msgstr "Idioma Principal:"
+
+#: ../delibera_taxs.php:10
+msgid "Idioma Pai:"
+msgstr "Idioma Principal:"
+
+#: ../delibera_taxs.php:11
+msgid "Editar Idioma"
+msgstr "Editar Idioma"
+
+#: ../delibera_taxs.php:12
+msgid "Atualizar um Idioma"
+msgstr "Actualizar un Idioma"
+
+#: ../delibera_taxs.php:13
+msgid "Adicionar Novo Idioma"
+msgstr "Añadir Nuevo Idioma"
+
+#: ../delibera_taxs.php:14
+#: ../delibera.php:193
+msgid "Adicionar Novo"
+msgstr "Añadir Nuevo"
+
+#: ../delibera_taxs.php:15
+msgid "Novo Idioma"
+msgstr "Nuevo Idioma"
+
+#: ../delibera_taxs.php:16
+msgid "Visualizar Idioma"
+msgstr "Ver Idioma"
+
+#: ../delibera_taxs.php:17
+msgid "Nenhum Idioma localizado"
+msgstr "Ningún idioma encontrado"
+
+#: ../delibera_taxs.php:18
+msgid "Nenhum Idioma localizado na lixeira"
+msgstr "Ningún idioma encontrada en la basura"
+
+#: ../delibera_taxs.php:43
+#: ../delibera_taxs.php:44
+msgid "English"
+msgstr "Inglés"
+
+#: ../delibera_taxs.php:51
+#: ../delibera_taxs.php:52
+msgid "Español"
+msgstr "Español"
+
+#: ../delibera_taxs.php:59
+#: ../delibera_taxs.php:60
+msgid "Português"
+msgstr "Portugués"
+
+#: ../delibera_taxs.php:69
+#: ../delibera_taxs.php:83
+#: ../delibera_taxs.php:88
+msgid "Regiões"
+msgstr "Regiones"
+
+#: ../delibera_taxs.php:70
+msgid "Região"
+msgstr "Región"
+
+#: ../delibera_taxs.php:71
+msgid "Procurar por Região"
+msgstr "Buscar por Región"
+
+#: ../delibera_taxs.php:72
+msgid "Todas as Regiões"
+msgstr "Todas las Regiones"
+
+#: ../delibera_taxs.php:73
+msgid "Região Pai"
+msgstr "Región Principal:"
+
+#: ../delibera_taxs.php:74
+msgid "Região Pai:"
+msgstr "Región Principal:"
+
+#: ../delibera_taxs.php:75
+msgid "Editar Região"
+msgstr "Editar Región"
+
+#: ../delibera_taxs.php:76
+msgid "Atualizar uma Região"
+msgstr "Actualizar Región"
+
+#: ../delibera_taxs.php:77
+msgid "Adicionar Nova Região"
+msgstr "Añadir Nueva Región"
+
+#: ../delibera_taxs.php:78
+#: ../delibera.php:114
+#: ../delibera.php:230
+msgid "Adicionar Nova"
+msgstr "Añadir Nueva"
+
+#: ../delibera_taxs.php:79
+msgid "Nova Região"
+msgstr "Nueva Región"
+
+#: ../delibera_taxs.php:80
+msgid "Visualizar Região"
+msgstr "Ver Región"
+
+#: ../delibera_taxs.php:81
+msgid "Nenhuma Região localizada"
+msgstr "Ninguna región encontrada"
+
+#: ../delibera_taxs.php:82
+msgid "Nenhuma Região localizada na lixeira"
+msgstr "Ninguna región encontrada en la basura"
+
+#: ../delibera_user_painel.php:8
+msgid "Sem Nome"
+msgstr "Sin Nombre"
+
+#: ../delibera_user_painel.php:11
+msgid "Favor informar"
+msgstr "Por favor, informe"
+
+#: ../delibera_user_painel.php:44
+msgid "Receber mensagem de criação de novas pauta?"
+msgstr "Recibir el mensaje de la creación de la nueva agenda?"
+
+#: ../delibera_user_painel.php:52
+msgid "Receber mensagem nova situação das pautas?"
+msgstr "Recibir nuevo mensaje de estado de las Agendas?"
+
+#: ../delibera_user_painel.php:60
+msgid "Receber mensagem fim de prazo próximo?"
+msgstr "Recibe mensaje fecha límite se acerca?"
+
+#: ../delibera_seguir.php:95
+#: ../delibera_seguir.php:126
+#: ../delibera_seguir.php:147
+msgid "Seguir"
+msgstr "Seguir"
+
+#: ../delibera_seguir.php:95
+#: ../delibera_seguir.php:118
+msgid "Seguindo"
+msgstr "Siguiente"
+
+#: ../delibera_seguir.php:95
+#: ../delibera_seguir.php:121
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#: ../delibera_edit_comment.php:23
+msgid "Editar"
+msgstr "Edirar"
+
+#: ../delibera_edit_comment.php:124
+msgid "Delete"
+msgstr "Borrar"
+
+#: ../delibera_cron.php:41
+msgid "Erro no cron Delibera: "
+msgstr "Error no cron Delibera:"
+
+#: ../delibera_discordar.php:141
+#: ../delibera_discordar.php:190
+msgid "Discordo"
+msgstr "Discrepar"
+
+#: ../delibera_discordar.php:142
+#: ../delibera_discordar.php:163
+#: ../delibera_discordar.php:179
+#: ../delibera_discordar.php:192
+msgid "discordaram"
+msgstr "no convenidos"
+
+#: ../delibera_discordar.php:142
+#: ../delibera_discordar.php:163
+#: ../delibera_discordar.php:179
+#: ../delibera_discordar.php:192
+msgid "discordou"
+msgstr "no convenido"
+
+#: ../delibera.php:112
+#: ../delibera.php:123
+#: ../delibera.php:129
+msgid "Pautas"
+msgstr "Agendas"
+
+#: ../delibera.php:113
+msgid "Pauta"
+msgstr "Agenda"
+
+#: ../delibera.php:115
+msgid "Adicionar nova pauta"
+msgstr "Añadir nueva agenda"
+
+#: ../delibera.php:116
+msgid "Editar Pauta"
+msgstr "Editar agenda"
+
+#: ../delibera.php:117
+msgid "Nova Pauta"
+msgstr "Nueva agenda"
+
+#: ../delibera.php:118
+msgid "Visualizar Pauta"
+msgstr "Ver agenda"
+
+#: ../delibera.php:119
+msgid "Procurar Pautas"
+msgstr "Buscar agendas"
+
+#: ../delibera.php:120
+msgid "Nenhuma Pauta localizada"
+msgstr "Ninguna agenda encontrada"
+
+#: ../delibera.php:121
+msgid "Nenhuma Pauta localizada na lixeira"
+msgstr "Ninguna agenda encontrada en la basura"
+
+#: ../delibera.php:131
+msgid "Pauta de discussão"
+msgstr "Agenda de discusión"
+
+#: ../delibera.php:184
+#: ../delibera.php:198
+#: ../delibera.php:203
+msgid "Temas"
+msgstr "Asuntos"
+
+#: ../delibera.php:185
+#: ../delibera.php:2581
+msgid "Tema"
+msgstr "Asunto"
+
+#: ../delibera.php:186
+msgid "Procurar por Temas"
+msgstr "Buscar por Asuntos"
+
+#: ../delibera.php:187
+msgid "Todos os Temas"
+msgstr "Todos los asuntos"
+
+#: ../delibera.php:188
+msgid "Tema Pai"
+msgstr "Asunto principal"
+
+#: ../delibera.php:189
+msgid "Tema Pai:"
+msgstr "Asunto principal:"
+
+#: ../delibera.php:190
+msgid "Editar Tema"
+msgstr "Edirar asunto"
+
+#: ../delibera.php:191
+msgid "Atualizar um Tema"
+msgstr "Actualizar un asunto"
+
+#: ../delibera.php:192
+msgid "Adicionar Novo Tema"
+msgstr "Añadir Nuevo Asunto"
+
+#: ../delibera.php:194
+msgid "Novo Tema"
+msgstr "Nuevo Asunto"
+
+#: ../delibera.php:195
+msgid "Visualizar Tema"
+msgstr "Ver asunto"
+
+#: ../delibera.php:196
+msgid "Nenhum Tema localizado"
+msgstr "Ningun asunto encontrado"
+
+#: ../delibera.php:197
+msgid "Nenhum Tema localizado na lixeira"
+msgstr "Ningun asunto encontrado en la basura"
+
+#: ../delibera.php:221
+#: ../delibera.php:235
+#: ../delibera.php:240
+msgid "Situações"
+msgstr "Situaciones"
+
+#: ../delibera.php:222
+#: ../delibera.php:2582
+msgid "Situação"
+msgstr "Situación"
+
+#: ../delibera.php:223
+msgid "Procurar por Situação"
+msgstr "Buscar por Situación"
+
+#: ../delibera.php:224
+msgid "Todas as Situações"
+msgstr "Todas las Situaciones"
+
+#: ../delibera.php:227
+msgid "Editar Situação"
+msgstr "Editar Situaciones"
+
+#: ../delibera.php:228
+msgid "Atualizar uma Situação"
+msgstr "Actualizar una Situación"
+
+#: ../delibera.php:229
+msgid "Adicionar Nova Situação"
+msgstr "Añadir Nueva Situación"
+
+#: ../delibera.php:231
+msgid "Nova Situação"
+msgstr "Nueva Situación"
+
+#: ../delibera.php:232
+msgid "Visualizar Situação"
+msgstr "Ver Situación"
+
+#: ../delibera.php:233
+msgid "Nenhuma Situação localizado"
+msgstr "Ninguna Situación Encontrada"
+
+#: ../delibera.php:234
+msgid "Nenhuma Situação localizada na lixeira"
+msgstr "Ninguna Situación Encontrada en la Basura"
+
+#: ../delibera.php:393
+#: ../delibera.php:394
+msgid "Validação"
+msgstr "Validación"
+
+#: ../delibera.php:397
+#: ../delibera.php:398
+msgid "Proposta"
+msgstr "Propuesta"
+
+#: ../delibera.php:401
+#: ../delibera.php:402
+#: ../delibera.php:1148
+#: ../delibera.php:1163
+msgid "Voto"
+msgstr "Voto"
+
+#: ../delibera.php:405
+#: ../delibera.php:406
+msgid "Resolução"
+msgstr "Resolución"
+
+#: ../delibera.php:409
+#: ../delibera.php:410
+#: ../delibera.php:1504
+msgid "Opinião"
+msgstr "Opinión"
+
+#: ../delibera.php:459
+msgid "Forçar fim de prazo"
+msgstr "Forzar fín de fecha límite"
+
+#: ../delibera.php:463
+msgid "Invalidar"
+msgstr "Invalidar"
+
+#: ../delibera.php:470
+msgid "Reabrir"
+msgstr "Abrir de Nuevo"
+
+#: ../delibera.php:491
+msgid "Você não tem permissão para forçar um prazo"
+msgstr "Usted no tiene permiso para forzar una fecha límite"
+
+#: ../delibera.php:491
+#: ../delibera.php:506
+#: ../delibera.php:521
+msgid "Sem permissão"
+msgstr "Sin permiso"
+
+#: ../delibera.php:506
+msgid "Você não tem permissão para invalidar uma pauta"
+msgstr "Usted no tiene permiso para invalidar una agenda"
+
+#: ../delibera.php:521
+msgid "Você não tem permissão para re-abrir discussão sobre uma pauta"
+msgstr "Usted no tiene permiso para abrir de nuevo una discusión acerca de una agenda"
+
+#: ../delibera.php:623
+msgid "Mínimo de Validações"
+msgstr "Mínimo de Validaciones"
+
+#: ../delibera.php:627
+msgid "Prazo para Validação"
+msgstr "Fecha límite para validación"
+
+#: ../delibera.php:634
+msgid "Prazo para Discussões"
+msgstr "Fecha límite para discusiones"
+
+#: ../delibera.php:644
+#: ../delibera.php:1915
+msgid "Prazo para Eleição de Relator"
+msgstr "Fecha límite para elección del relator"
+
+#: ../delibera.php:651
+#: ../delibera.php:1905
+msgid "Prazo para Relatoria"
+msgstr "Fecha límite para Relatoría"
+
+#: ../delibera.php:658
+msgid "Prazo para Votações"
+msgstr "Fecha límite para votaciones"
+
+#: ../delibera.php:1063
+msgid "Erro ao salvar dados da pauta, faltando informações de prazos e validações mínimas!"
+msgstr "Error al salvar dato de la agenda. Faltan informaciones acerca de fecha límite y validaciones mínimas!"
+
+#: ../delibera.php:1116
+#: ../delibera.php:1353
+msgid "Aceitou"
+msgstr "Acceptó"
+
+#: ../delibera.php:1118
+#: ../delibera.php:1355
+msgid "Rejeitou"
+msgstr "Rechazó"
+
+#: ../delibera.php:1148
+#: ../delibera.php:1163
+msgid "Votos"
+msgstr "Votos"
+
+#: ../delibera.php:1208
+msgid "Continue lendo este comentário"
+msgstr "Lea este comentario"
+
+#: ../delibera.php:1370
+msgid "proposta de encaminhamento"
+msgstr "propuesta de seguimiento"
+
+#: ../delibera.php:1458
+msgid "Você quer ver essa pauta posta em discussão?"
+msgstr "¿Usted quiere ver esa agenda en discusión?"
+
+#: ../delibera.php:1459
+#: ../delibera.php:1542
+#, php-format
+msgid "Você precisar <a href=\"%s\">estar logado</a> e ter permissão para votar."
+msgstr "Usted hay que <a href=\"%s\">estar conectado</a> y tener permiso para votar."
+
+#: ../delibera.php:1463
+msgid "Aceitar"
+msgstr "Acceptar"
+
+#: ../delibera.php:1464
+msgid "Rejeitar"
+msgstr "Rechazar"
+
+#: ../delibera.php:1472
+#: ../delibera.php:1564
+msgid "Votar"
+msgstr "Votar"
+
+#: ../delibera.php:1476
+#, php-format
+msgid "Você está logado como <a href=\"%1$s\">%2$s</a> que não é um usuário autorizado a votar. <a href=\"%3$s\" title=\"Sair desta conta?\">Sair desta conta</a> e logar com um usuário com permissão de votar?"
+msgstr "Usted está conectado como <a href=\"%1$s\">%2$s</a> que no es un usuário autorizado a votar. <a href=\"%3$s\" title=\"Salir de esta cuenta?\">Salir de esta cuenta</a> y conectar con un usuário que tiene permiso para votar?"
+
+#: ../delibera.php:1486
+#, php-format
+msgid "Discussão em torno de \"%s\""
+msgstr "Discusión acerca de \"%s\""
+
+#: ../delibera.php:1487
+#, php-format
+msgid "Você precisar <a href=\"%s\">estar logado</a> para contribuir com a discussão."
+msgstr "Usted hay que <a href=\"%s\">estar conectado</a> para contribuir con la discusión."
+
+#: ../delibera.php:1497
+#: ../delibera_comments_template.php:112
+msgid "Proposta baseada em:"
+msgstr "Propuesta basada en:"
+
+#: ../delibera.php:1505
+msgid "Proposta de encaminhamento"
+msgstr "Propuesta de enrutamiento"
+
+#: ../delibera.php:1512
+#, php-format
+msgid "Você está logado como <a href=\"%1$s\">%2$s</a> que não é um usuário autorizado a votar. <a href=\"%3$s\" title=\"Sair desta conta?\">Sair desta conta</a> e logar com usuário que possa votar?"
+msgstr "Usted está conectado como <a href=\"%1$s\">%2$s</a> que no es un usuário autorizado a votar. <a href=\"%3$s\" title=\"¿Salir de esta cuenta?\">¿Salir de esta cuenta</a> y conectar con un usuário que tiene permiso para votar?"
+
+#: ../delibera.php:1541
+#, php-format
+msgid "Regime de votação para a pauta \"%s\""
+msgstr "Régimen de votación para la agenda \"%s\""
+
+#: ../delibera.php:1547
+msgid "Escolha os encaminhamentos que deseja aprovar e depois clique em \"Votar\":"
+msgstr "Elija los seguimientos que desea aprobar y después haga clic en \"Votar\":"
+
+#: ../delibera.php:1569
+#, php-format
+msgid "Você está logado como <a href=\"%1$s\">%2$s</a> que não é um usuário autorizado a votar. <a href=\"%3$s\" title=\"Sair desta conta?\">Sair desta conta</a> e logar com um usuário com permisão para votar?"
+msgstr "Usted está conctado como <a href=\"%1$s\">%2$s</a> que no es un usuário autorizado a votar. <a href=\"%3$s\" title=\"¿Salir de esta cuenta?\">¿Salir de esta cuenta</a> y conectar con un usuário que tiene permiso para votar?"
+
+#: ../delibera.php:1727
+#: ../delibera.php:1734
+msgid "Você não pode Editar esse tipo de comentário"
+msgstr "Usted no puede editar este tipo de comentario"
+
+#: ../delibera.php:1759
+msgid "Delibera"
+msgstr "Delibera"
+
+#: ../delibera.php:1759
+msgid "Delibera plugin"
+msgstr "Delibera plugin"
+
+#: ../delibera.php:1804
+msgid "Você não pode editar as configurações do delibera."
+msgstr "Usted no puede editar las configuraciones del Delibera."
+
+#: ../delibera.php:1836
+msgid "Configurações salvas!"
+msgstr "Configuraciones han sido guardadas!"
+
+#: ../delibera.php:1838
+msgid "Erro ao salvar as configurações. Verifique os valores inseridos e tente novamente!"
+msgstr "Error al guardar configuraciones. Verifique los valores inseridos y intente de nuevo!"
+
+#: ../delibera.php:1861
+msgid "Representante define prazos?"
+msgstr "¿Representante define fecha límite?"
+
+#: ../delibera.php:1866
+msgid "É Necessário Validação?"
+msgstr "¿Es necesario validación?"
+
+#: ../delibera.php:1871
+msgid "Mínimo de adesões para pauta"
+msgstr "Mínimo de adhesiones para agenda"
+
+#: ../delibera.php:1877
+msgid "Dias para validação da pauta"
+msgstr "Días para validación de la agenda"
+
+#: ../delibera.php:1883
+msgid "Dias para discussão da pauta"
+msgstr "Días para discusión de la agenda"
+
+#: ../delibera.php:1889
+msgid "Dias para votação de encaminhamentos"
+msgstr "Días para votar seguimientos"
+
+#: ../delibera.php:1895
+msgid "Dias para novo prazo"
+msgstr "Días para nueva fecha límite"
+
+#: ../delibera.php:1900
+msgid "Necessário Relatoria?"
+msgstr "¿Es necesaria una relatoría?"
+
+#: ../delibera.php:1910
+msgid "Necessário Eleição de Relator?"
+msgstr "¿Es necesário elegir un relator?"
+
+#: ../delibera.php:1920
+msgid "Necessário Limitar o Tamanho do comentário visível?"
+msgstr "Necesarias para limitar el tamaño del comentario visible?"
+
+#: ../delibera.php:1925
+msgid "Número máximo de caracteres por comentário"
+msgstr "El número máximo de caracteres por comentario"
+
+#: ../delibera.php:1930
+msgid "Importar novas configurações de arquivo externo?"
+msgstr "Importar nuevas configuraciones de archivo externo?"
+
+#: ../delibera.php:1936
+msgid "Selecione uma língua para configurar as notificações em cada idioma"
+msgstr "Seleccione un idioma para configurar notificaciones en cada idioma"
+
+#: ../delibera.php:1956
+#: ../delibera.php:2005
+msgid "Assunto da mensagem padrão de notificação de criação de pauta"
+msgstr "Asunto del mensaje estándar de notificación de creación de agenda"
+
+#: ../delibera.php:1961
+#: ../delibera.php:2010
+msgid "Mensagem padrão de notificação de criação de pauta"
+msgstr "Mensaje estándar de notificación de creación de agenda"
+
+#: ../delibera.php:1966
+#: ../delibera.php:2015
+msgid "Assunto da mensagem padrão de notificação de mudança de situação"
+msgstr "Asunto del mensaje estándar de notificación de cambio de situación"
+
+#: ../delibera.php:1971
+#: ../delibera.php:2020
+msgid "Mensagem padrão de notificação de mudança de situação"
+msgstr "Mensaje estándar de notificación de cambio de situación "
+
+#: ../delibera.php:1976
+#: ../delibera.php:2025
+msgid "Assunto da mensagem padrão de notificação final de prazo"
+msgstr "Asunto del mensaje estándar de la última notificación de fecha límite"
+
+#: ../delibera.php:1981
+#: ../delibera.php:2030
+msgid "Mensagem padrão de notificação final de prazo"
+msgstr "Mensaje estándar de notificación final de fecha límite"
+
+#: ../delibera.php:1986
+#: ../delibera.php:2035
+msgid "Assunto da mensagem padrão de notificação de novo comentário"
+msgstr "Título del mensaje estándar de notificación de nuevos comentarios"
+
+#: ../delibera.php:1991
+#: ../delibera.php:2040
+msgid "Mensagem padrão de notificação de novo comentário"
+msgstr "Notificación de mensajes estándar de un nuevo comentario"
+
+#: ../delibera.php:2046
+msgid "Configurações para o plugin Delibera"
+msgstr "Configuraciones para el plugin Delibera"
+
+#: ../delibera.php:2046
+msgid "Salvar as configurações do Delibera"
+msgstr "Guardar configuraciones del Delibera"
+
+#: ../delibera.php:2125
+msgid "Nova Pauta Criada"
+msgstr "Nueva Agenda Creada"
+
+#: ../delibera.php:2126
+msgid "Nova Pauta:"
+msgstr "Nueva Agenda:"
+
+#: ../delibera.php:2127
+msgid "Situação de Pauta modificada"
+msgstr "Situación de la Agenda ha cambiado"
+
+#: ../delibera.php:2128
+msgid "Nova situação da Pauta:"
+msgstr "Nueva situación de la Agenda"
+
+#: ../delibera.php:2129
+msgid "Fim de prazo próximo"
+msgstr "Fecha límite se acerca"
+
+#: ../delibera.php:2130
+msgid "Fim de prazo próximo para a pauta a seguir: "
+msgstr "Se acerca la fecha límite para cerrar esta discusión:"
+
+#: ../delibera.php:2131
+msgid "Novo Comentário"
+msgstr "Nuevo Comentario"
+
+#: ../delibera.php:2132
+msgid "Há um novo comentário na pauta seguida: "
+msgstr "Hay un nuevo comentario en el orden del día, entonces: "
+
+#: ../delibera.php:2182
+#, php-format
+msgid "Permissão original (%s) não localizada"
+msgstr "Permiso original (%s) no se encuentra"
+
+#: ../delibera.php:2192
+#: ../delibera.php:2217
+#, php-format
+msgid "Permissão %s não localizada"
+msgstr "Permiso %s no encontrado"
+
+#: ../delibera.php:2583
+msgid "Prazo"
+msgstr "Plazo"
+
+#: ../delibera.php:2681
+#, php-format
+msgid "Mostrar todas as %s"
+msgstr "Mostrar todas las %s"
+
+#: ../delibera.php:2965
+msgid "Sua contribuição foi registrada no sistema"
+msgstr "Su contribución ha sido registrada en el sistema"
+
+#: ../delibera_comments_template.php:66
+msgid "Seu comentário está aguardando moderação."
+msgstr "Su comentario está en espera de moderación."
+
+#: ../delibera_comments_template.php:79
+#, php-format
+msgid "há %s"
+msgstr "hace %s"
+
+#: ../delibera_comments_template.php:81
+msgid "em"
+msgstr "en"
+
+#: ../delibera_comments_template.php:87
+#: ../delibera_comments_template.php:207
+msgid "(Edit)"
+msgstr "(Editar)"
+
+#: ../delibera_comments_template.php:88
+msgid "(Delete)"
+msgstr "(Borrar)"
+
+#: ../delibera_comments_template.php:95
+msgid "Encaminhamento"
+msgstr "Seguimiento"
+
+#: ../delibera_comments_template.php:120
+msgid "basear-se neste encaminhamento?"
+msgstr "se basan en esta ruta?"
+
+#: ../delibera_comments_template.php:132
+msgid "Editar Encaminhamento"
+msgstr "Edición de enrutamiento"
+
+#: ../delibera_comments_template.php:137
+msgid "Responda este comentário"
+msgstr "Respuesta a este comentario"
+
+#: ../delibera_comments_template.php:197
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+
+#: ../delibera_comments_template.php:200
+msgid "Your comment is awaiting moderation."
+msgstr "Su comentário necesita aprovación."
+
+#: ../delibera_comments_template.php:207
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s at %2$s"
+
+#: ../delibera_shortcodes.php:95
+msgid "Desconhecido"
+msgstr "Desconocido"
+
+#: ../delibera-edit-form-comment.php:23
+msgid "Atualizar"
+msgstr "Actualización"
+
+#: ../print/print-comments.php:23
+msgid "Mostrar"
+msgstr "Mostrar"
+
+#: ../print/print-comments.php:23
+msgid "Esconder"
+msgstr "Ocultar"
+
+#: ../print/print-comments.php:33
+msgid "para"
+msgstr "para"
+
+#: ../print/print-comments.php:45
+msgid "de"
+msgstr "de"
+
+#: ../print/print-comments.php:45
+#: ../print/print-posts.php:47
+#, php-format
+msgid "%s @ %s"
+msgstr "%s @ %s"
+
+#: ../print/print-posts.php:47
+msgid "Postado por"
+msgstr "Publicado por"
+
+#: ../print/print-posts.php:47
+msgid "na"
+msgstr "en"
+
+#: ../print/print-posts.php:54
+msgid "Pauta impressa de"
+msgstr "Agenda impresa"
+
+#: ../print/print-posts.php:55
+msgid "URL da pauta"
+msgstr "URL de la agenda"
+
+#: ../print/print-posts.php:59
+msgid "Click"
+msgstr "Clic"
+
+#: ../print/print-posts.php:59
+msgid "Click aqui para imprimir."
+msgstr "Clic para imprimir."
+
+#: ../print/print-posts.php:59
+msgid "aqui"
+msgstr "aquí"
+
+#: ../print/print-posts.php:59
+msgid "para imprimir."
+msgstr "para imprimi."
+
+#: ../print/print-posts.php:61
+msgid "Não há pautas relacionadas a esse critério."
+msgstr "No hay agendas relacionadas con este criterio."
+
+#: ../print/wp-print.php:104
+#: ../print/wp-print.php:169
+msgid "Image"
+msgstr "imagen"
+
+#: ../print/wp-print.php:124
+msgid ","
+msgstr ","
+
+#: ../print/wp-print.php:192
+msgid "Sem Interações"
+msgstr "No se conocen interacciones"
+
+#: ../print/wp-print.php:197
+msgid "Interações Desativadas"
+msgstr "Interacciones con discapacidad"
+
+#: ../print/wp-print.php:200
+msgid "Interações Escondidas"
+msgstr "Interacciones ocultos"
+
+#: ../print/wp-print.php:211
+msgid "URLs in this post:"
+msgstr "URLs en este post:"
+
+#: ../print/wp-print.php:231
+msgid "Print"
+msgstr "Imprimir"
+
+#: ../print/wp-print.php:269
+msgid "imprimir"
+msgstr "imprimir"
+
+#~ msgid "%s Interação"
+
+#~ msgid_plural "%s Interações"
+#~ msgstr[0] "%s Interacción"
+#~ msgstr[1] "%s Interacciones"
+
+#~ msgid "%s Validação"
+
+#~ msgid_plural "%s Validações"
+#~ msgstr[0] "%s Validación"
+#~ msgstr[1] "%s Validaciones"
+
+#~ msgid "%s Opnião"
+
+#~ msgid_plural "%s Opniões"
+#~ msgstr[0] "%s Opnião"
+#~ msgstr[1] "%s Opniões"
+
+#~ msgid "%s Proposta"
+
+#~ msgid_plural "%s Propostas"
+#~ msgstr[0] "%s Propuesta"
+#~ msgstr[1] "%s Propuestas"
+
+#~ msgid "%s Voto"
+
+#~ msgid_plural "%s Votos"
+#~ msgstr[0] "%s Voto"
+#~ msgstr[1] "%s Votos"
+
+#~ msgid "%s Resolução"
+
+#~ msgid_plural "%s Resoluções"
+#~ msgstr[0] "%s Resolución"
+#~ msgstr[1] "%s Resoluciones"
+
+#~ msgid ""
+#~ "O Plugin Delibera extende as funções padrão do WordPress e cria um "
+#~ "ambiente de deliberação."
+#~ msgstr ""
+#~ "El plug-in Delibera extiende las funciones estándar de WordPress y crea "
+#~ "un ambiente de deliberación."
+
+#~ msgid "<cite class=\"fn\">%s</cite><span class=\"delibera-says\"></span>"
+#~ msgstr "<cite class=\"fn\">%s</cite><span class=\"delibera-says\"></span>"
+
+#~ msgid "Reinterar"
+#~ msgstr "Reiterar"
+
+#~ msgid " pessoas reiteraram isso"
+#~ msgstr "personas han reiterado eso"
+
+#~ msgid "ingles"
+#~ msgstr "inglés"
+
+#~ msgid "Add new topic"
+#~ msgstr "Añadir nueva pauta"

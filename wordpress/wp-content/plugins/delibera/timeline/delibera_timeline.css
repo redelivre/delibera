@@ -1,0 +1,283 @@
+body,h1,h2,h3,p,quote,small,form,input,ul,li,ol,label{
+	/* Simple page reset */
+	margin:0;
+	padding:0;
+}
+
+body{
+	background:url('images/topo.gif') center top no-repeat #fff;
+	color: #4f4f4f;
+	font-family: 'BellGothicStdBold',arial, helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+.event{
+	/* Contains the event header and body list */
+	float:left;
+	padding:4px;
+	text-align:left;
+	width:300px;
+	margin:0 5px 50px;
+}
+
+.eventList li{
+	/* The individual events */
+	background:#F4F4F4;
+	border:1px solid #EEEEEE;
+	list-style:none;
+	margin:5px;
+	padding:4px 7px;
+	
+	/* CSS3 rounded corners */
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+.eventList li:hover{
+	/* The hover state: */
+	cursor:pointer;
+	background:#E6F8FF;
+	border:1px solid #D4E6EE;
+	color:#548DA5;
+}
+
+li span{
+	/* The event icon */
+	display:block;
+	float:left;
+	height:16px;
+	margin-right:5px;
+	width:16px;
+}
+
+/* Individual background images for each type of event: */
+
+li.news span.icon { 	background:url(img/icons/newspaper.png) no-repeat; }
+li.image span.icon { 	background:url(img/icons/camera.png) no-repeat; }
+li.milestone span.icon { 	background:url(img/icons/chart.png) no-repeat; }
+
+div.timeline_content{
+	/* This div contains additional data for the content */
+	display:none;
+}
+
+.eventHeading{
+	/* The colorful year headings at the top */
+	font-size:16px;
+	margin:-5px -5px 10px;
+	padding:2px 5px;
+	text-align:center;
+}
+
+/* Three color styles for the headings: */
+
+.eventHeading.chreme{
+	background:#FBF7F0;
+	border:1px solid #EEE4D4;
+	color:#A78B5F;
+}
+
+.eventHeading.blue{
+	background:#E6F8FF;
+	border:1px solid #D4E6EE;
+	color:#548DA5;
+}
+
+.eventHeading.green{
+	background:#E6FFDF none repeat scroll 0 0;
+	border:1px solid #C9E6C1;
+	color:#6EA85F;
+}
+
+#timelineLimiter{
+	/* Hides the overflowing timeline */
+	width:100%;
+	overflow:hidden;
+	padding-top:10px;
+	margin:40px 0;
+}
+
+.scroll{
+	/* The small timeline below the main one. Hidden here and shown by jQuery if JS is enabled: */
+	display:none;
+	height:30px;
+
+	background:#F5F5F5;
+	border:1px solid #EEEEEE;
+	color:#999999;
+}
+
+.scrollPoints{
+	/* The individual years */
+	float:left;
+	font-size:1.4em;
+	padding:4px 10px;
+	text-align:center;
+	width:100px;
+	
+	position:relative;
+	z-index:10;
+}
+
+.centered{
+	/* Centers the years, width is assigned by jQuery */
+	margin:0 auto;
+	position:relative;
+}
+
+.slider{
+	/* Holds the scroll bar */
+	margin:10px auto;
+	height:25px;
+	display:none;
+}
+
+.bar{
+	/* The scroll bar */
+	background:url(img/slider_center.png) repeat-x center center;
+	height:25px;
+	cursor:pointer;
+}
+
+.barLeft{
+	background:transparent url(img/slider.png) no-repeat scroll left center;
+	height:25px;
+	width:20px;
+	left:0;
+	top:0;
+	position:absolute;
+}
+
+.barRight{
+	background:transparent url(img/slider.png) no-repeat scroll right center;
+	height:25px;
+	position:absolute;
+	right:0;
+	top:0;
+	width:20px;
+}
+
+#overlay{
+	/* The overlay that darkens the page when an event is clicked */
+	position:absolute;
+	z-index:10;
+	top:0;
+	left:0;
+	background-color:#222222;
+}
+
+#windowBox{
+	/* Shows details about the event on click */
+	position:fixed;
+	z-index:20;
+	background-color:#fcfcfc;
+	padding:10px;
+	border:2px solid #666666;
+	overflow:auto;
+}
+
+#titleDiv{
+	/* The title of the windowBox */
+	background:#F5F5F5;
+	border:1px solid #EEEEEE;
+	color:#AAAAAA;
+	font-size:1.5em;
+	margin-bottom:10px;
+	padding:5px 10px;
+}
+
+#date{
+	/* The date on the bottom of the windowBox */
+	bottom:20px;
+	color:#999999;
+	font-size:0.8em;
+	font-style:italic;
+	position:absolute;
+	right:15px;
+	padding:2px;
+	background:#FCFCFC;
+}
+
+.highlight{
+	/* The blue highlight that moves with the scroll bar */
+	height:30px;
+	position:absolute;
+	z-index:0;
+	left:0;
+	top:0;
+	
+	background:#E6F8FF;
+	border:1px solid #D4E6EE;
+	border-width:0 1px;
+}
+
+.clear{
+	clear:both;
+}
+
+/* The styles below are only necessary for the demo page */
+
+h1{
+	background: #e9eeda;
+  border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+  color:#0eb8b3;
+  min-height:20px;
+  margin-bottom:5px;
+  padding:15px;
+}
+
+h2 {
+	font-family:"Myriad Pro",Arial,Helvetica,sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	padding-right:40px;
+	position:relative;
+	right:0;
+	text-align:right;
+	text-transform:uppercase;
+	top:-48px;
+}
+
+a, a:visited {
+	color:#0196e3;
+	text-decoration:none;
+	outline:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+p.tutInfo{
+	/* The tutorial info on the bottom of the page */
+	padding:10px 0;
+	text-align:center;
+	position:absolute;
+	bottom:0px;
+	background:#F4F4F4;
+	border-top:1px solid #EEEEEE;
+	width:100%;
+}
+
+/* Customização */
+li.pauta {
+  background:url('images/icone-balao.gif') 7px center no-repeat;
+}
+li.pauta:hover {
+  background:url('images/icone-balao.gif') 7px center no-repeat;
+}
+li.comment-discussao {
+   background:url('images/icone-user.png') 7px center no-repeat;
+  }
+li.comment-discussao:hover {
+   background:url('images/icone-user.png') 7px center no-repeat;
+  }
+  li.comment-encaminhamento {
+   background:url('images/icone-encaminhamento.png') 7px center no-repeat;
+  }
+  li.comment-encaminhamento:hover {
+   background:url('images/icone-encaminhamento.png') 7px center no-repeat;
+  }
