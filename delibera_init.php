@@ -156,94 +156,8 @@ function delibera_Add_custom_taxonomy()
 				)
 			);
 		}
-		if(term_exists('emvotacao', 'situacao', null) == false)
-		{
-			delibera_insert_term('Regime de Votação', 'situacao', array(
-					'description'=> 'Pauta com encaminhamentos em Votacao',
-					'slug' => 'emvotacao',
-				),
-				array(
-					'qtrans_term_pt' => 'Regime de Votação',
-					'qtrans_term_en' => 'Voting',
-					'qtrans_term_es' => 'Sistema de Votación',
-				)
-			);
-		}
-		if(isset($opt['relatoria']) && $opt['relatoria'] == 'S')
-		{
-			if($opt['eleicao_relator'] == 'S')
-			{
-				if(term_exists('eleicaoredator', 'situacao', null) == false)
-				{
-					delibera_insert_term('Regime de Votação de Relator', 'situacao', array(
-							'description'=> 'Pauta em Eleição de Relator',
-							'slug' => 'eleicaoredator',
-						),
-						array(
-							'qtrans_term_pt' => 'Regime de Votação de Relator',
-							'qtrans_term_en' => 'Election of Rapporteur',
-							'qtrans_term_es' => 'Elección del Relator',
-						)
-					);
-				}
-			}
-
-			if(term_exists('relatoria', 'situacao', null) == false)
-			{
-				delibera_insert_term('Relatoria', 'situacao', array(
-						'description'=> 'Pauta com encaminhamentos em Relatoria',
-						'slug' => 'relatoria',
-					),
-					array(
-						'qtrans_term_pt' => 'Relatoria',
-						'qtrans_term_en' => 'Rapporteur',
-						'qtrans_term_es' => 'Relator',
-					)
-				);
-				}
-		}
-		if(term_exists('discussao', 'situacao', null) == false)
-		{
-			delibera_insert_term('Pauta em discussão', 'situacao', array(
-					'description'=> 'Pauta em Discussão',
-					'slug' => 'discussao',
-				),
-				array(
-					'qtrans_term_pt' => 'Pauta em discussão',
-					'qtrans_term_en' => 'Agenda en discusión',
-					'qtrans_term_es' => 'Topic under discussion',
-				)
-			);
-		}
-		if(isset($opt['validacao']) && $opt['validacao'] == 'S')
-		{
-			if(term_exists('validacao', 'situacao', null) == false)
-			{
-				delibera_insert_term('Proposta de Pauta', 'situacao', array(
-						'description'=> 'Pauta em Validação',
-						'slug' => 'validacao',
-					),
-					array(
-						'qtrans_term_pt' => 'Proposta de Pauta',
-						'qtrans_term_en' => 'Proposed Topic',
-						'qtrans_term_es' => 'Agenda Propuesta',
-					)
-				);
-			}
-			if(term_exists('naovalidada', 'situacao', null) == false)
-			{
-				delibera_insert_term('Pauta Recusada', 'situacao', array(
-						'description'=> 'Pauta não Validação',
-						'slug' => 'naovalidada',
-					),
-					array(
-						'qtrans_term_pt' => 'Pauta Recusada',
-						'qtrans_term_en' => 'Rejected Topic',
-						'qtrans_term_es' => 'Agenda Rechazada',
-					)
-				);
-			}
-		}
+		do_action('delibera_situacao_register');
+		
 	}
 
 	if(file_exists(__DIR__.DIRECTORY_SEPARATOR.'delibera_taxs.php'))
@@ -253,9 +167,24 @@ function delibera_Add_custom_taxonomy()
 
 }
 
+function deliberaLoadModules()
+{
+	$modules = array_filter(glob(dirname(__FILE__).'/modules/*'), 'is_dir');
+	foreach ($modules as $module)
+	{
+		$filename = $module.DIRECTORY_SEPARATOR.basename($module).'.php';
+		if(file_exists($filename))
+		{
+			include $filename;
+		}
+	}
+}
 
 function delibera_init()
 {
+	
+	deliberaLoadModules();
+	
 	add_action('admin_menu', 'delibera_config_menu');
 
 	delibera_Add_custom_Post();

@@ -1,56 +1,6 @@
 <?php
 // Parse shorttag
 
-function delibera_replace_propostas($matches)
-{
-	global $wp_posts;
-	$temp = explode(',', $matches[1]); // configurações da shorttag
-    $count = count($temp);
-
-    $param = array(); // TODO Tratar Parametros
-
-    $html = delibera_get_propostas($param);
-
-    $wp_posts = $html;
-    global $post;
-    $old = $post;
-    echo '<div id="lista-de-pautas">';
-    foreach ( $wp_posts as $wp_post )
-    {
-		$post = $wp_post;
-		include 'delibera_loop_pauta.php';
-	}
-	echo '</div>';
-	$post = $old;
-
-	return ''; // Retornar código da representação
-}
-add_shortcode( 'delibera_lista_de_propostas', 'delibera_replace_propostas' );
-
-function delibera_replace_pautas($matches)
-{
-	$temp = explode(',', $matches[1]); // configurações da shorttag
-    $count = count($temp);
-
-    $param = array(); // TODO Tratar Parametros
-
-    $html = delibera_get_pautas($param);
-	$wp_posts = $html;
-    global $post;
-    $old = $post;
-    echo '<div id="lista-de-pautas">';
-    foreach ( $wp_posts as $wp_post )
-    {
-		$post = $wp_post;
-		include 'delibera_loop_pauta.php';
-	}
-	echo '</div>';
-	$post = $old;
-
-	return ''; // Retornar código da representação
-}
-add_shortcode( 'delibera_lista_de_pautas', 'delibera_replace_pautas' );
-
 function delibera_replace_resolucoes($matches)
 {
 	$temp = explode(',', $matches[1]); // configurações da shorttag
