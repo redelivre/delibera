@@ -18,8 +18,8 @@
 
 		<div class="lista-de-pautas">
 			<?php
-			global $deliberaThemes;
-			$deliberaThemes->archiveLoop();
+			global $DeliberaThemes;
+			$DeliberaThemes->archiveLoop();
 
 			$default_flow = isset($options_plugin_delibera['delibera_flow']) ? $options_plugin_delibera['delibera_flow'] : array();
 			$default_flow = apply_filters('delibera_flow_list', $default_flow);

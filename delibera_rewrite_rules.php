@@ -35,9 +35,7 @@ function delibera_nova_pauta_template_redirect_intercept() {
         $options = delibera_get_config();
         if(isset($options['criar_pauta_pelo_front_end']) && $options['criar_pauta_pelo_front_end'] == 'S'){
 
-            global $deliberaThemes;
-
-            include $deliberaThemes->themeFilePath('delibera_nova_pauta.php');
+            include \Delibera\Themes::themeFilePath('delibera_nova_pauta.php');
             die;
         }
     }
@@ -74,9 +72,7 @@ function delibera_temas_template_redirect_intercept() {
     $tpl = $wp_query->get('tpl');
 
     if ($tpl && $tpl === 'temas') {
-        global $deliberaThemes;
-
-        include $deliberaThemes->themeFilePath('delibera_temas.php');
+        include \Delibera\Themes::themeFilePath('delibera_temas.php');
         die;
     }
 }

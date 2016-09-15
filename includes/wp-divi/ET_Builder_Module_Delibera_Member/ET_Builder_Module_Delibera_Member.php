@@ -258,8 +258,8 @@ class ET_Builder_Module_Delibera_Member extends ET_Builder_Module {
 			}
 			else
 			{
-				global $deliberaThemes;
-				wp_enqueue_style('delibera_style', $deliberaThemes->themeFileUrl('delibera_style.css'));
+				global $DeliberaThemes;
+				wp_enqueue_style('delibera_style', $DeliberaThemes->themeFileUrl('delibera_style.css'));
 			}
 		}
 		wp_enqueue_style('ET_Builder_Module_Delibera_Member', plugins_url("frontend/css", __FILE__)."/ET_Builder_Module_Delibera_Member.css");
@@ -425,8 +425,8 @@ class ET_Builder_Module_Delibera_Member extends ET_Builder_Module {
 
 				$style = '' !== $style ? " style='{$style}'" : '';
 
-				global $deliberaThemes;
-				$svg = $deliberaThemes->themeFileUrl('images/icons.svg');
+				global $DeliberaThemes;
+				$svg = $DeliberaThemes->themeFileUrl('images/icons.svg');
 				$like = delibera_gerar_curtir($wp_posts[$key]->ID);
 				$unlike = delibera_gerar_discordar($wp_posts[$key]->ID);
 				$comment_count = delibera_comment_number($wp_posts[$key]->ID,'todos');

@@ -69,8 +69,8 @@ global $user_display;
 				?>
 				<div class="lista-de-pautas">
 					<?php
-					global $deliberaThemes;
-					$deliberaThemes->archiveLoop();
+					global $DeliberaThemes;
+					$DeliberaThemes->archiveLoop();
 					
 					//pagination hack
 					$big = 99999999; // need an unlikely integer

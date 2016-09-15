@@ -1,5 +1,5 @@
 <?php 
-global $deliberaThemes;
+global $DeliberaThemes;
                 
 get_header();
 ?>
@@ -14,7 +14,7 @@ get_header();
 		
             // chama o formulário de nova pauta
             if (is_user_logged_in()) {
-                include $deliberaThemes->themeFilePath('form-nova-pauta.php');
+                include $DeliberaThemes->themeFilePath('form-nova-pauta.php');
             }
         
     		?>

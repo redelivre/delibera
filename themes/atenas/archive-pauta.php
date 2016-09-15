@@ -23,8 +23,8 @@
 
 					//echo count(query_posts($args));
 
-					global $deliberaThemes;
-					$deliberaThemes->archiveLoop();
+					global $DeliberaThemes;
+					$DeliberaThemes->archiveLoop();
 
 					?>
 

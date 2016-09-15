@@ -10,8 +10,6 @@
  */
 function delibera_filtros_gerar()
 {
-    global $deliberaThemes;
-
 	?>
 	<div id="filtro-horizontal">
 		<h4><?php _e( 'Filtros de conteúdo', 'delibera' ); ?><span id="delibera-filtros-archive-mostrar" onclick="delibera_filtros_archive_mostrar()" class="delibera-filtros-mostrar" style="display: none" title="Mostrar Filtros" ></span><span id="delibera-filtros-archive-esconder" onclick="delibera_filtros_archive_esconder()" class="delibera-filtros-esconder" title="Esconder Filtros"></span></h4>
@@ -60,8 +58,8 @@ function delibera_filtros_gerar()
 			var html = '<div id="'+id+'">';
 			<?php
 
-			$iloader = $deliberaThemes->getThemeDir() . "/images/ajax-loader.gif";
-			$iloader_padrao = $deliberaThemes->getThemeUrl() . "/images/ajax-loader.gif";
+			$iloader = \Delibera\Themes::getThemeDir() . "/images/ajax-loader.gif";
+			$iloader_padrao = \Delibera\Themes::getThemeUrl() . "/images/ajax-loader.gif";
 			if(file_exists($iloader))
 			{
 			?>
@@ -219,7 +217,7 @@ function delibera_filtros_get_filtros($tax, $value = false, $linha = "<br/>")
  */
 function delibera_filtros_archive_callback()
 {
-	global $wp_query, $deliberaThemes;
+	global $wp_query, $DeliberaThemes;
 
 	$action = new stdClass();
 	$action->canQuery = true;
@@ -234,7 +232,7 @@ function delibera_filtros_archive_callback()
 	query_posts($args);
 	?>
 	<div id="lista-de-pautas">
-		<?php $deliberaThemes->archiveLoop(); // Chama o loop do arquivo ?>
+		<?php $DeliberaThemes->archiveLoop(); // Chama o loop do arquivo ?>
 		
 		<div id="nav-below" class="navigation">
 			<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>

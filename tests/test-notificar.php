@@ -5,9 +5,6 @@ class NotificarTest extends WP_UnitTestCase
     {
         parent::setUp();
         
-        global $deliberaThemes;
-        $deliberaThemes = new DeliberaThemes;
-        
         $user = get_user_by('id', 1);
         $user->add_cap('votar');
         $this->post_id = $this->factory->post->create(array('post_type' => 'pauta'));

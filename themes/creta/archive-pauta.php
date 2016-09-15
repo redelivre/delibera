@@ -1,6 +1,6 @@
 <?php
 
-wp_enqueue_script('creta-filters', $deliberaThemes->getThemeUrl() . '/js/creta-filters.js', array('jquery'));
+wp_enqueue_script('creta-filters', $DeliberaThemes->getThemeUrl() . '/js/creta-filters.js', array('jquery'));
 
 if (!isset($_GET['situacao_filtro'])) {
     $_GET['situacao_filtro'] = array();
@@ -50,8 +50,8 @@ $options = delibera_get_config();
                 </div>
                 <div id="lista-de-pautas" class="site-content alignright">
                     <?php
-                    global $deliberaThemes;
-					$deliberaThemes->archiveLoop();
+                    global $DeliberaThemes;
+					$DeliberaThemes->archiveLoop();
                     
                     global $wp_query;
                     $big = 99999999; // need an unlikely integer

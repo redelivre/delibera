@@ -303,17 +303,17 @@ function delibera_comment_form($defaults)
 add_filter('comment_form_defaults', 'delibera_comment_form');
 
 add_action('wp_enqueue_scripts', function() {
-    global $deliberaThemes, $post;
+    global $DeliberaThemes, $post;
 
     if (get_post_type() == 'pauta')
     {
     	$situacao = delibera_get_situacao($post->ID);
-        wp_enqueue_script('creta', $deliberaThemes->getThemeUrl() . '/js/creta.js', array('delibera'));
+        wp_enqueue_script('creta', $DeliberaThemes->getThemeUrl() . '/js/creta.js', array('delibera'));
 
         if ($situacao->slug == 'relatoria') {
-            wp_enqueue_script('creta-relatoria', $deliberaThemes->getThemeUrl() . '/js/creta-relatoria.js', array('delibera'));
+            wp_enqueue_script('creta-relatoria', $DeliberaThemes->getThemeUrl() . '/js/creta-relatoria.js', array('delibera'));
         } else if ($situacao->slug == 'emvotacao') {
-            wp_enqueue_script('creta-votacao', $deliberaThemes->getThemeUrl() . '/js/creta-votacao.js', array('delibera'));
+            wp_enqueue_script('creta-votacao', $DeliberaThemes->getThemeUrl() . '/js/creta-votacao.js', array('delibera'));
         }
     }
 });
