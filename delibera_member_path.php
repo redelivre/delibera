@@ -105,15 +105,18 @@ class MemberPath
 			}
 			if(! $found)
 			{
-				global $wp_rewrite;
-				$wp_rewrite->flush_rules();
+				flush_rewrite_rules();
 			}
 		}
 	}
 
+	/**
+	 * retrive Author Pautas Url
+	 * @param int $ID User ID
+	 */
 	public static function getAuthorPautasUrl($ID)
 	{
-		return get_site_url().'/delibera/' .  $ID  . '/pautas';
+		return get_site_url().'/delibera/' . deliberaEncryptor('encrypt', $ID) . '/pautas';
 	}
 }
 $member_path = new \Delibera\Member\MemberPath(); 

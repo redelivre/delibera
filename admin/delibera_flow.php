@@ -35,7 +35,7 @@ class Flow
 	}
 	
 	/**
-	 * Append configurations 
+	 * Append defaults configurations 
 	 * @param array $opts
 	 */
 	public function getMainConfig($opts)
@@ -64,9 +64,23 @@ class Flow
 	 */
 	public function preMainConfigSave($opts)
 	{
-		if(array_key_exists('delibera_flow', $opts) && !is_array($opts['delibera_flow']))
+		$save_opts = delibera_get_config();
+		
+		if(array_key_exists('delibera_flow', $opts) && is_string($opts['delibera_flow']) && strlen($opts['delibera_flow']) > 1)
 		{
 			$opts['delibera_flow'] = explode(',', trim($opts['delibera_flow']));
+		}
+		
+		if( empty($opts['delibera_flow']) || (is_string($opts['delibera_flow']) && strlen($opts['delibera_flow']) < 2 ) )
+		{
+			if(empty($save_opts['delibera_flow']))
+			{
+				$opts = $this->getMainConfig($opts);
+			}
+			else 
+			{
+				$opts['delibera_flow'] = $save_opts['delibera_flow'];
+			}
 		}
 		return $opts;
 	}
@@ -646,6 +660,27 @@ class Flow
 		die('ok');
 	}
 	
+	/**
+	 * return list of Deadlines of a post in format: array of [situacao] => [date]
+	 * @param int $post_id
+	 * @return array
+	 */
+	public static function getDeadlineDates($post_id)
+	{
+		global $DeliberaFlow;
+	
+		$dates = array();
+		$flow = $DeliberaFlow->get($post_id);
+		$modules = $DeliberaFlow->getFlowModules();
+		foreach ($flow as $situacao)
+		{
+			if(array_key_exists($situacao, $modules))
+			{
+				$dates[$situacao] = $modules[$situacao]->getDeadline($post_id);
+			}
+		}
+		return $dates;
+	}
 	
 }
 

@@ -5,4 +5,5 @@ Thumbs.db
 .project
 .settings
 .buildpath
+.idea/*
 *~

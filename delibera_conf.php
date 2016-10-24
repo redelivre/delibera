@@ -35,8 +35,6 @@ function delibera_get_config() {
     return $opt;
 }
 
-require_once('delibera_conf_themes.php');
-
 /**
  * Return Main Configuration from database
  * there are two level of config, main (required) and others configs
@@ -47,23 +45,21 @@ require_once('delibera_conf_themes.php');
  *
  */
 function delibera_get_main_config($config = array()) {
-    global $deliberaThemes;
-
-    if(!is_object($deliberaThemes)) $deliberaThemes = new DeliberaThemes;
-
     $opt = array();
     $opt['theme'] = plugin_dir_path(__FILE__)."/themes/generic";
     
-    $opt['criar_pauta_pelo_front_end'] = 'N';
-    $opt['representante_define_prazos'] = 'N';
+    $opt['criar_pauta_pelo_front_end'] = 'S';
+    $opt['representante_define_prazos'] = 'S';
     $opt['dias_novo_prazo'] = '2';
     $opt['limitar_tamanho_comentario'] = 'N';
     $opt['numero_max_palavras_comentario'] = '50';
     $opt['plan_restriction'] = 'N';
     $opt['cabecalho_arquivo'] = __( 'Bem-vindo a plataforma de debate do ', 'delibera' ).get_bloginfo('name');
-    $opt['todos_usuarios_logados_podem_participar'] = 'N';
+    $opt['todos_usuarios_logados_podem_participar'] = 'S';
     $now = new DateTime();
 	$opt['data_fixa_nova_pauta_externa'] = $now->format('d/m/Y');
+	$opt['titulo_nova_pauta'] = __('nova pauta', 'delibera');
+	$opt['url_nova_pauta'] = '';
 	
 	$opt = apply_filters('delibera_get_main_config', $opt);
 
@@ -181,6 +177,16 @@ function delibera_conf_page()
 					"id" => "cabecalho_arquivo",
 					"label" => __('Título da página de listagem de pautas e da página de uma pauta:', 'delibera'),
 					"content" => '<input type="text" name="cabecalho_arquivo" id="cabecalho_arquivo" value="'.htmlspecialchars_decode($opt['cabecalho_arquivo']).'"/>'
+				);
+				$rows[] = array(
+					"id" => "titulo_nova_pauta",
+					"label" => __('Título do botão para criação de nova pauta:', 'delibera'),
+					"content" => '<input type="text" name="titulo_nova_pauta" id="titulo_nova_pauta" value="'.htmlspecialchars_decode($opt['titulo_nova_pauta']).'"/>'
+				);
+				$rows[] = array(
+					"id" => "url_nova_pauta",
+					"label" => __('URl do botão para criação de nova pauta (deixe em branco para o padrão):', 'delibera'),
+					"content" => '<input type="text" name="url_nova_pauta" id="titulo_nova_pauta" value="'.htmlspecialchars_decode($opt['url_nova_pauta']).'"/>'
 				);
 				$rows[] = array(
 					"id" => "data_fixa_nova_pauta_externa",

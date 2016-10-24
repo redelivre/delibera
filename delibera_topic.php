@@ -458,7 +458,7 @@ function deliberaCreateTopic($args = array())
 		$pauta['post_title'] = $title;
 		$pauta['post_excerpt'] = $excerpt;
 		$pauta['post_type'] = 'pauta';
-		
+		$pauta['post_name'] = sanitize_title($title);
 		$pauta['post_content'] = $content;
 		
 		// para que a situação da pauta seja criada corretamente,
@@ -511,9 +511,12 @@ function deliberaCreateTopic($args = array())
 			//TODO tratar as categorias e tags
 			deliberaAddTerms($pauta_id, $args, 'tema', true);
 			
-			ini_set('display_errors', 1);
-			ini_set('display_startup_errors', 1);
-			error_reporting(E_ALL & ~E_STRICT);
+			if(defined('WP_DEBUG') && WP_DEBUG)
+			{
+				ini_set('display_errors', 1);
+				ini_set('display_startup_errors', 1);
+				error_reporting(E_ALL & ~E_STRICT);
+			}
 			
 			// publica o post
 			wp_publish_post($pauta_id);
@@ -523,8 +526,6 @@ function deliberaCreateTopic($args = array())
 			// draft e o wp_publish_post tb não cria o slug
 			unset($pauta['post_status']);
 			$pauta['ID'] = $pauta_id;
-			$pauta['post_name'] = sanitize_post_field('post_name', $title, 
-					$pauta_id, 'save');
 			wp_update_post($pauta);
 			
 			if(array_key_exists('redirect', $args) && $args['redirect'])
@@ -543,7 +544,12 @@ function deliberaCreateTopic($args = array())
 					die();
 				}
 			}
+			return $pauta_id;	
 		}
+	}
+	elseif($opt['criar_pauta_pelo_front_end'] == 'S')
+	{
+		wp_die(__('Criação de pauta fora do painel está desabilitada, favor contactar o administrador e pedir sua ativação.', 'delibera'));
 	}
 }
 
@@ -561,46 +567,44 @@ function deliberaAddTerms($pauta_id, $args, $taxonomy = 'tema', $insert = true )
 {
 	$terms_ids = array();
 	
-	if(array_key_exists($taxonomy, $args) && is_array($args[$taxonomy]))
+	if(array_key_exists($taxonomy, $args))
 	{
+		// check array of terms itens
+		$itens = $args[$taxonomy];
+		if(!is_array($itens) && is_string($itens))
+		{
+			if(strpos($itens, ',') != false)
+			{
+				$itens = explode(',', $itens);
+			}
+			else 
+			{
+				$itens = array($itens);
+			}
+		}
+		
 		$terms = get_terms( $taxonomy,
 			array(
 				'hide_empty' => false
 			)
 		);
 		
-		if(isset($args[$taxonomy]) && is_array($args[$taxonomy]))
+		if(is_array($itens))
 		{
 			// verifica se todos os temas enviados por post são válidos
 			foreach($terms as $term)
 			{
-				if(in_array($term->term_id, $args[$taxonomy]))
+				if(in_array($term->term_id, $itens))
 				{
 					$terms_ids[] = $term->term_id;
 				}
 			}
+			
+			// coloca os termos no post
+			if($insert && count($terms_ids) > 0) wp_set_post_terms($pauta_id, $terms_ids, 'tema');
 		}
-				
-		// coloca os termos no post
-		if($insert) wp_set_post_terms($pauta_id, $terms_ids, 'tema');
 	}
 	return $terms_ids;
 }
 
-/**
- * 
- * @param WP_Post $post
- * @param WP_REST_Request $request
- */
-function deliberaApiCreate($post, $request)
-{
-	$args = $_POST;
-	$args['post_id'] = $post->ID;
-	if(empty($post->post_name))
-	{
-		$post->post_name = sanitize_title($post->post_title);
-		wp_update_post($post);
-	}
-	deliberaCreateTopic($args);
-}
-add_action('rest_insert_pauta', 'deliberaApiCreate', 10, 2);
+?>

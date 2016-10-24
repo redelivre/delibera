@@ -162,3 +162,24 @@ function delibera_delete_comment_callback()
 }
 add_action('wp_ajax_delibera_delete_comment', 'delibera_delete_comment_callback');
 add_action('wp_ajax_nopriv_delibera_delete_comment', 'delibera_delete_comment_callback');
+
+/*
+ * Comment Meta Debug 
+ *
+function delibera_comment_add_meta_box()
+{
+	add_meta_box( 'delibera-comment-meta', __( 'Comment Title' ), 'delibera_comment_meta_box_cb', 'comment', 'normal', 'high' );
+}
+add_action( 'add_meta_boxes_comment', 'delibera_comment_add_meta_box' );
+
+function delibera_comment_meta_box_cb( $comment )
+{
+	$title = get_comment_meta( $comment->comment_ID, 'delibera_votos', true );
+	//wp_nonce_field( 'delibera_comment_update', 'delibera_comment_update', false );
+	?>
+    <p>
+        <label for="delibera_comment_title"><?php _e( 'Comment Title' ); ?></label>;
+        <input type="text" name="delibera_comment_title" value="<?php echo esc_attr( print_r($title, true) ); ?>" class="widefat" />
+    </p>
+    <?php
+}*/

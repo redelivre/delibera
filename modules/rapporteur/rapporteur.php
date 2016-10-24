@@ -30,11 +30,17 @@ class Rapporteur extends \Delibera\Modules\ModuleBase
 	protected $days = array('dias_relatoria', 'dias_votacao_relator');
 	
 	/**
+	 * Display priority
+	 * @var int
+	 */
+	public $priority = 3;
+	
+	/**
 	 * Register Tax for the module
 	 */
 	public function registerTax()
 	{
-		if(term_exists('eleicao_redator', 'situacao', null) == false)
+		/*if(term_exists('eleicao_redator', 'situacao', null) == false) // TODO create election
 		{
 			delibera_insert_term('Regime de Votação de Relator', 'situacao', array(
 					'description'=> 'Pauta em Eleição de Relator',
@@ -46,7 +52,7 @@ class Rapporteur extends \Delibera\Modules\ModuleBase
 					'qtrans_term_es' => 'Elección del Relator',
 				)
 			);
-		}
+		}*/
 
 		if(term_exists('relatoria', 'situacao', null) == false)
 		{
@@ -290,6 +296,16 @@ class Rapporteur extends \Delibera\Modules\ModuleBase
 			wp_set_object_terms($post_id, 'relatoria', 'situacao', false);
 			$this->newDeadline($post_id);
 		}
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see \Delibera\Modules\ModuleBase::getCommentListLabel()
+	 */
+	public function getCommentListLabel()
+	{
+		return __('Relatoria da Pauta', 'delibera');
 	}
 	
 }

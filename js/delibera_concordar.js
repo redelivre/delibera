@@ -12,9 +12,16 @@ jQuery(document).ready(function() {
 					type : jQuery(this).children('input[name="type"]').val(),
 				},
 				function(response) {
-					container.toggleClass('.active');
+					container.find('.delibera-icon-thumbs-up').toggleClass('active');
 					jQuery(container).children('.delibera-like-count').text(response);
-					jQuery(container).children('.delibera-like-count').show();
+					if(parseInt(jQuery(container).children('.delibera-like-count').text()) > 0)
+                    {
+                    	jQuery(container).children('.delibera-like-count').show();
+                    }
+                    else
+                    {
+                    	jQuery(container).children('.delibera-like-count').hide();
+                    }
 				}
 			);
 		}
@@ -32,9 +39,16 @@ jQuery(document).ready(function() {
 					type : jQuery(this).children('input[name="type"]').val(),
 				},
 				function(response) {
-                    container.toggleClass('.active')
+                    container.find('.delibera-icon-thumbs-down').toggleClass('active')
 					jQuery(container).children('.delibera-unlike-count').text(response);
-					jQuery(container).children('.delibera-unlike-count').show();
+                    if(parseInt(jQuery(container).children('.delibera-unlike-count').text(), 10) > 0)
+                    {
+                    	jQuery(container).children('.delibera-unlike-count').show();
+                    }
+                    else
+                    {
+                    	jQuery(container).children('.delibera-unlike-count').hide();
+                    }
 				}
 			);
 		}

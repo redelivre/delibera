@@ -30,6 +30,12 @@ class Result extends \Delibera\Modules\ModuleBase
 	protected $shortcodes = array('delibera_lista_de_resolucoes' => 'replaceResolucoes' );
 	
 	/**
+	 * Display priority
+	 * @var int
+	 */
+	public $priority = 5;
+	
+	/**
 	 * Register Tax for the module
 	 */
 	public function registerTax()
@@ -209,6 +215,16 @@ class Result extends \Delibera\Modules\ModuleBase
 	public static function deadline($args)
 	{
 		$post_id = $args['post_ID'];
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see \Delibera\Modules\ModuleBase::getCommentListLabel()
+	 */
+	public function getCommentListLabel()
+	{
+		return __('Resolução da Pauta', 'delibera');
 	}
 	
 }

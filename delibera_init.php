@@ -77,8 +77,12 @@ function delibera_Add_custom_taxonomy()
 		'label' => __('Temas','delibera'),
 		'labels' => $labels,
 		'public' => true,
-		'capabilities' => array('assign_terms' => 'edit_pautas',
-								'edit_terms' => 'edit_pautas'),
+		'capabilities' => array(
+			'manage_terms' => 'manage_tema_term',
+            'edit_terms' => 'edit_tema_term',
+            'delete_terms' => 'delete_tema_term',
+            'assign_terms' => 'assign_tema_term'
+		),
 		//'show_in_nav_menus' => true, // Public
 		// 'show_ui' => '', // Public
 		'hierarchical' => true,
@@ -430,15 +434,22 @@ add_filter('language_attributes', 'doctype_opengraph');
 function fb_opengraph() {
     global $post;
 
-    if(is_single()) {
+    if(is_single())
+    {
+    	$img_src = '';
         if(has_post_thumbnail($post->ID))
         {
             $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
         }
-        else
+        elseif(file_exists(get_stylesheet_directory().'/img/delibera_icon.png'))
         {
             $img_src = get_stylesheet_directory_uri() . '/img/delibera_icon.png';
-            $img_src = array('url' => $img_src);
+            $img_src = array(0 => $img_src);
+        }
+        elseif(file_exists(get_stylesheet_directory().'/images/delibera_icon.png'))
+        {
+        	$img_src = get_stylesheet_directory_uri() . '/images/delibera_icon.png';
+        	$img_src = array(0 => $img_src);
         }
         if($excerpt = $post->post_excerpt)
         {
@@ -449,18 +460,20 @@ function fb_opengraph() {
         {
             $excerpt = get_bloginfo('description');
         }
+        $img_src = apply_filters('delibera_og_image', $img_src);
         ?>
 
-    <meta property="og:title" content="<?php echo the_title(); ?>"/>
-    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
-    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
-    <meta property="og:image" content="<?php echo $img_src['url']; ?>"/>
-
-<?php
+	    <meta property="og:title" content="<?php echo the_title(); ?>"/>
+	    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+	    <meta property="og:type" content="article"/>
+	    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+	    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/><?php
+	    if(is_array($img_src) && array_key_exists(0, $img_src) && strlen($img_src[0]) > 0)
+	    {?>
+	    	<meta property="og:image" content="<?php echo $img_src[0]; ?>"/><?php
+	   	}
     } else {
         return;
     }
 }
-add_action('wp_head', 'fb_opengraph', 5);
+add_action('wp_head', 'fb_opengraph', 20);

@@ -61,7 +61,7 @@ class Delibera_Walker_Comment extends Walker_Comment
 					<?php
 					//$url = get_author_posts_url($comment->user_id);
 					// XXX colocar hash
-					$url = get_site_url() . '/delibera/' . $comment->user_id . '/pautas/';
+					$url = \Delibera\Member\MemberPath::getAuthorPautasUrl($comment->user_id) ;
 					//print_r($comment);
 					$autor_link = "<a href='$url' rel='external nofollow' class='url'>$comment->comment_author</a>";
 					printf('<cite class="fn">%s</cite><span class="delibera-says"></span>', $autor_link);
@@ -117,11 +117,9 @@ class Delibera_Walker_Comment extends Walker_Comment
 			}
 			comment_text();
 
-			echo '<div id="delibera-comment-botoes-'.$comment->comment_ID.'" class="delibera-comment-botoes" >
-			<div class="group-button-like">';
+			echo '<div class="group-button-like">';
 			echo delibera_gerar_curtir($comment, 'comment');
 			echo delibera_gerar_discordar($comment, 'comment');
-			echo '</div>';
 			echo '</div>';
 
 

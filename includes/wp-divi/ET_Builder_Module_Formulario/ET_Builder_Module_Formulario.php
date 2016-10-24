@@ -84,6 +84,8 @@ class ET_Builder_Module_Formulario extends ET_Builder_Module {
 				'selector' => '.et_pb_contact_right p',
 			),
 		);
+		
+		add_action('wp_enqueue_scripts', array($this, 'javascriptFiles'), 1001);
 	}
 
 	function get_fields() {
@@ -392,7 +394,7 @@ class ET_Builder_Module_Formulario extends ET_Builder_Module {
 
 		if ( $et_contact_error ) {
 			$form = sprintf( '
-				<div class="et_pb_contact" onclick="teste();">
+				<div class="et_pb_contact" onclick="divi_child_teste();">
 					<form class="et_pb_contact_form clearfix" method="post" action="%1$s">
 						%8$s
 						<input type="hidden" value="et_contact_proccess" name="et_pb_contactform_submit_%7$s">
@@ -440,6 +442,21 @@ class ET_Builder_Module_Formulario extends ET_Builder_Module {
 
 		return $output;
 	}
+	
+	function javascriptFiles()
+	{
+		if (!is_pauta())
+		{
+			wp_enqueue_script('ET_Builder_Module_Formulario',  plugins_url("frontend/js", __FILE__).'/ET_Builder_Module_Formulario.js', array('jquery'));
+	
+			$data = array(
+				'ajax_url' => admin_url('admin-ajax.php'),
+				'url' => wp_login_url( get_permalink() )
+			);
+			wp_localize_script('ET_Builder_Module_Formulario', 'ET_Builder_Module_Formulario', $data);
+		}
+	}
+	
 }
 new ET_Builder_Module_Formulario;
 

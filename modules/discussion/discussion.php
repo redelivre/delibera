@@ -37,6 +37,12 @@ class Discussion extends \Delibera\Modules\ModuleBase
 	protected $days = array('dias_discussao');
 	
 	/**
+	 * Display priority
+	 * @var int
+	 */
+	public $priority = 2;
+	
+	/**
 	 * Register Tax for the module
 	 */
 	public function registerTax()
@@ -257,6 +263,16 @@ class Discussion extends \Delibera\Modules\ModuleBase
 				$current->newDeadline($post_id, false);
 			}
 		}
+	}
+	
+	/**
+	 * 
+	 * {@inheritDoc}
+	 * @see \Delibera\Modules\ModuleBase::getCommentListLabel()
+	 */
+	public function getCommentListLabel()
+	{
+		return __('Discussão sobre a Pauta', 'delibera');
 	}
 	
 }

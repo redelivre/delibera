@@ -150,7 +150,6 @@ function delibera_notifications_page()
 	}
 	echo $table;  
 	echo '<table class="form-table">';
-
 	foreach($rows as $row)
 	{
 		echo '<tr '.(array_key_exists('row-id', $row) ? 'id="'.$row['row-id'].'"' : '' ).' '.(array_key_exists('row-style', $row) ? 'style="'.$row['row-style'].'"' : '' ).' '.(array_key_exists('row-class', $row) ? 'class="'.$row['row-class'].'"' : '' ).' ><th valign="top" scrope="row">';
@@ -181,6 +180,15 @@ function delibera_notifications_page()
 		<?php
 }
 
+
+/*
+delibera_get_notification_config
+
+Recebe um arranjo vázio ou não e complementa o arranjo com as informações necessárias para a página de notificação.
+Todas as mensagens e os cabeçalhos e rodapés das mensagens são predefinidos aqui. Qualquer nova linha deve antes ser definida abaixo.
+Existem comentários que identificam o inicio de uma mensagem. A mensagem possui titulo, corpo, cabeçalho e roddapé.
+
+*/
 function delibera_get_notification_config($config = array())
 {
 	$opt['notificacoes'] = "S";
@@ -188,22 +196,21 @@ function delibera_get_notification_config($config = array())
 	{
 		$opt["{$notif['mensagem']}-enabled"] = "S";
 	}
-
+// inicio mensagem_criacao_pauta
 	$opt['mensagem_criacao_pauta_assunto'] = __('Nova Pauta Criada','delibera'); 
-	$opt['mensagem_criacao_pauta'] = __(
-		    '<div><h1>Nova Pauta: «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			Nova Pauta: {post_title}
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>','delibera');
+	$opt['mensagem_criacao_pauta'] = __('Nova Pauta: {post_title}','delibera');
+	$opt['mensagem_criacao_pauta_cabecalho'] = __('Cabeçalho','delibera');
+	$opt['mensagem_criacao_pauta_rodape'] = __('Rodapé','delibera');
+// fim mensagem_criacao_pauta
+// inicio mensagem_validacao
 	$opt['mensagem_validacao_assunto'] = __('Novo voto de validação: Pauta {post_title}','delibera');
 	$opt['mensagem_validacao'] = __(
-			'<div><h1>Novo voto de validação: Pauta «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			A validação do usuário xxx na pauta {post_title} foi registrada no sistema. Acesse a pauta para verificar a situação.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
-
+			'A validação do usuário xxx na pauta {post_title} foi registrada no sistema. Acesse a pauta para verificar a situação: 
+			{post_url}', 'delibera');
+	$opt['mensagem_validacao_cabecalho'] = __('Cabeçalho','delibera');
+	$opt['mensagem_validacao_rodape'] = __('Rodapé','delibera');
+// fim mensagem_validacao
+// mensagem_validacao_concluida
 	$opt['mensagem_validacao_concluida_assunto'] = __('Nova pauta validada: Pauta {post_title}','delibera');
 	$opt['mensagem_validacao_concluida'] = __(
 			'<div><h1>Nova pauta validada: Pauta «{post_title}»</h1></div>
@@ -214,63 +221,76 @@ function delibera_get_notification_config($config = array())
 			Seus comentários poderão ser avaliados pelos demais membros, já as propostas, além de avaliadas previamente, poderão ir a votação onde todos os usuários poderão votar. Caso exista uma relatoria, esta poderá fazer a sistematização, mesclando propostas similares e ajustando a redação para a melhor compreensão, tudo garantindo o controle social do processo com o histórico de propostas originais. 
 
 			Agora vai em frente! Debata, proponha, fortaleça a democracia digital! 
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
-
+			{post_url}', 'delibera');
+	$opt['mensagem_validacao_concluida_cabecalho'] = __('Cabeçalho','delibera');
+	$opt['mensagem_validacao_concluida_rodape'] = __('Rodapé','delibera');
+// fim mensagem_validacao_concluida
+// inicio mensagem_pauta_recusada
 	$opt['mensagem_pauta_recusada_assunto'] = __('Pauta Recusada: Pauta {post_title}','delibera');
 	$opt['mensagem_pauta_recusada'] = __(
 			'<div><h1>Pauta Recusada: Pauta «{post_title}»</h1></div>
 			<div style="border: 5px solid grey; padding: 1em;">
 			Olá {display_name},
 
-			a pauta {post_title} não obteve o apoio necessário, por isto ela não entrará em debate desta vez.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
+			A pauta {post_title} não obteve o apoio necessário, por isto ela não entrará em debate desta vez. 
 
-	$opt['mensagem_fim_prazo_validacao_assunto'] = 'Fim de prazo para Validação: Pauta {post_title}';
-	$opt['mensagem_fim_prazo_validacao'] = '<div><h1>Fim de prazo para Validação: Pauta «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			Olá {display_name},
+			{post_url}', 'delibera');
+	$opt['mensagem_pauta_recusada_cabecalho'] = __('Cabeçalho','delibera');
+	$opt['mensagem_pauta_recusada_rodape'] = __('Rodapé','delibera');
+// fim mensagem_pauta_recusada
+// inicio mensagem_fim_prazo_validacao
+	$opt['mensagem_fim_prazo_validacao_assunto'] = __('Fim de prazo para Validação: Pauta {post_title}' , 'delibera');
+	$opt['mensagem_fim_prazo_validacao'] = __('Olá {display_name},
 
-			Falta apenas 1 dia para o fim do prazo para validação da pauta {post_title}. Caso não tenha votado aproveite agora para fazê-lo, ou chame seus conhecidos!
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>';
+		Falta apenas 1 dia para o fim do prazo para validação da pauta {post_title}. Caso não tenha votado aproveite agora para fazê-lo, ou chame seus conhecidos! 
 
+		{post_url}' , 'delibera' );
+	$opt['mensagem_fim_prazo_validacao_cabecalho'] = __('Cabeçalho' , 'delibera');
+	$opt['mensagem_fim_prazo_validacao_rodape'] = __('Rodapé' , 'delibera');
+// fim mensagem_fim_prazo_validacao
+// inicio mensagem_novo_comentario
 	$opt['mensagem_novo_comentario_assunto'] = __('Novo Comentário em {post_title}','delibera');
-	$opt['mensagem_novo_comentario'] = __('<div><h1>Novo Comentário em «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			Olá {display_name},
+	$opt['mensagem_novo_comentario'] = __('Há um novo comentário na pauta seguida: ','delibera');
+	$opt['mensagem_novo_comentario_cabecalho'] = __('Cabeçalho','delibera');
+	$opt['mensagem_novo_comentario_rodape'] = __('Rodapé','delibera');
 
-			Há um novo comentário na pauta {post_title}.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>','delibera');
-	$opt['mensagem_fim_prazo_discussao_assunto'] = 'Fim de prazo para Discussão: Pauta {post_title}';
-	$opt['mensagem_fim_prazo_discussao'] = '<div><h1>Fim de prazo para Discussão: Pauta «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			Olá {display_name},
+// fim mensagem_novo_comentario
+// inicio mensagem_fim_prazo_discussao
+	$opt['mensagem_fim_prazo_discussao_assunto'] = __( 'Fim de prazo para Discussão: Pauta {post_title}' , 'delibera' );
+	$opt['mensagem_fim_prazo_discussao'] = __( 'Olá {display_name},
 
-			Falta apenas 1 dia para o fim do prazo de discussão da pauta {post_title}. Caso ainda queira comentar aproveite agora para fazê-lo agora!			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>';
-
+		Falta apenas 1 dia para o fim do prazo de discussão da pauta {post_title}. Caso ainda queira comentar aproveite agora para fazê-lo agora!
+		{post_url}' , 'delibera' );
+	$opt['mensagem_fim_prazo_discussao_cabecalho'] = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_fim_prazo_discussao_rodape'] = __( 'Rodapé' , 'delibera' );
+	
+// fim mensagem_fim_prazo_discussao
+// inicio mensagem_discussao_concluida_relatoria
 	$opt['mensagem_discussao_concluida_rel_assunto'] = __('Término da Discussão e início da relatoria: Pauta {post_title}','delibera');
 	$opt['mensagem_discussao_concluida_rel'] = __(
 			'<div><h1>Término da Discussão e início da relatoria: Pauta «{post_title}»</h1></div>
 			<div style="border: 5px solid grey; padding: 1em;">
 			Olá {display_name},
 
-			O prazo para discussão da pauta {post_title} terminou, agora o relator terá o prazo de {report_deadline} para sistematizar as propostas e colocar em votação. Você continua podendo visualizar o que foi discutido nesta pauta.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
+			O prazo para discussão da pauta {post_title} terminou, agora o relator terá o prazo de {report_deadline} para sistematizar as propostas e colocar em votação. Você continua pondendo visualizar o que foi discutido nesta pauta:
+
+			{post_url}', 'delibera');
+	$opt['mensagem_discussao_concluida_rel_cabecalho'] = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_discussao_concluida_rel_rodape'] = __( 'Rodapé' , 'delibera' );
+
+// fim mensagem_discussao_concluida_relatoria
+// inicio mensagem_discussao_concluida
 	$opt['mensagem_discussao_concluida_assunto'] = __('Término da Discussão: Pauta {post_title}','delibera');
 	$opt['mensagem_discussao_concluida'] = __(
 			'<div><h1>Término da Discussão: Pauta «{post_title}»</h1></div>
 			<div style="border: 5px solid grey; padding: 1em;">
 			Olá {display_name},
 
-			O prazo para discussão da pauta {post_title} terminou, agora você poderá votar nas propostas que foram encaminhadas durante o processo de discussão.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
-
+			{post_url}', 'delibera');
+	$opt['mensagem_discussao_concluida_cabecalho'] = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_discussao_concluida_rodape'] = __( 'Rodapé' , 'delibera' );
+// fim mensagem_discussao_concluida
+// inicio mensagem_relatoria_concluida
 	$opt['mensagem_relatoria_concluida_assunto'] = __('Fim do prazo da relatoria: Pauta {post_title}','delibera');
 	$opt['mensagem_relatoria_concluida'] = __(
 			'<div><h1>Fim do prazo da relatoria: Pauta «{post_title}»</h1></div>
@@ -279,28 +299,33 @@ function delibera_get_notification_config($config = array())
 
 			O prazo para a relatoria da pauta {post_title} terminou, agora você poderá votar nas propostas que foram encaminhadas durante o processo de discussão e sistematizadas pela relatoria. 
 			Você pode acompanhar a origem de todas as propostas, de modo que garanta o controle social da sistematização das propostas.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
 
+			{post_url}', 'delibera');
+	$opt['mensagem_relatoria_concluida_cabecalho'] = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_relatoria_concluida_rodape'] = __( 'Rodapé' , 'delibera' );
+// fim mensagem_relatoria_concluida
+// inicio mensagem_fim_prazo_relatoria
 	$opt['mensagem_fim_prazo_relatoria_assunto'] = 'Fim do prazo da relatoria: Pauta {post_title}';
-	$opt['mensagem_fim_prazo_relatoria'] = '<div><h1>Fim do prazo da relatoria: Pauta «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			Olá {display_name},
-
-			O prazo para a relatoria da pauta {post_title} terminou, agora você poderá votar nas propostas que foram encaminhadas durante o processo de discussão e sistematizadas pela relatoria. 
+	$opt['mensagem_fim_prazo_relatoria'] = 'Olá {display_name},
+		O prazo para a relatoria da pauta "{post_title}" terminou, agora você poderá votar nas propostas que foram encaminhadas durante o processo de discussão e sistematizadas pela relatoria. 
 			Você pode acompanhar a origem de todas as propostas, de modo que garanta o controle social da sistematização das propostas.
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>';
 
-	$opt['mensagem_fim_prazo_votacao_assunto'] = 'Fim de prazo para Votação: Pauta {post_title}';
-	$opt['mensagem_fim_prazo_votacao'] = '<div><h1>Fim de prazo para Votação: Pauta «{post_title}»</h1></div>
-			<div style="border: 5px solid grey; padding: 1em;">
-			Olá {display_name},
+			{post_url}';
+	$opt['mensagem_fim_prazo_relatoria_cabecalho'] = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_fim_prazo_relatoria_rodape'] = __( 'Rodapé' , 'delibera' );
 
-			Falta apenas 1 dia para o fim do prazo de votação da pauta {post_title}. Se ainda não votou, aproveite para fazê-lo agora. Sua participação é muito importante!
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>';
+// fim mensagem_fim_prazo_relatoria
+// inicio mensagem_fim_prazo_votacao
+	$opt['mensagem_fim_prazo_votacao_assunto'] = __( 'Fim de prazo para Votação: Pauta {post_title}' , 'delibera' );
+	$opt['mensagem_fim_prazo_votacao'] = __( 'Olá {display_name},
 
+		Falta apenas 1 dia para o fim do prazo de votação da pauta {post_title}. Se ainda não votou,  aproveite agora para fazê-lo agora. Sua participação é muito importante!
+
+		{post_url}' , 'delibera' );
+	$opt['mensagem_fim_prazo_votacao_cabecalho']  = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_fim_prazo_votacao_rodape']  = __( 'Rodapé' , 'delibera' );
+// fim mensagem_fim_prazo_votacao
+// inicio mensagem_votacao_concluida
 	$opt['mensagem_votacao_concluida_assunto'] = __('Votação Concluída, veja as resoluções: Pauta {post_title}','delibera');
 	$opt['mensagem_votacao_concluida'] = __(
 			'<div><h1>Votação Concluída, veja as resoluções: Pauta «{post_title}»</h1></div>
@@ -310,8 +335,10 @@ function delibera_get_notification_config($config = array())
 			O prazo para votação da pauta {post_title} encerrou, confira as resoluções do processo.
 			
 			Obrigado por sua participação!
-			</div>
-			Leia a Pauta: <a>{post_title}</a> em <a>{site_name}</a>', 'delibera');
+
+			{post_url}', 'delibera');
+	$opt['mensagem_votacao_concluida_cabecalho'] = __( 'Cabeçalho' , 'delibera' );
+	$opt['mensagem_votacao_concluida_rodape'] = __( 'Rodapé' , 'delibera' );
 
 	$langs = delibera_get_available_languages();
 
@@ -321,13 +348,24 @@ function delibera_get_notification_config($config = array())
 		{
 			$opt["{$notif['mensagem']}_assunto-$lang"] = $opt["{$notif['mensagem']}_assunto"];
 			$opt["{$notif['mensagem']}-$lang"] = $opt[$notif['mensagem']];
+			$opt["{$notif['mensagem']}_cabecalho-$lang"] = $opt["{$notif['mensagem']}_cabecalho"];
+			$opt["{$notif['mensagem']}_rodape-$lang"] = $opt["{$notif['mensagem']}_rodape"];
 		}
 	}
 
 	return array_merge($opt, $config);
 }
 add_filter('delibera_get_config', 'delibera_get_notification_config');
+/*
 
+XXX nome da função esta incorreto. (delibeta)
+
+delibeta_nofiticar_config_page_row
+
+Esta função é respnsavel por visitar cada elemento de um arranjo contendo informações para montar linhas de uma tabela.
+Básicamente ela monta as notificações que contem titílo, corpo/mensagem, cabeçalho e cabeçalho.
+
+*/
 function delibeta_nofiticar_config_page_row(&$rows, $opt, $tipo, $label = '', $lang = '')
 {
 
@@ -347,6 +385,20 @@ function delibeta_nofiticar_config_page_row(&$rows, $opt, $tipo, $label = '', $l
 			"row-id" => "row-mensagem_{$tipo}".$lang,
 			"label" => __('Mensagem padrão de notificação de ' . $label . ':', 'delibera'),
 			"content" => htmlspecialchars_decode($opt['mensagem_'.$tipo.$lang]),
+			"type" => 'wp_editor'
+			);
+		$rows2[] = array(
+			"id" => "mensagem_{$tipo}_cabecalho".$lang,
+			"row-id" => "row-mensagem_{$tipo}_cabecalho".$lang,
+			"label" => __('Cabeçalho da mensagem padrão de notificação de ' . $label . ':', 'delibera'),
+			"content" => htmlspecialchars_decode($opt['mensagem_'.$tipo.'_cabecalho'.$lang]),
+			"type" => 'wp_editor'
+			);
+		$rows2[] = array(
+			"id" => "mensagem_{$tipo}_rodape".$lang,
+			"row-id" => "row-mensagem_{$tipo}_rodape".$lang,
+			"label" => __('Rodapé da mensagem padrão de notificação de ' . $label . ':', 'delibera'),
+			"content" => htmlspecialchars_decode($opt['mensagem_'.$tipo.'_rodape'.$lang]),
 			"type" => 'wp_editor'
 			);
 
@@ -622,7 +674,7 @@ function delibera_notificar_representantes($mensage, $tipo, $post = false, $user
 
 				if(array_key_exists("$tipo-$lang", $options_plugin_delibera))
 				{
-					$mensage_tmp = htmlspecialchars_decode($options_plugin_delibera["$tipo-$lang"]).$mensage;
+					$mensage_tmp = htmlspecialchars_decode($options_plugin_delibera["{$tipo}_cabecalho-$lang"]) . htmlspecialchars_decode($options_plugin_delibera["$tipo-$lang"]) . $mensage . htmlspecialchars_decode($options_plugin_delibera["{$tipo}_rodape-$lang"]);
 				}
 				if(array_key_exists("{$tipo}_assunto-$lang", $options_plugin_delibera))
 				{
@@ -783,25 +835,25 @@ function delibera_nofiticar_get_tipos()
 {
 	return array(
 			array(
-				'tipo' => 'criacao_pauta',
-				'mensagem' => 'mensagem_criacao_pauta',
-				'dica' => __('criação de pauta', 'delibera'),
-				'dica_permicao' => __('Permitir notificações na criação de uma pauta?', 'delibera'),
-				'user_panel_text' => __('Receber mensagem de criação de novas pautas?', 'delibera')
+					'tipo' => 'criacao_pauta',
+					'mensagem' => 'mensagem_criacao_pauta',
+					'dica' => __('criação de pauta', 'delibera'),
+					'dica_permicao' => __('Permitir notificações na criação de uma pauta?', 'delibera'),
+					'user_panel_text' => __('Receber mensagem de criação de novas pautas?', 'delibera')
 			     ),
 			array(
-				'tipo' => 'validacao',
-				'mensagem' => 'mensagem_validacao',
-				'dica' => __('quando a pauta recebe uma validação', 'delibera'),
-				'dica_permicao' => __('Permitir notificações de cada validação de uma pauta?', 'delibera'),
-				'user_panel_text' => __('Receber mensagem para cada validação de uma pauta?', 'delibera')
+					'tipo' => 'validacao',
+					'mensagem' => 'mensagem_validacao',
+					'dica' => __('quando a pauta recebe uma validação', 'delibera'),
+					'dica_permicao' => __('Permitir notificações de cada validação de uma pauta?', 'delibera'),
+					'user_panel_text' => __('Receber mensagem para cada validação de uma pauta?', 'delibera')
 			     ),
 			array(
-				'tipo' => 'validacao_concluida',
-				'mensagem' => 'mensagem_validacao_concluida',
-				'dica' => __('quando a pauta é validada', 'delibera'),
-				'dica_permicao' => __('Permitir notificações quando a pauta é validada?', 'delibera'),
-				'user_panel_text' => __('Receber mensagem quando uma pauta for aprovada?', 'delibera')
+					'tipo' => 'validacao_concluida',
+					'mensagem' => 'mensagem_validacao_concluida',
+					'dica' => __('quando a pauta é validada', 'delibera'),
+					'dica_permicao' => __('Permitir notificações quando a pauta é validada?', 'delibera'),
+					'user_panel_text' => __('Receber mensagem quando uma pauta for aprovada?', 'delibera')
 			     ),
 			array(
 					'tipo' => 'pauta_recusada',
@@ -873,7 +925,7 @@ function delibera_nofiticar_get_tipos()
 					'dica_permicao' => __('Permitir notificações quando a votação for encerrada?', 'delibera'),
 					'user_panel_text' => __('Receber mensagem quando a votação for encerrada?', 'delibera')
 			     )
-				);
+		        );
 }
 
 function delibera_nofitica_user_panel($forms)

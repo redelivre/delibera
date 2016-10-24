@@ -36,9 +36,15 @@ abstract class ModuleBase
 	 */
 	protected $days = array();
 	
+	/**
+	 * Display priority
+	 * @var int
+	 */
+	public $priority = 0;
+	
 	public function __construct()
 	{
-		add_filter('delibera_register_flow_module', array($this, 'registerFlowModule'));
+		add_filter('delibera_register_flow_module', array($this, 'registerFlowModule'), $this->priority);
 		add_action('delibera_situacao_register', array($this, 'registerTax'));
 		add_filter('delibera_get_config', array($this, 'getMainConfig'));
 		//add_filter('delivera_config_page_rows', array($this, 'configPageRows'), 10, 2);
@@ -270,5 +276,10 @@ abstract class ModuleBase
 		}
 		return $days;
 	}
+	
+	/**
+	 * Return comment list Title
+	 */
+	abstract public function getCommentListLabel();
 	
 }

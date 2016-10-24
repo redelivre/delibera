@@ -11,16 +11,20 @@ $paged = get_query_var( 'paged' );
 $blogusers = \Delibera\Theme\UserDisplay::getUsers( $order_by , $search , $per_page , $paged );
 $number_of_pages = \Delibera\Theme\UserDisplay::getNumberOfPages( $blogusers->get_total() , $per_page );
 ?>
-<div id="user_form_search" class="user_form_search">
-	<form method="get"	name="form">
-		<p>
-			<input type="text" name="search" placeholder="Pesquisar Membros ..." value="<?php echo $search; ?>"/>
-			<br>
-			<br>
-			<input type="submit" id="submit" class="button button-primary" value="Pesquisar"	/>
-		</p>
-	</form>
-</div>
+<div id="container">
+	<div id="main-content" role="main">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+				<div id="user_form_search" class="user_form_search">
+					<form method="get"	name="form">
+					<p>
+						<input type="text" name="search" placeholder="Pesquisar Membros ..." value="<?php echo $search; ?>"/>
+						<br>
+						<br>
+						<input type="submit" id="submit" class="button button-primary" value="Pesquisar"	/>
+					</p>
+					</form>
+				</div>
 
 <form method="get">
 	<label for="order-by"><?php echo __('Ordenar por: ' , 'delibera' ); ?></label>
@@ -44,51 +48,58 @@ $number_of_pages = \Delibera\Theme\UserDisplay::getNumberOfPages( $blogusers->ge
 		<?php echo \Delibera\Theme\UserDisplay::getPaginator( $number_of_pages, $paged ); ?>
 	</p>
 </div>
-<div id="user_list" class="user_list">
-	<?php
-	if ($blogusers)
-	{
-		foreach ( $blogusers->results as $user )
-		{
-			?>
-			<h1>
-				<p>
-					<?php echo get_avatar( $user->ID ); ?>
-				</p>
-				<p>
-					<?php echo esc_html( $user->display_name ); ?>
-					-
-					<?php echo count_user_posts($user->ID, 'pauta'); ?>
-					<?php _e( 'pautas' , 'delibera'); ?>
-				</p>
-				<a id="link_pautas" class="link_pautas" href="<?php echo get_site_url()?>/delibera/<?php echo deliberaEncryptor('encrypt', $user->ID); ?>/pautas">
-					<?php echo __('Todas as Pautas' , 'delibera'); ?>
-				</a>
-				|
-				<a id="link_comments" class="link_comments" href="<?php echo get_site_url()?>/delibera/<?php echo deliberaEncryptor('encrypt', $user->ID); ?>/comentarios">
-					<?php echo __('Todas os Comentários' , 'delibera'); ?>
-				</a>
-			</h1>
-
-			<?php	$last_content = \Delibera\Theme\UserDisplay::getLastPauta($user);
-			if ( $last_content )
-			{
-			?>
-			<div id="user_post" class="user_post" >
-				<div id="user_post_title" class="user_post_title" ><h2><a href="<?php echo $last_content->guid; ?>" ><?php echo	$last_content->post_title; ?></a></h2></div>
-				<div id="user_post_content" class="user_post_content"><p><?php echo $last_content->post_content;?></div>
-				</div>
+		<div id="user_list" class="user_list">
 			<?php
+			if ($blogusers)
+			{
+				foreach ( $blogusers->results as $user )
+				{
+					?>
+					<h1>
+						<p>
+							<?php echo get_avatar( $user->ID ); ?>
+						</p>
+						<p>
+							<?php echo esc_html( $user->display_name ); ?>
+							-
+							<?php echo count_user_posts($user->ID, 'pauta'); ?>
+							<?php _e( 'pautas' , 'delibera'); ?>
+						</p>
+						<a id="link_pautas" class="link_pautas" href="<?php echo get_site_url()?>/delibera/<?php echo deliberaEncryptor('encrypt', $user->ID); ?>/pautas">
+							<?php echo __('Todas as Pautas' , 'delibera'); ?>
+						</a>
+						|
+						<a id="link_comments" class="link_comments" href="<?php echo get_site_url()?>/delibera/<?php echo deliberaEncryptor('encrypt', $user->ID); ?>/comentarios">
+							<?php echo __('Todas os Comentários' , 'delibera'); ?>
+						</a>
+					</h1>
+
+					<?php	$last_content = \Delibera\Theme\UserDisplay::getLastPauta($user);
+					if ( $last_content )
+					{
+					?>
+					<div id="user_post" class="user_post" >
+						<div id="user_post_title" class="user_post_title" ><h2><a href="<?php echo $last_content->guid; ?>" ><?php echo	$last_content->post_title; ?></a></h2></div>
+						<div id="user_post_content" class="user_post_content"><p><?php echo $last_content->post_content;?></div>
+						</div>
+					<?php
+					}
+				}
 			}
-		}
-	}
-	else
-	{
-		echo __('Nenhum usuário encontrado!' , 'delibera');
-	}
-	echo \Delibera\Theme\UserDisplay::getPaginator( $number_of_pages , $paged );
+			else
+			{
+				echo __('Nenhum usuário encontrado!' , 'delibera');
+			}
+			echo \Delibera\Theme\UserDisplay::getPaginator( $number_of_pages , $paged );
+		?>
+		<div>
+
+			</main><!-- #main -->
+		</div>
+	</div><!-- #content -->
+</div><!-- #container -->
+<?php
+get_footer(); 
 ?>
-<div>
-<?php get_footer(); ?>
 </body>
 </html>

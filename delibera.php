@@ -31,13 +31,13 @@ if(!defined('__DIR__')) {
 
 define('DELIBERA_ABOUT_PAGE', __('sobre-a-plataforma', 'delibera'));
 
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'delibera_conf.php';
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'delibera_shortcodes.php';
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'delibera_widgets.php';
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'delibera_rewrite_rules.php';
-
-require_once __DIR__ . DIRECTORY_SEPARATOR . 'delibera_conf.php';
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'delibera_permission.php';
 
@@ -99,6 +99,8 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'wp-divi'. DIRECTORY_SEPARATOR .'modules.php';
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'api'. DIRECTORY_SEPARATOR . 'wp-api.php';
+
+require_once __DIR__ . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'delibera_conf_permission.php';
 
  /**
    * Redir e ciona usuários que não são membros do site

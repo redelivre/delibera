@@ -180,6 +180,7 @@ function delibera_comment_form($defaults)
 
 
 					$defaults['comment_field'] = preg_replace ("/<label for=\"comment\">(.*?)<\/label>/", $replace, $defaults['comment_field']);
+					$defaults['label_submit'] = __('Publicar','delibera');
 				}
 				else
 				{
@@ -219,22 +220,99 @@ function delibera_comment_form($defaults)
 				{
 					$defaults['must_log_in'] = sprintf(__('Você precisar <a href="%s">estar logado</a> e ter permissão para votar.'),wp_login_url( apply_filters( 'the_permalink', get_permalink( $post->ID ))));
 					$encaminhamentos = array();
-					if (delibera_current_user_can_participate()) {
-						$form = '<div class="delibera_checkbox_voto">';
+					if (delibera_current_user_can_participate())
+					{
+						$tipo_votacao = get_post_meta($post->ID, 'tipo_votacao', true);
+						$form = '<div class="delibera_'.$tipo_votacao.'_voto">';
 						$encaminhamentos = delibera_get_comments_encaminhamentos($post->ID);
-
-						$form .= '<h3 class="comment-respond">'.__('Escolha os encaminhamentos que deseja aprovar e depois clique em "Votar":','delibera').'</h3>';
-
+						
 						$i = 0;
-						foreach ($encaminhamentos as $encaminhamento)
+						$users = array();
+						switch ($tipo_votacao)
 						{
-							$form .= '
-							<div class="checkbox-voto"><input type="checkbox" name="delibera_voto'.$i.'" id="delibera_voto'.$i.'" value="'.$encaminhamento->comment_ID.'" /><label for="delibera_voto'.$i++.'" class="label-voto">'.$encaminhamento->comment_content.'</label></div>
-							';
+							case 'radio':
+								$form .= '<h3 class="comment-respond">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</h3>';
+								/* @var WP_Comment $encaminhamento */
+								foreach ($encaminhamentos as $encaminhamento)
+								{
+									if(!array_key_exists($encaminhamento->comment_author, $users)) $users[$encaminhamento->comment_author] = 0;
+									$users[$encaminhamento->comment_author]++;
+									
+									$form .= '<div id="delibera-voto-modal-'.$i.'" class="delibera-voto-modal"><div class="delibera-voto-modal-window"><div class="delibera-voto-modal-close">×</div>';
+										$form .= '<div id="delibera-voto-modal-content-'.$i.'" class="delibera-voto-modal-content">';
+											$form .= wpautop(apply_filters( 'get_comment_text', $encaminhamento->comment_content, $encaminhamento, array() ));
+										$form .= '</div>';
+									$form .= '</div></div>';
+									$form .= '
+									<div id="delibera-voto-option-'.$i.'" class="delibera-voto-option radio-voto">
+										<input type="radio" name="delibera_voto" id="delibera_voto'.$i.'" value="'.$encaminhamento->comment_ID.'" />
+										<label id="delibera-label-voto-'.$i.'" for="delibera_voto'.$i.'" class="label-voto">
+											<div class="delibera-voto-content">
+												<div class="delibera-voto-title">
+													'.__('Proposta', 'delibera').' '.$users[$encaminhamento->comment_author].' de @'.get_comment_author($encaminhamento).'
+												</div>
+												<div class="delibera-voto-icons">
+												</div>
+												<div class="delibera-voto-text">
+													'.wp_trim_words( $encaminhamento->comment_content, 55, '' ).'
+												</div>
+											</div>
+										</label>
+										<div id="delibera-voto-bt-read-'.$i.'" class="delibera-voto-bt-read">'.__('Proposta Completa', 'delibera').'</div>
+									</div>
+									';
+									$i++;
+								}
+								break;
+							case 'dropdown':
+								$form .= '<h3 class="comment-respond">'.__('Escolha o encaminhamento que deseja aprovar e depois clique em "Votar":','delibera').'</h3>';
+								$form .= '<div class="delibera_voto"><select name="delibera_voto" id="delibera_voto" class="delibera_voto_select">';
+								foreach ($encaminhamentos as $encaminhamento)
+								{
+									$form .= '
+									<option value="'.$encaminhamento->comment_ID.'" />'.$encaminhamento->comment_content.'</option>
+									';
+								}
+								$form .= '</select></div>';
+								break;
+							case 'checkbox':
+							default:
+								$form .= '<h3 class="comment-respond">'.__('Escolha os encaminhamentos que deseja aprovar e depois clique em "Votar":','delibera').'</h3>';
+								foreach ($encaminhamentos as $encaminhamento)
+								{
+									if(!array_key_exists($encaminhamento->comment_author, $users)) $users[$encaminhamento->comment_author] = 0;
+									$users[$encaminhamento->comment_author]++;
+										
+									$form .= '<div id="delibera-voto-modal-'.$i.'" class="delibera-voto-modal"><div class="delibera-voto-modal-window"><div class="delibera-voto-modal-close">×</div>';
+									$form .= '<div id="delibera-voto-modal-content-'.$i.'" class="delibera-voto-modal-content">';
+									$form .= wpautop(apply_filters( 'get_comment_text', $encaminhamento->comment_content, $encaminhamento, array() ));
+									$form .= '</div>';
+									$form .= '</div></div>';
+									$form .= '
+										<div id="delibera-voto-option-'.$i.'" class="delibera-voto-option checkbox-voto">
+											<input type="checkbox" name="delibera_voto'.$i.'" id="delibera_voto'.$i.'" value="'.$encaminhamento->comment_ID.'" />
+											<label id="delibera-label-voto-'.$i.'" for="delibera_voto'.$i.'" class="label-voto">
+												<div class="delibera-voto-content">
+													<div class="delibera-voto-title">
+														'.__('Proposta', 'delibera').' '.$users[$encaminhamento->comment_author].' de @'.get_comment_author($encaminhamento).'
+													</div>
+													<div class="delibera-voto-icons">
+													</div>
+													<div class="delibera-voto-text">
+														'.wp_trim_words( $encaminhamento->comment_content, 55, '' ).'
+													</div>
+												</div>
+											</label>
+											<div id="delibera-voto-bt-read-'.$i.'" class="delibera-voto-bt-read">'.__('Proposta Completa', 'delibera').'</div>
+										</div>
+										';
+									$i++;
+								}
+							break;
 						}
 						$form .= '
-						<input name="delibera_comment_tipo" value="voto" style="display:none;" />
-						<input name="comment" value="O voto de '.$current_user->display_name.' foi registrado no sistema" style="display:none;" />
+						<input type="hidden" name="delibera_comment_tipo" value="voto" style="display:none;" />
+						<input type="hidden" name="comment" value="O voto de '.$current_user->display_name.' foi registrado no sistema" style="display:none;" />
 						</div>'
 						;
 
@@ -291,7 +369,7 @@ add_action('wp_enqueue_scripts', function()
 
 		if ($situacao->slug == 'relatoria')
 		{
-			wp_enqueue_script('delibera_relatoria_js', plugin_dir_url(__FILE__) . '/js/delibera_relatoria.js', array('jquery'));
+			wp_enqueue_script('delibera_relatoria_js', plugin_dir_url(__FILE__) . '/../../../js/delibera_relatoria.js', array('jquery'));
 		}
 	}
 });
@@ -386,23 +464,30 @@ function delibera_gerar_curtir($ID, $type ='pauta')
 		$html .= '<span class="delibera-like-count" style="display: none;"></span>';
 	}
 
-	if (is_user_logged_in()) {
+	if (is_user_logged_in())
+	{
 		$user_id = get_current_user_id();
 		$ip = $_SERVER['REMOTE_ADDR'];
+		
+		$ja_curtiu = delibera_ja_curtiu($ID, $user_id, $ip, $type);
+		$ja_discordou = delibera_ja_discordou($ID, $user_id, $ip, $type);
 
 		if(
-		!delibera_ja_curtiu($ID, $user_id, $ip, $type) && // Ainda não curitu
-		(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas)) && $situacoes_validas[$situacao->slug] && // é uma situação válida
-		!(delibera_ja_discordou($ID, $user_id, $ip, $type)) // não discordou
+			(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas) && $situacoes_validas[$situacao->slug]) && // é uma situação válida
+			!$ja_discordou
 		)
 		{
 			$html .= "<input type='hidden' name='object_id' value='{$ID}' />";
 			$html .= "<input type='hidden' name='type' value='{$type}' />";
-			$html .= '<i class="delibera-icon-thumbs-up"></i>';
-		} else {
-			$html .= '<i class="delibera-icon-thumbs-up active"></i>';
+			$html .= '<i class="delibera-icon-thumbs-up'.( $ja_curtiu ? ' active' : '').'"></i>';
 		}
-	} else if (is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas) && $situacoes_validas[$situacao->slug]) { // é uma situação válida
+		elseif($ja_discordou)
+		{
+			$html .= '<i class="delibera-icon-thumbs-up'.( $ja_curtiu ? ' active' : '').'"></i>';
+		}
+	}
+	elseif(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas) && $situacoes_validas[$situacao->slug]) // é uma situação válida
+	{
 		$html .= '<a class="delibera-like-login" href="';
 		$html .= wp_login_url( $type == "pauta" ? get_permalink() : delibera_get_comment_link());
 		$html .= '" ><i class="delibera-icon-thumbs-up"></i></a>';
@@ -458,23 +543,25 @@ function delibera_gerar_discordar($ID, $type ='pauta')
 	{
 		$user_id = get_current_user_id();
 		$ip = $_SERVER['REMOTE_ADDR'];
+		
+		$ja_curtiu = delibera_ja_curtiu($ID, $user_id, $ip, $type);
+		$ja_discordou = delibera_ja_discordou($ID, $user_id, $ip, $type);
 
 		if(
-		!delibera_ja_discordou($ID, $user_id, $ip, $type) && // Ainda não curitu
-		(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas)) && $situacoes_validas[$situacao->slug] &&// é uma situação válida
-		!(delibera_ja_curtiu($ID, $user_id, $ip, $type)) // não discordou
+			(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas) && $situacoes_validas[$situacao->slug]) &&// é uma situação válida
+			!$ja_curtiu
 		)
 		{
 			$html .= "<input type='hidden' name='object_id' value='{$ID}' />";
 			$html .= "<input type='hidden' name='type' value='{$type}' />";
+			$html .= '<i class="delibera-icon-thumbs-down'.( $ja_discordou ? ' active' : '').'"></i>';
+		}
+		elseif($ja_curtiu)
+		{
 			$html .= '<i class="delibera-icon-thumbs-down"></i>';
 		}
-		else
-		{
-			$html .= '<i class="delibera-icon-thumbs-down active"></i>';
-		}
 	}
-	else if(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas) && $situacoes_validas[$situacao->slug]) // é uma situação válida
+	elseif(is_object($situacao) && array_key_exists($situacao->slug, $situacoes_validas) && $situacoes_validas[$situacao->slug]) // é uma situação válida
 	{
 		$html .= '<a class="delibera-unlike-login" href="';
 		$html .= wp_login_url( $type == "pauta" ? get_permalink() : delibera_get_comment_link());

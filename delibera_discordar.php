@@ -54,9 +54,8 @@ function delibera_discordar($ID, $type ='pauta')
 	{
 		if ($type == 'pauta') {
 			$postID = $ID;
-			$ndiscordar--;
-			update_post_meta($postID, 'delibera_numero_discordar', $ndiscordar);
 			$discordaram = get_post_meta($postID, 'delibera_discordaram', true);
+			$acho  = 0;
 			foreach ($discordaram as $hora => $discordouem)
 			{
 				for($i = 0; $i < count($discordouem); $i++)
@@ -64,18 +63,29 @@ function delibera_discordar($ID, $type ='pauta')
 					if(intval($user_id) == 0 && $ip == $discordouem[$i]['ip'])
 					{
 						unset($discordouem[$i]);
+						$acho--;
 					}
 					elseif($user_id == $discordouem[$i]['user'])
 					{
 						unset($discordouem[$i]);
+						$acho--;
 					}
 				}
+				if(count($discordouem) == 0)
+				{
+					unset($discordaram[$hora]);
+				}
+				else
+				{
+					$discordaram[$hora] = $discordouem;
+				}
 			}
-			update_post_meta($postID, 'delibera_discordaram', $curtiram);
+			$ndiscordar += $acho;
+			update_post_meta($postID, 'delibera_numero_discordar', $ndiscordar);
+			update_post_meta($postID, 'delibera_discordaram', $discordaram);
 		} elseif ($type == 'comment') {
 			$comment_id = $ID;
-			$ndiscordar--;
-			update_comment_meta($comment_id, 'delibera_numero_discordar', $ndiscordar);
+			$acho  = 0;
 			$discordaram = get_comment_meta($comment_id, 'delibera_discordaram', true);
 			foreach ($discordaram as $hora => $discordouem)
 			{
@@ -84,14 +94,26 @@ function delibera_discordar($ID, $type ='pauta')
 					if(intval($user_id) == 0 && $ip == $discordouem[$i]['ip'])
 					{
 						unset($discordouem[$i]);
+						$acho--;
 					}
 					elseif($user_id == $discordouem[$i]['user'])
 					{
 						unset($discordouem[$i]);
+						$acho--;
 					}
 				}
+				if(count($discordouem) == 0)
+				{
+					unset($discordaram[$hora]);
+				}
+				else
+				{
+					$discordaram[$hora] = $discordouem;
+				}
 			}
-			update_comment_meta($comment_id, 'delibera_discordaram', $curtiram);
+			$ndiscordar += $acho;
+			update_comment_meta($comment_id, 'delibera_numero_discordar', $ndiscordar);
+			update_comment_meta($comment_id, 'delibera_discordaram', $discordaram);
 		}
 	}
 	return apply_filters('delibera_discordar', $ndiscordar);

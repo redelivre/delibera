@@ -30,10 +30,17 @@ class Vote extends \Delibera\Modules\ModuleBase
 	 */
 	protected $days = array('dias_votacao');
 	
+	/**
+	 * Display priority
+	 * @var int
+	 */
+	public $priority = 4;
+	
 	public function __construct()
 	{
 		parent::__construct();
 		add_action( 'admin_print_scripts', array($this, 'adminScripts') );
+		add_action( 'wp_enqueue_scripts', array($this, 'js') );
 		add_filter('delibera_unfilter_duplicate', array($this, 'unfilterDuplicate'));
 	}
 	
@@ -75,6 +82,7 @@ class Vote extends \Delibera\Modules\ModuleBase
 	public function getMainConfig($opts)
 	{
 		$opts['dias_votacao'] = '5';
+		$opts['tipo_votacao'] = 'checkbox';
 		return $opts;
 	}
 	
@@ -88,6 +96,20 @@ class Vote extends \Delibera\Modules\ModuleBase
 			"id" => "dias_votacao",
 			"label" => __('Dias para votação de encaminhamentos:', 'delibera'),
 			"content" => '<input type="text" name="dias_votacao" id="dias_votacao" value="'.htmlspecialchars_decode($opt['dias_votacao']).'" autocomplete="off" />'
+		);
+		$id = 'tipo_votacao';
+		$value = htmlspecialchars_decode($opt[$id]);
+		$rows[] = array(
+			"id" => $id,
+			"label" => __('Tipo da votação:', 'delibera'),
+			//"content" => '<input type="text" name="dias_votacao" id="dias_votacao" value="'.htmlspecialchars_decode($opt['dias_votacao']).'" autocomplete="off" />'
+			"content" => '
+				<select name="'.$id.'" id="'.$id.'" autocomplete="off" >
+					<option value="checkbox" '.($value == 'checkbox' ? 'selected="selected"' : '').'>'.__('Checkbox', 'delibera').'</option>
+					<option value="radio" '.($value == 'radio' ? 'selected="selected"' : '').'>'.__('Radio Buttons', 'delibera').'</option>
+					<!-- <option value="dropdown" '.($value == 'dropdown' ? 'selected="selected"' : '').'>'.__('Dropdown', 'delibera').'</option> -->
+				</select>
+			'
 		);
 		return $rows;
 	}
@@ -138,6 +160,7 @@ class Vote extends \Delibera\Modules\ModuleBase
 		$discussao = array_search('discussao', $haystack)*/
 		
 		$prazo_votacao = $this->generateDeadline($options_plugin_delibera);
+		$tipo_votacao = $options_plugin_delibera['tipo_votacao'];
 		
 		if(!($post->post_status == 'draft' ||
 			$post->post_status == 'auto-draft' ||
@@ -145,12 +168,21 @@ class Vote extends \Delibera\Modules\ModuleBase
 		{
 			
 			$prazo_votacao = array_key_exists("prazo_votacao", $custom) ?  $custom["prazo_votacao"][0] : $prazo_votacao;
+			$tipo_votacao = array_key_exists("tipo_votacao", $custom) ?  $custom["tipo_votacao"][0] : $tipo_votacao;
 		}
 		
 		?>
 		<p>
 			<label class="label_prazo_votacao"><?php _e('Prazo para Votações','delibera') ?>:</label>
 			<input <?php echo $disable_edicao ?> name="prazo_votacao" class="prazo_votacao widefat hasdatepicker" value="<?php echo $prazo_votacao; ?>"/>
+		</p>
+		<p>
+			<label class="label_tipo_votacao"><?php _e('Tipo de Votação','delibera') ?>:</label>
+			<select name="tipo_votacao" id="tipo_votacao" class="tipo_votacao widefat" autocomplete="off" >
+				<option value="checkbox" <?php echo $tipo_votacao == 'checkbox' ? 'selected="selected"' : ''; ?>><?php _e('Checkbox', 'delibera'); ?></option>
+				<option value="radio" <?php echo $tipo_votacao == 'radio' ? 'selected="selected"' : ''; ?>><?php _e('Radio Buttons', 'delibera'); ?></option>
+				<!-- <option value="dropdown" <?php echo $tipo_votacao == 'dropdown' ? 'selected="selected"' : ''; ?>><?php _e('Dropdown', 'delibera'); ?></option> -->
+			</select>
 		</p>
 		
 		<div class="delibera_comment_list_panel" style="display: none;">
@@ -175,8 +207,13 @@ class Vote extends \Delibera\Modules\ModuleBase
 		$screenid = $screen->id;
 		if(strpos($screenid, 'page_delibera') !== false || $screenid == 'pauta' )
 		{
-			wp_enqueue_script('delibera-module-vote',WP_PLUGIN_URL.'/delibera/modules/vote/assets/js/vote.js', array('jquery'));
+			wp_enqueue_script('delibera-module-vote-admin',WP_PLUGIN_URL.'/delibera/modules/vote/assets/js/admin-vote.js', array('jquery'));
 		}
+	}
+	
+	public function js()
+	{
+		wp_enqueue_script('delibera-module-vote',WP_PLUGIN_URL.'/delibera/modules/vote/assets/js/vote.js', array('jquery'));
 	}
 	
 	public function publishPauta($postID, $opt)
@@ -225,6 +262,10 @@ class Vote extends \Delibera\Modules\ModuleBase
 		{
 			$events_meta['prazo_votacao'] = sanitize_text_field($_POST['prazo_votacao']);
 		}
+		if(array_key_exists('tipo_votacao', $_POST))
+		{
+			$events_meta['tipo_votacao'] = sanitize_text_field($_POST['tipo_votacao']);
+		}
 		
 		global $post, $current_user;
 		if(!is_object($post))
@@ -251,7 +292,7 @@ class Vote extends \Delibera\Modules\ModuleBase
 				
 				foreach ($_POST['delibera_comment_add_list'] as $vote_option)
 				{
-					$vote_option = explode(',', $vote_option);
+					$vote_option = explode(',', $vote_option, 2);
 					if(count($vote_option) == 1) $vote_option = array('', $vote_option[0]);
 					if($vote_option[0] == '')
 					{
@@ -437,6 +478,16 @@ class Vote extends \Delibera\Modules\ModuleBase
 	{
 		$tipos[] = 'voto';
 		return $tipos;
+	}
+	
+	/**
+	 *
+	 * {@inheritDoc}
+	 * @see \Delibera\Modules\ModuleBase::getCommentListLabel()
+	 */
+	public function getCommentListLabel()
+	{
+		return __('Votação da Pauta', 'delibera');
 	}
 	
 }

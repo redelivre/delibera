@@ -76,6 +76,7 @@ class DeliberaThemes
         $this->wpThemePath = get_stylesheet_directory() . '/delibera';
         $this->wpThemeUrl = get_stylesheet_directory_uri() . '/delibera';
         $this->wpThemeName = wp_get_theme()->get_stylesheet();
+        add_filter('body_class', array(&$this,'body_class'), 10, 2);
     }
 
     /**
@@ -93,6 +94,7 @@ class DeliberaThemes
         } else {
             $conf = delibera_get_config();
             $themePath = $conf['theme'];
+            $themePath = $this->checkPath($themePath);
         }
 
         if (file_exists($themePath)) {
@@ -314,6 +316,27 @@ class DeliberaThemes
 
         return $html;
     }
+    
+    public function checkPath($path)
+    {
+    	if(strpos($path, 'home/hacklab') !== false) // need to remove old hardcode path from config
+    	{
+    		$theme = basename($path);
+    		$path = $this->baseDir . $theme;
+    	}
+    	return $path;
+    }
+    
+    public function body_class($classes, $class)
+    {
+    	if(is_pauta())
+    	{
+    		$situacao = delibera_get_situacao(get_the_ID());
+    		$classes[] = $situacao->slug;
+    	}
+    	return $classes;
+    }
+    
 }
 global $deliberaThemes;
 $deliberaThemes = new DeliberaThemes;

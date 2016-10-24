@@ -25,7 +25,15 @@ $delibera_permissoes = array(
 		'edit_others_pautas',
 		'edit_others_pauta',
 		'delete_others_pautas',
-		'delete_others_pauta'
+		'delete_others_pauta',
+		'manage_tema_term',
+		'edit_tema_term',
+		'delete_tema_term',
+		'assign_tema_term',
+		'manage_delibera_cat_term',
+		'edit_delibera_cat_term',
+		'delete_delibera_cat_term',
+		'assign_delibera_cat_term'
 	)),
 	'coordenador' => array('nome'=> 'Coordenador', 'Novo' => true, 'From' => 'administrator', 'Caps' => array
 	(
@@ -48,7 +56,15 @@ $delibera_permissoes = array(
 		'edit_others_pautas',
 		'edit_others_pauta',
 		'delete_others_pautas',
-		'delete_others_pauta'
+		'delete_others_pauta',
+		'manage_tema_term',
+		'edit_tema_term',
+		'delete_tema_term',
+		'assign_tema_term',
+		'manage_delibera_cat_term',
+		'edit_delibera_cat_term',
+		'delete_delibera_cat_term',
+		'assign_delibera_cat_term',
 	)),
 	'contributor' => array('Novo' => false, 'Caps' => array
 	(

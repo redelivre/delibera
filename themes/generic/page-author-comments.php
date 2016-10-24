@@ -2,7 +2,6 @@
 /*
 Template Name: Author Page Comments
 */
-
 get_header();
 $id = $wp_query->query_vars['commentsfor'];
 $user = get_user_by( 'id' , deliberaEncryptor('decrypt',$id) );
@@ -13,16 +12,20 @@ $order	= isset( $_GET['order-by'] ) ?	esc_html( $_GET['order-by'] ) : '' ;
 $paged = get_query_var( 'paged' );
 
 ?>
-<div id="user_form_search" class="user_form_search">
-	<form method="get"	name="form">
-		<p>
-			<input type="text" name="search" placeholder="<?php _e('Pesquisar por Comentários', 'delibera'); ?> ..." value="<?php echo $search; ?>"/>
-			<br>
-			<br>
-			<input type="submit" id="submit" class="button button-primary" value="Pesquisar"	/>
-		</p>
-	</form>
-</div>
+<div id="container">
+	<div id="main-content" role="main">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
+				<div id="user_form_search" class="user_form_search">
+					<form method="get"	name="form">
+						<p>
+						<input type="text" name="search" placeholder="<?php _e('Pesquisar por Comentários', 'delibera'); ?> ..." value="<?php echo $search; ?>"/>
+						<br>
+						<br>
+						<input type="submit" id="submit" class="button button-primary" value="Pesquisar"	/>
+						</p>
+					</form>
+				</div>
 <form method="get">
 	<label for="per-page"><?php echo __('Comentários por Página:' , 'delibera'); ?></label>
 	<select id="per-page" name="per-page"	onchange='if(this.value != 0) { this.form.submit(); }' >
@@ -32,7 +35,7 @@ $paged = get_query_var( 'paged' );
 	</select>
 </form>
 <a href="<?php echo get_site_url(); ?>/delibera/membros" ><?php _e( 'Ver todos os Membros' , 'delibera' ); ?></a>
-<a href="<?php echo get_site_url(); ?>/delibera/<?php echo deliberaEncryptor('encrypt', $user->ID); ?>/pautas" ><?php _e( 'Ver todas as Pautas de' , 'delibera' ); ?> <?php echo $user->display_name; ?></a>
+<a href="<?php echo \Delibera\Member\MemberPath::getAuthorPautasUrl($user->ID); ?>" ><?php _e( 'Ver todas as Pautas de' , 'delibera' ); ?> <?php echo $user->display_name; ?></a>
 <p>
 	<div>
 		<?php echo get_avatar( $user->ID ); ?>
@@ -110,8 +113,12 @@ if ( $comments )
 			?>
 		</p>
 	</div>
-	<?php
-	wp_footer();
-	?>
+			</main><!-- #main -->
+		</div>
+	</div><!-- #content -->
+</div><!-- #container -->
+<?php
+get_footer();
+?>
 </body>
 </html>

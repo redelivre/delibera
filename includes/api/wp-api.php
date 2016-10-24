@@ -78,7 +78,7 @@ function delibera_api_avatar($object, $field_name, $request)
 	return $avatar;
 }
 
-function delibera_like_api($data)
+function delibera_like_pauta_api($data)
 {
 	if(is_object($data))
 	{
@@ -87,7 +87,7 @@ function delibera_like_api($data)
 	return "ops, need id";
 }
 
-function delibera_unlike_api($data)
+function delibera_unlike_pauta_api($data)
 {
 	if(is_object($data))
 	{
@@ -96,14 +96,69 @@ function delibera_unlike_api($data)
 	return "ops, need id";
 }
 
+function delibera_like_comment_api($data)
+{
+	if(is_object($data))
+	{
+		return delibera_curtir($data->get_param('id'), 'comment');
+	}
+	return "ops, need id";
+}
+
+function delibera_unlike_comment_api($data)
+{
+	if(is_object($data))
+	{
+		return delibera_discordar($data->get_param('id'), 'comment');
+	}
+	return "ops, need id";
+}
+
 add_action( 'rest_api_init', function () {
 	register_rest_route( 'wp/v2', '/pautas/(?P<id>\d+)/like', array(
 		'methods' => 'POST',
-		'callback' => 'delibera_like_api',
+		'callback' => 'delibera_like_pauta_api',
 	) );
 	register_rest_route( 'wp/v2', '/pautas/(?P<id>\d+)/unlike', array(
 		'methods' => 'POST',
-		'callback' => 'delibera_unlike_api',
+		'callback' => 'delibera_unlike_pauta_api',
+	) );
+	register_rest_route( 'wp/v2', '/comments/(?P<id>\d+)/like', array(
+		'methods' => 'POST',
+		'callback' => 'delibera_like_comment_api',
+	) );
+	register_rest_route( 'wp/v2', '/comments/(?P<id>\d+)/unlike', array(
+		'methods' => 'POST',
+		'callback' => 'delibera_unlike_comment_api',
 	) );
 } );
 
+/**
+ *
+ * @param WP_Post $post
+ * @param WP_REST_Request $request
+ */
+function deliberaApiCreate($post, $request)
+{
+	$args = $request->get_params();
+	$args['post_id'] = $post->ID;
+	
+	deliberaCreateTopic($args);
+	return $post;
+}
+add_action('rest_insert_pauta', 'deliberaApiCreate', 10, 2);
+
+/**
+ *
+ * @param WP_Post $prepared_post
+ * @param WP_REST_Request $request
+ */
+function deliberaApiPreInsertPauta($prepared_post, $request)
+{
+	if(empty($prepared_post->post_name))
+	{
+		$prepared_post->post_name = sanitize_title($prepared_post->post_title);
+	}
+	return $prepared_post;
+}
+add_filter('rest_pre_insert_pauta', 'deliberaApiPreInsertPauta', 10, 2);

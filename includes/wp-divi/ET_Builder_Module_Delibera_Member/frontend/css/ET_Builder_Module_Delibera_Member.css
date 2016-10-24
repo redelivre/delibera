@@ -1,16 +1,36 @@
 @CHARSET "UTF-8";
 
 .et_pb_module.et_pb_delibera_member {
-    border-radius: 12px;
+    border-style: solid;
     display: block;
     margin: 0 auto;
     padding: 2px;
     position: relative;
     text-align: center;
     float: left;
-    box-shadow: 5px 5px 5px #888888;
     width: 100%;
 }
+
+.et_pb_module.et_pb_delibera_member_border {
+    border-radius: 12px;
+    border-style: solid;
+    display: block;
+    margin: 0 auto;
+    padding: 2px;
+    position: relative;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+
+.et_pb_delibera_shadow {
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.et_pb_delibera_border{
+    border: 1px solid;
+}
+
 
 .et_pb_delibera_categoria {
 	display: block;
@@ -19,7 +39,7 @@
 	width: 100%;
 }
 
-.et_pb_module.et_pb_delibera_member .comments {
+.et_pb_module.et_pb_delibera_member .comments, .et_pb_module.et_pb_delibera_member_border .comments {
     display: inline-block;
     position: relative;
 }
@@ -33,6 +53,16 @@
     display: block;
     float: left;
     position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100% auto;
+}
+
+.et_pb_module.et_pb_delibera_member_border .et_pb_delibera_member_image_border {
+    display: block;
+    float: left;
+    position: relative;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-position: center center;
@@ -41,14 +71,16 @@
     background-size: 100% auto;
 }
 
-.et_pb_module.et_pb_delibera_member .tema a {
+.et_pb_module.et_pb_delibera_member .tema a, 
+.et_pb_module.et_pb_delibera_member_border .tema a {
     color: #000;
     font-size: 1.6em;
     font-weight: bolder;
     text-transform: uppercase;
 }
 
-.et_pb_module.et_pb_delibera_member .tema {
+.et_pb_module.et_pb_delibera_member .tema,
+.et_pb_module.et_pb_delibera_member_border .tema  {
     padding: 10px 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -58,17 +90,19 @@
     width: 100%;
 }
 
-.et_pb_module.et_pb_delibera_member.has-thumbnail .tema {
+.et_pb_module.et_pb_delibera_member.has-thumbnail .tema,
+.et_pb_module.et_pb_delibera_member_border.has-thumbnail .tema{
     border-top-left-radius: unset;
     border-top-right-radius: unset;
 }
 
-.et_pb_module.et_pb_delibera_member .et_pb_delibera_member_description h4 {
+.et_pb_module.et_pb_delibera_member .et_pb_delibera_member_description h4,
+.et_pb_module.et_pb_delibera_member_border .et_pb_delibera_member_description h4  {
     color: #000 !important;
 }
 
-.et_pb_module.et_pb_delibera_member .et_pb_delibera_member_description {
-    background-color: #fff;
+.et_pb_module.et_pb_delibera_member .et_pb_delibera_member_description,
+.et_pb_module.et_pb_delibera_member_border .et_pb_delibera_member_description {
     color: #000;
     padding: 10px 20px;
     text-align: left;
@@ -76,6 +110,7 @@
     border-top-right-radius: 10px;
 }
 
+.et_pb_module.et_pb_delibera_member .user div,
 .et_pb_module.et_pb_delibera_member .user div {
     display: inline-block;
     margin: 10px;
@@ -84,9 +119,31 @@
     color: #000;
 }
 
-.et_pb_module.et_pb_delibera_member .faixa {
+.et_pb_module.et_pb_delibera_member .faixa,
+.et_pb_module.et_pb_delibera_member_border .faixa {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 8px 20px 8px 8px;
     text-align: right;
 }
+
+.delibera-like .delibera-icon-thumbs-up, .delibera-unlike .delibera-icon-thumbs-down,
+a.delibera-like-login .delibera-icon-thumbs-up, a.delibera-unlike-login .delibera-icon-thumbs-down {
+    color: #000000;
+}
+
+.delibera-like .delibera-icon-thumbs-up:hover, .delibera-unlike .delibera-icon-thumbs-down:hover,
+a.delibera-like-login .delibera-icon-thumbs-up:hover, a.delibera-unlike-login .delibera-icon-thumbs-down:hover {
+    color: #cccccc;
+}
+
+.delibera-like .delibera-icon-thumbs-up.active,
+a.delibera-like-login .delibera-icon-thumbs-up.active {
+    color: blue;
+}
+
+.delibera-unlike .delibera-icon-thumbs-down.active,
+a.delibera-unlike-login .delibera-icon-thumbs-down.active {
+    color: red;
+}
+

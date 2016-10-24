@@ -856,7 +856,7 @@ add_filter('comment_reply_link_args', 'delibera_comment_reply_link_args', 10, 3)
 function delibera_duplicate_comment_id($dupe_id, $commentdata )
 {
 	$tipos = array();
-	$tipos = apply_filters('delibera_unfilter_duplicate', $filtro);
+	$tipos = apply_filters('delibera_unfilter_duplicate', $tipos);
 	
 	if( array_key_exists('delibera_comment_tipo', $_POST) && in_array($_POST['delibera_comment_tipo'], $tipos) )
 	{

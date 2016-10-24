@@ -52,9 +52,8 @@ function delibera_curtir($ID, $type = 'pauta')
 	{
 		if ($type == 'pauta') {
 			$postID = $ID;
-			$ncurtir--;
-			update_post_meta($postID, 'delibera_numero_curtir', $ncurtir);
 			$curtiram = get_post_meta($postID, 'delibera_curtiram', true);
+			$acho  = 0;
 			foreach ($curtiram as $hora => $curtiuem)
 			{
 				for($i = 0; $i < count($curtiuem); $i++)
@@ -62,19 +61,31 @@ function delibera_curtir($ID, $type = 'pauta')
 					if(intval($user_id) == 0 && $ip == $curtiuem[$i]['ip'])
 					{
 						unset($curtiuem[$i]);
+						$acho--;
 					}
 					elseif($user_id == $curtiuem[$i]['user'])
 					{
 						unset($curtiuem[$i]);
+						$acho--;
 					}
 				}
+				if(count($curtiuem) == 0)
+				{
+					unset($curtiram[$hora]);
+				}
+				else
+				{
+					$curtiram[$hora] = $curtiuem;
+				}
 			}
+			$ncurtir += $acho;
+			if($ncurtir < 0) $ncurtir = 0; // fix previews bug
+			update_post_meta($postID, 'delibera_numero_curtir', $ncurtir);
 			update_post_meta($postID, 'delibera_curtiram', $curtiram);
 		} elseif ($type == 'comment') {
 			$comment_id = $ID;
-			$ncurtir--;
-			update_comment_meta($comment_id, 'delibera_numero_curtir', $ncurtir);
 			$curtiram = get_comment_meta($comment_id, 'delibera_curtiram', true);
+			$acho  = 0;
 			foreach ($curtiram as $hora => $curtiuem)
 			{
 				for($i = 0; $i < count($curtiuem); $i++)
@@ -82,13 +93,26 @@ function delibera_curtir($ID, $type = 'pauta')
 					if(intval($user_id) == 0 && $ip == $curtiuem[$i]['ip'])
 					{
 						unset($curtiuem[$i]);
+						$acho--;
 					}
 					elseif($user_id == $curtiuem[$i]['user'])
 					{
 						unset($curtiuem[$i]);
+						$acho--;
 					}
 				}
+				if(count($curtiuem) == 0)
+				{
+					unset($curtiram[$hora]);
+				}
+				else
+				{
+					$curtiram[$hora] = $curtiuem;
+				}
 			}
+			$ncurtir += $acho;
+			if($ncurtir < 0) $ncurtir = 0; // fix previews bug
+			update_comment_meta($comment_id, 'delibera_numero_curtir', $ncurtir);
 			update_comment_meta($comment_id, 'delibera_curtiram', $curtiram);
 		}
 	}
