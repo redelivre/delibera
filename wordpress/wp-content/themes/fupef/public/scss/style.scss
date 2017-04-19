@@ -1,0 +1,30 @@
+/*!
+	Theme Name: Teste Fupef por Kaleb Martins
+	Theme URI: http://www.fupef.ufpr.br/
+	Author: Kaleb Martins, JAN.2016
+	Version: 1.0
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+// Base
+@import 'mixins';
+@import 'reset';
+@import 'typography';
+@import 'grid';
+
+// Components
+@import 'forms';
+@import 'buttons';
+@import 'paginacao';
+@import 'comments';
+
+// Layout
+@import 'header';
+@import 'homepage';
+@import 'sidebar';
+@import 'footer';
+
+// Pages
+@import 'page';
+@import 'archive';

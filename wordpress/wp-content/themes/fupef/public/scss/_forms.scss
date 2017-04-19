@@ -1,0 +1,80 @@
+/*-------------------------------------------------
+    Forms
+-------------------------------------------------*/
+::-webkit-input-placeholder 	{color: #999; font-size: 17px; } 
+:-moz-placeholder 				{color: #999; font-size: 17px; } 
+::-moz-placeholder 				{color: #999; font-size: 17px; } 
+:-ms-input-placeholder 			{color: #999; font-size: 17px; }
+
+input[type="search"] 			{-webkit-appearance: textfield;}
+
+form {
+	input, textarea {
+		font-size: 15px;
+		background:#FFF;
+		border:1px solid #CCC;
+		display: block;
+		padding: 15px;
+		@include size(100%);
+		@include fade;
+		@include left;
+		margin-right: 10px;
+
+		&:focus {
+			background:#FFF;
+			border:1px solid $secondary-color;
+		}
+	}
+
+	textarea {margin-bottom: 20px;}
+
+	input[type="submit"] {
+		color: #FFF;
+		font-size: 12px;
+		text-transform: uppercase;
+		background:$tertiary-color;
+		padding:15px;
+		text-align: center;		
+		border:none;
+		cursor:pointer;
+		display: block;
+		@include size(30%);
+		@include left;
+		margin: 0;
+	}
+
+	input[type="checkbox"], input[type="radio"]{
+		cursor:pointer;
+		width: auto !important;
+		margin-top: 5px;
+	}
+	.checkbox {
+		cursor:pointer;
+	}
+}
+
+
+/*-------------------------------------------------
+    Search Form
+-------------------------------------------------*/
+.search-form {
+	background:$main-color;
+	padding: 60px 0;
+	margin:0 0 20px 0;
+	overflow: hidden;
+	position: relative;
+
+	form {position: relative; @include size(100%)}
+
+	input[type="search"] {padding-right: 40px;}
+
+	input[type="submit"] {
+		background:url(public/img/search.png) no-repeat center top;
+		text-indent: -999em;
+		overflow: hidden;
+		position: absolute;
+		@include size(40px, 40px);
+		top:13px;
+		right:5px;
+	}
+}

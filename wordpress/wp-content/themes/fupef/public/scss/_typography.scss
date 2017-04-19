@@ -1,0 +1,57 @@
+/*-------------------------------------------------
+    Typography
+-------------------------------------------------*/
+h1 {font-size: 35px; @include font(light);}
+h2 {font-size: 20px; @include font(normal);}
+h3 {font-size: 16px; }
+h4 {font-size: 18px;}
+
+
+
+.h2 {
+	color: $tertiary-color;
+	text-transform: uppercase;
+	border-bottom: 1px solid #EEE;
+	padding: 5px 0;
+	margin: 20px 0;
+}
+
+.h3 {
+	color: $main-color;
+	font-size: 25px;
+	@include font(light);
+	text-transform: uppercase;
+	border-bottom: 1px solid $secondary-color;
+	padding: 5px 0;
+	margin: 5px 0;
+}
+
+.lead {
+	p {
+		color: #333;
+		font:normal 15px/1.4em $main-font;
+		margin-bottom: 20px;
+	}
+
+	a {
+		text-decoration: underline;
+		&:hover {color:$tertiary-color; text-decoration: none;}
+	}
+
+	h2 { font-size:23px; margin-bottom: 10px; }
+
+	h3 {color: $main-color; margin-bottom: 10px; text-transform: none; }
+
+	ul {
+		padding:0 0 10px 0;
+
+		li {
+			list-style: disc;
+			margin-left: 30px;
+		}
+	}
+
+	.alignleft{float:left; margin:0 10px 10px 0;}
+	.aligncenter{text-align: center;}
+	.alignright{float:right; margin:0 0 10px 10px;}
+}

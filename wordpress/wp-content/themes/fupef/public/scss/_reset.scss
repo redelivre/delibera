@@ -1,0 +1,26 @@
+/**
+ * RESET
+ *
+ * Esse arquivo tem como objetivo 'zerar' as 
+ * funcionalizades do css
+ * 
+ * @author Kaleb Martins <kaleb@paradoxodigital.com.br>
+ * @date (setembro 2015)
+ * 
+ */
+
+ * { padding:0; margin:0; list-style:none; box-sizing: border-box; outline: none; }
+
+ article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display:block }
+
+ body {
+ 	font-family: $main-font;
+ }
+
+ a { 
+ 	color:$secondary-color; 
+ 	text-decoration: none; 
+ }
+
+ ::-moz-selection{ background:#104069; color:#FFF }
+ ::selection { background:#104069; color:#FFF } 

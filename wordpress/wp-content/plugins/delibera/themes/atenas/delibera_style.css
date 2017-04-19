@@ -1,0 +1,1654 @@
+/* ================================================================================
+    Lista-de-pautas
+   ================================================================================*/
+   
+/* 
+   Header - archive
+   ================================================================================*/
+#content{
+	float: none;
+}
+
+.home p.delibera-boasvindas {
+    padding-left:20px;
+    float: left;
+    color: #fff7e4;
+    font-size: 22px;
+    font-weight: bold;
+    width: 650px;
+    line-height: 35px;
+}
+
+.home p.delibera-participacao a{
+    margin-right: 20px;
+}
+
+p.delibera-boasvindas {
+    color:#5d5a5d;
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+    width: 500px;
+    line-height: 30px;
+    font-family: sans-serif;
+}
+
+p.delibera-login {
+    font-size:12px;
+    clear: both;
+ }
+
+.single p.delibera-login {
+    float:left;
+    font-size:12px;
+    width: 70%;
+}
+
+p.delibera-participacao a{
+    border-radius:5px;
+    padding-top:15px;
+    padding-bottom:15px;
+    display: block;
+    float: right;
+    width: 225px;
+    text-align:center;
+    color:white;
+    text-shadow:1px 1px 1px #888;
+    text-transform:uppercase;
+    background:#959595;
+    margin-right:30px;  
+  } 
+  
+ p.delibera-participacao a:hover {
+    background-color:#898989;
+    /*color:#fff !important;*/
+    text-decoration: none;
+}
+
+/* 
+   Filtro - archive
+   ================================================================================*/
+ 
+ #filtro {
+    background:#e7f1ee;
+    padding:15px;
+    float: right;
+    margin-top: 0;
+    width: 220px;
+}
+
+#delibera {
+    border-radius: 10px;
+    padding:10px;
+    background:url('images/icone-menu-discussoes.png') 500px 75px #BDD7D1 no-repeat;
+    margin-top:40px;
+    overflow: hidden;
+}
+
+ #delibera #ultimos-comentarios h4, 
+ #delibera #filtro h4, 
+ .author #ultimos-comentarios h4, 
+ .archive #filtro-horizontal h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 20px 10px 0;
+}
+
+.delibera-filtros-mostrar {	
+    padding: 0 10px;
+    width:14px ;
+    height:14px ;
+    background-image: url('images/baixo.png') ;
+    background-repeat:no-repeat; 
+    margin-left: 15px;
+    margin-top: 2px;
+    opacity:0.7;
+    cursor:pointer;
+    float:left;
+}
+
+.delibera-filtros-mostrar:hover {	
+    opacity: 1.0;
+}
+
+.delibera-filtros-esconder {	
+    padding: 0 10px;
+    width:14px;
+    height:14px;
+    background-image: url('images/cima.png'); 
+    background-repeat:no-repeat;
+    margin-left: 15px;
+    margin-top: 2px;
+    cursor:pointer;
+    opacity:0.7; 
+    float:left;
+}
+
+.delibera-filtros-esconder:hover {	
+    opacity: 1.0;
+}
+
+.form-filtro-ultimos-chebox-span {
+    float: left;
+}
+
+.form-filtro-ultimos-chebox-label-todos {
+    color: #434343;
+}
+
+#form-filtro-ultimos-todos-tema {
+    background: #31c510;
+}
+
+#filtro {
+    background:#e7f1ee;
+    padding:15px;
+    float: right;
+    margin-top: 0;
+    width: 220px;
+}
+
+#filtro .form-filtro-ultimos-div {
+    margin:10px 0;  
+}
+
+#filtro label.form-filtro-ultimos-chebox-label {
+    color:#000;
+    font-size:11px;
+}
+
+#filtro label.form-filtro-ultimos-chebox-label:hover {
+    cursor: pointer;
+}
+
+#filtro input.form-filtro-ultimos-chebox, #filtro input.form-filtro-ultimos-chebox-todos {
+    margin: 5px;
+}
+
+#filtro label.form-filtro-ultimos-chebox-label-todos {
+    font-size:11px;
+}
+
+#filtro span#form-filtro-ultimos-button { 
+    background: #5bb762;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top:20px;
+    padding: 3px 0;
+    text-align: center;
+}
+
+#filtro span#form-filtro-ultimos-todos {
+    background:#eee;
+    color:#444;
+    cursor:pointer;
+    display:block;
+    font-size:11px;
+    margin:10px 0;
+    text-align:center;
+}
+
+#filtro span#form-filtro-ultimos-todos:hover {
+    background: #e4e4e4;
+}
+
+#filtro span#form-filtro-ultimos-button:hover {
+    background: green;
+}
+
+.archive form#form-filtro {
+    background:#fff;
+    padding: 10px 35px;
+    margin:0 10px 0 10px;
+    border-radius: 10px;
+    width: 790px;
+}
+
+.archive .form-filtro-ultimos-div {
+    margin:10px 0;
+}
+
+.archive .form-filtro-ultimos-div label {
+    /*color:#034ea1 !important;*/
+    font-size:12px;
+    margin:5px 10px 10px 0;
+    font-family:sans-serif;
+}
+
+.archive .form-filtro-ultimos-div label:hover {
+    cursor:pointer;
+ }
+ 
+.archive span#form-filtro-button {
+    background: #acacac;
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 3px 0;
+    text-align: center;
+    width:150px;
+}
+
+.archive span#form-filtro-button:hover {
+    background:#959595;
+}
+
+/* 
+   lista-de-pautas-archive
+   ================================================================================*/
+
+.post-type-archive-pauta .hentry {
+    float: left;
+    margin: 10px;
+    width: 400px;
+    border: 3px solid #c4c2c2;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+#lista-de-pautas .hentry {
+    margin-bottom:35px !important;
+    min-height: 250px;
+    background: #fff;
+}
+
+.post-type-archive-pauta .hentry h2 {
+    font-size:18px;
+    padding: 10px 0 0; 
+}
+
+.entry-meta{
+	margin-top: 10px;
+
+}
+
+.post-type-archive-pauta .hentry .entry-meta {
+    border-bottom:1px solid #eee;
+    display:block;
+    padding-bottom:5px !important;
+}  
+  
+body.post-type-archive-pauta .entry-meta {
+    background:url('images/icone-calendario.gif') 5px 3px no-repeat;
+    height: 60px;
+    padding-left: 15px;
+    
+  /*padding-left: 28px !important;
+    padding:0;
+    margin-left:0;*/
+
+}
+
+.post-type-archive-pauta .hentry .entry-utility {
+    border-top: 1px solid #EEE;
+    padding:10px;
+}
+
+.post-type-archive-pauta .entry-content {
+    line-height: 1.9em;
+    padding:0 10px;
+    margin-top: 40px;
+}
+
+.post-type-archive-pauta .hentry .entry-content {
+    min-height: 228px;
+}
+
+.archive .pauta .entry-prazo {
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: left;
+    color: #CD334E;
+    float: left;
+    width: 100%;
+ }
+
+ span.archive-situacao {
+    display:block;
+    font-size:11px;
+    float:right;
+    text-transform:uppercase;
+    color:#CD334E;
+}
+
+.post-type-archive-pauta .hentry .entry-meta, .post-type-archive-pauta .hentry .entry-utility {
+    padding: 0 10px;  
+}  
+
+body.post-type-archive-pauta .entry-utility {
+    margin-left:0 !important; 
+}
+
+/* ================================================================================
+    Discuss�o-single
+   ================================================================================*/
+
+/* 
+   leader-discuss�o-single
+   ================================================================================*/
+   
+.single-pauta #leader, h1.entry-title {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	background-color: #e1e1e1;
+	clear:both;
+	font-family: 'LucidaSansDemiboldRoman', arial, sans-serif;
+	font-size:22px;
+  	color:#4f4f4f;
+	padding: 15px;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+
+.single-pauta #leader img {
+    float: left;
+	margin-right: 20px;
+	border: 3px solid #ebebeb;
+}
+
+.single-pauta #leader h1.entry-title {
+    clear: none;
+    float: left;
+    font-family: 'LucidaSansDemiboldRoman', arial, sans-serif;
+    line-height:27px;
+    margin-right: 20px;
+    width: 500px;
+}
+
+.single-pauta #leader .entry-meta {
+    font-size: 11px;
+    text-align: right;
+    clear: none;
+}
+
+.single-pauta #leader .entry-meta a {
+    /*color:#1b61ae;*/
+}
+
+.single-pauta #leader .entry-meta a:hover {
+    /*color:#a9c03d;*/
+}
+
+.single-pauta #leader .entry-meta div {
+    color:#535353;
+}
+
+.single-pauta #leader .entry-author {
+    background:url('images/icone-user.png') right center no-repeat;
+    padding-right:22px;  
+}
+
+span.author {
+    display:inline;
+    margin-left: 10px;
+}
+
+.delibera-aceitou-view,
+.delibera-rejeitou-view{
+	margin-left: 60px;
+}
+
+.single-pauta #leader .entry-comment {
+    background:url('images/icone-balao.gif') right center no-repeat;
+    padding-right:20px;
+}
+ 
+.single-pauta #leader .entry-prazo {
+    background:url('images/icone-calendario.gif') right center no-repeat;
+    color:#cd334e !important;
+    padding-right:20px;
+    font-weight: bold;
+}
+
+.single-pauta #leader .entry-print a {
+    background:url('images/icone-print.png') right center no-repeat;
+    padding-right:20px;
+}
+
+.single-pauta #leader .entry-print label.delibera-print-link-label {
+    text-transform:capitalize !important;
+} 
+
+.single-pauta #leader .entry-print label.delibera-print-link-label:hover {
+    cursor:pointer !important;
+    text-transform:capitalize !important;
+} 
+
+span.delibera_seguir_text {
+    /*color:#1b61ae;*/
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight:bold;
+}
+
+span.delibera_seguir_text:hover {
+    cursor:pointer;
+    /*color:#aac13f;*/
+}
+
+.single-pauta .hentry {
+    float: left;
+    background: #fff;
+    width: 940px;
+    border-radius: 15px;
+}
+
+.single-pauta .entry-content {
+    border-left: 1px solid #EEE;
+    border-right: 1px solid #EEE;
+    color: #4F4F4F;
+    float: left;
+    line-height: 1.9em;
+    padding: 20px 30px;
+    width: 940px;
+}
+
+.single-pauta .entry-utility {
+  /*border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
+    background: #E1E1E1;
+    clear: both;
+    height:50px;
+    padding-bottom:5px;
+    padding: 0 15px;
+    padding-top:1px;
+    width:940px;
+    float:left;
+    border:none;
+}
+
+.single-pauta .share-twitter {
+    margin-right: 20px;	
+}
+
+.single .pauta .entry-share {
+    float:left;
+    clear:both;
+    margin: 10px;
+    margin-left: 12px;
+    width: 300px !important;
+}
+
+.single-pauta .entry-respond a.comment-reply-link {
+    background-position:right 3px;
+    float: right;
+    text-align: right;
+    padding-right: 22px;
+    padding-top: 0 !important;
+    /*color: #034ea1;*/
+    font-size: 1em;
+    margin-right: 0!important;
+}
+
+.comentario_coluna2 {
+    background: url('images/icone-grafico.png') center right no-repeat ;
+    width: 170px !important;
+    float: right !important;
+    margin-right: 4px;
+    padding-right: 22px;
+    text-align: right;
+}
+
+.single li.comment .reply a , .single-pauta .entry-utility a.comment-reply-link, .comentario_coluna2 {
+    background: url('images/reply.png') center right no-repeat ;
+    display:block;
+    margin-right: 34px !important;
+    font-family: 'LucidaSansDemiboldRoman', arial, helvetica;
+    font-size:10px;
+    opacity:0.7;
+    text-transform:uppercase;
+    text-align:right;
+    padding-right: 22px;
+}
+
+/*.single li.comment{
+	width: 864px;
+}*/
+
+.single li.comment, .author li.comment {
+    border-bottom:1px solid #e9eeda;
+    overflow:hidden;
+    padding-top: 15px;
+}
+
+
+
+.author li.comment {
+    border-left: 1px solid #F4F4F4;
+    border-right: 1px solid #F4F4F4;
+    border-bottom:1px solid #e9eeda;
+    overflow:hidden;
+    padding-top: 15px;
+}
+  
+.single .delibera-comment-text, .author .delibera-comment-text {
+    color:#4f4f4f;
+    float:left;
+    width:600px;
+    margin-left:30px;
+} 
+
+.delibera-comment-meta {
+    color:#4f4f4f;
+    margin:5px 0;
+    display: block;
+    float: left;
+    margin: 0;
+}
+}
+
+.delibera-comment-meta a {
+  
+}
+
+.delibera-comment-text{
+	width: 500px;
+	margin-left: 10px;
+}
+
+.single .delibera-comment-text, .author .delibera-comment-text {
+    color:#4f4f4f;
+    clear: both;
+    width:500px;    
+}
+
+.single li.comment .reply a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 85%;
+    padding-left: 1em;
+}
+
+li.comment .reply a:hover,  .single-pauta .entry-utility {
+    opacity:1;
+    margin-bottom: 20px;
+}
+
+a.comment-reply-link:hover{
+	
+}
+
+.delibera_like, .delibera_unlike, span.delibera-unlike-count, span.delibera-like-count {
+    clear:right;
+    color:#4F4F4F !important;
+    font-family: 'LucidaSansDemiboldRoman', arial, helvetica;
+    float: right;
+    font-size:10px;
+    margin-top:5px;
+    margin-right: 4px;;
+    opacity:0.7;
+    width: 150px;
+    text-align: right;
+    text-transform:uppercase;
+}
+
+.delibera_like span, span.delibera-unlike-count, span.delibera-like-count {
+    display:block;
+    padding-top:4px;
+    padding-right:22px;
+    margin-right: 30px;
+}
+
+.delibera_unlike span {
+    display:block;
+    padding-top:2px;
+    padding-right:22px;
+    margin-right:30px;
+}
+
+span.delibera_unlike_text {
+    float:right;
+    background:url('images/discordo.png') right center no-repeat ;
+    font-weight: bold;
+}
+
+span.delibera_like_text {
+    background:url('images/concordo.png') right center no-repeat;
+    font-weight: bold;  
+ }
+
+.delibera_like span.delibera_like_reposta {
+    font-size:10px;
+}
+
+.delibera_like span.delibera_like_reposta:hover {
+    cursor:normal;
+    color:#4f4f4f;
+}
+
+span.delibera-unlike-count,.delibera_like span.delibera_like_reposta {
+    display:block; 
+    float:right; 
+    clear:both;
+}
+
+span.delibera-like-count, .delibera_like span.delibera_like_reposta {
+    background: url('images/icone-aprovados.png') center right no-repeat ;
+}
+ 
+span.delibera-unlike-count, .delibera_unlike span.delibera_unlike_reposta {
+    background: url('images/icone-discordaram.png') center right no-repeat ;
+    margin-right:30px;
+} 
+
+.delibera_like a, .delibera_like_text,.delibera_unlike_text {
+    /*color: #1b61ae !important;*/  
+    cursor:pointer;
+}
+
+.delibera_like a:hover, .delibera_like_text:hover, .delibera_like_text:hover, .delibera_unlike_text:hover {
+    /*color: #6bc6d3 !important;*/
+    cursor:pointer !important;
+    opacity:1;
+    font-weight: bold;
+}
+
+
+ /* 
+   resposta - discuss�o-single
+   ================================================================================*/
+ 
+.single li.comment ul.children li {
+    border-bottom:0;  
+}  
+
+ .single li.comment ul.children li.depth-2 {
+    background: #c5ecf2;
+    margin-bottom: 0;
+    margin-left: 35px;
+}
+
+.single li.comment ul.children li.depth-2 .delibera-comment-text {
+    width:562px;
+    margin-left: 30px;
+}
+
+ /* 
+   resposta-resposta - discuss�o-single
+   ================================================================================*/
+   
+.single li.comment ul.children li.depth-3 {
+    background:#e1f6f9;
+    border:0;
+    padding-left:15px;
+} 
+
+ /* 
+   publicar-resposta - discuss�o-single
+   ================================================================================*/
+   
+.single-pauta h3#reply-title {
+    color:#464646;
+    font-family: 'Candal', arial, helvetica;
+    margin:10px 0 0 20px;
+    float: left;
+}
+
+#painel_validacao{
+	clear:both;
+}
+
+.single-pauta p.comment-form-comment {
+    width:600px;
+}
+
+.single-pauta p.comment-form-comment label {
+    float:left;
+    font-size:12px;
+    margin:20px 5px;
+    text-transform:uppercase;
+}
+
+.single-pauta p.comment-form-comment textarea#comment {
+    font-family:Helvetica, arial, sans-serif;    
+    border:1px solid #ccc;
+    color:#666;
+    font-size:14px;
+    height:280px;
+    padding:10px;
+    width: 550px;
+}
+
+.single-post #respond {
+    background:#eee;
+    float:left;
+    padding:15px;
+    width:612px;
+}
+
+#respond {
+    overflow: visible;
+}
+
+#respond input {
+    margin:10px 0 !important;
+    width: auto !important;
+}
+
+.single-post #respond textarea {
+    width:602px;
+    padding:10px;
+    font-family:Helvetica, arial, sans-serif;
+}
+
+.single-post #respond h3 {
+    color:#0EB8B3;
+    font-family: 'LucidaSansRegular', arial, helvetica;
+}
+
+#delibera-comments {
+    clear: both;
+}
+
+#delibera-comments input#submit, .single-post #respond input#submit {
+    background: #666666;
+    border:0;
+    color: white;
+    display: block;
+    font-family: 'LucidaSansRegular', arial, helvetica;
+    font-size: 12px;
+    height:25px;
+    padding-right: 10px;
+    text-align: right;
+    text-transform: uppercase;
+    width:250px;
+    border-radius: 5px;
+}
+
+#delibera-comments input#submit:hover, .single-post #respond input#submit:hover { 
+    background:#464646;
+    cursor:pointer;
+}
+
+#delibera-comments .children {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+#delibera-comments ul.children {
+    width: 97%;
+}
+
+#delibera-comments .delibera-comment-text {
+	width: 67%;
+	display: block;
+    float: left;
+    position: relative;
+}
+
+#delibera-comments .reply,
+#delibera-comments .delibera-comment-botoes {
+	width: 27%;
+	display: block;
+    float: left;
+    position: relative;
+}
+
+#delibera-comments .delibera-comment-author.vcard {
+    display: block;
+    float: left;
+    position: relative;
+}
+
+/* 
+  coment�rios - discuss�o-single
+  ================================================================================*/
+
+/* editar e deletar comentarios*/
+.delibera-edit-comment-button:hover, .delibera-delete-comment-button:hover {
+    cursor:pointer;
+    color:#D6690B;
+}
+
+.delibera-edit-comment-button, .delibera-delete-comment-button {
+    display:inline;
+    color:#FC8D0B;
+    font-size:11px;
+}
+
+ /* 
+   p�gina de discuss�es - discuss�o-single (css antigo)
+   ================================================================================*/
+
+#delibera h2, #delibera-header h2, #delibera-header h1.page-title {
+    display:none;
+    color:#C6C8B2;
+    font-size:23px;
+    background:url('images/dotted.gif') center repeat-x ;
+    font-family: 'LucidaSansDemiboldRoman', Arial, Verdana, sans-serif;
+}
+
+#delibera h2 span, #delibera-header h2 span, #delibera-header h1 span {
+    letter-spacing:-1px;
+    background:#fff;
+    padding-right:15px;
+}
+
+#delibera #tabs {
+    float: left;
+    width: 650px;
+    background: white;
+    border-bottom-right-radius: 50px;
+}
+
+ul.tab-navigation {
+    border-bottom: 1px solid #ccc;
+    margin: 40px 0 0;
+    display: block;
+    height: 32px;
+}
+
+ul.tab-navigation li {
+    float: left;
+    position: relative;
+    top: 1px;
+    white-space: nowrap;
+    border-bottom: 0;
+}
+
+ul.tab-navigation li a {
+    background: #666;
+    color: #fff;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding: 5px 25px;
+}
+
+ul.tab-navigation li.active a, ul.tab-navigation li.active a:hover {
+    background: #fff;
+    border-color: #f2f2f2;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border: 1px solid #f2f2f2;
+    border-bottom: 0 !important;
+    color: #666;
+}
+
+ul.tab-navigation li a:hover {
+    background: #333;
+    border-bottom: 0;
+} 
+
+#tabs .tab {
+    border-color: #ccc;
+    border-style: solid;
+    border-bottom-right-radius: 50px;
+    -moz-border-bottom-right-radius: 50px;
+    border-width: 0 1px 1px 1px;
+    clear: both;
+    padding: 20px;
+}
+
+.author #tabs .tab {
+    border:1px solid #ccc;
+    margin-top:20px;
+}
+
+#delibera #tabs .tab {
+    color: #666;
+    overflow: hidden;
+}
+
+#delibera ul.tab-navigation {
+    width: 650px;
+}
+
+#delibera ul.tab-navigation li a {
+    background: #5BB762;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 10px;    
+}
+
+#delibera ul.tab-navigation li a:hover {
+    background: #5BB762;
+    color:#5B8F62 !important;
+    margin-top:1px;
+}
+
+#delibera ul.tab-navigation li.active a, #delibera ul.tab-navigation li.active a:hover {
+    background: #fff;
+    border-color: #ccc;
+}
+
+.post-type-archive-pauta #content, .single-pauta #content {
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    width: 940px;
+    margin: 0 auto;
+}
+
+.single .hentry img.alignnone {
+    float:left;
+    margin-right: 20px;
+    background:#fff;  
+}
+
+.single .hentry .entry-content h1, .page .hentry .entry-content h1 {
+    font-family: 'LucidaSansDemiboldRoman', arial, sans-serif;
+    color:#ccc;
+    font-size:24px;
+    padding:0;
+    margin-top:5px;
+}
+
+.single .hentry .entry-content h2, .page .hentry .entry-content h2 {
+    font-family: 'LucidaSansDemiboldRoman', arial, sans-serif;
+    color: #F06522;
+    font-size: 20px;
+    padding: 0;
+    margin-top: 5px;
+    line-height: 150%;
+    letter-spacing: -1px;
+}
+
+.single .hentry .entry-content h3, .single .hentry .entry-content h4, .page .hentry .entry-content h3, .page .hentry .entry-content h4 {
+    color:#ccc;
+}
+
+.single .hentry .entry-content img, .page .hentry .entry-content img  {
+    margin: 0 auto;
+    border: 2px solid #EEE;
+    box-shadow: 0 0 5px #888;
+    max-width:100%;
+}
+
+li.comment .vcard img{
+    border:2px solid #fff;
+    float:left;
+    height:40px;
+    margin: 0 20px 10px 10px;
+    width:40px;
+    border-radius: 2px;
+    display: block;
+}  
+
+cite.fn a{
+    display:block;
+    float:left;
+    font-style:normal;
+    font-family: 'LucidaSansDemiboldRoman', arial, helvetica;
+    margin-left: 60px;
+}
+
+
+
+#windowBox .delibera-comment-text {
+    padding:10px;  
+}
+
+label.encaminhamento-label {
+    background: url('images/icone-encaminhamento.png') right 6px no-repeat;
+    color: #67a4a4;
+    display: block;
+    font-family: 'LucidaSansDemiboldRoman', arial, helvetica;
+    font-size: 10px;
+    /*height: 15px;*/
+    opacity: 0.7;
+    padding-right: 23px;
+    padding-top: 5px;
+    text-align: right;
+    text-transform: uppercase;
+    float: right;
+} 
+
+.single a.comment-reply-link {
+    float:right;
+} 
+
+.single li.depth-1 .delibera-comment-body {
+    margin-left:10px;
+    padding: 10px;
+}  
+
+.single li.comment  ul.children {
+    margin-bottom:0;
+}
+
+.single li.comment  ul.children .comment {
+    margin-bottom:15px;
+}
+
+.single li.comment ul.children li.depth-2 {
+    background: #c5ecf2;
+    margin-bottom: 0;
+    margin-left: 35px;
+}
+
+li.comment ul.children li.depth-3 .delibera-like {
+    margin-right: 10px;
+}
+
+#respond p.logged-in-as {
+    float:right;
+    text-align:right;
+}
+
+.single-pauta p.logged-in-as { 
+    float:left;
+}
+
+.single-pauta li.comment .reply { 
+    clear: right;
+    float: right;
+    height: 20px;
+    margin-right: 2px;
+    width: 190px;
+} 
+
+input.baseadoem-checkbox {
+    margin-left: 8px;
+    cursor:pointer;
+    float:right;
+} 
+
+.baseadoem-checkbox-div {
+    margin: 10px 0;
+    display: block;
+    float: right;
+}
+
+.baseadoem-checkbox-div:hover {
+    cursor:pointer;
+}
+
+.baseadoem-checkbox-label {
+    clear: right;
+    color:#4f4f4f;
+    display:block;
+    float:right;
+    font-family: 'LucidaSansDemiboldRoman', arial, helvetica;
+    font-size:10px;
+    opacity:0.7;
+  /*padding-right:0;
+    padding-top:5px;*/
+    text-align:right;
+    text-transform:uppercase;
+    /*width: 236px;*/
+}
+
+input#baseadoem-checkbox-9 {
+    float:right;
+} 
+
+.single-pauta ol.commentlist {
+  
+}
+
+.single-pauta .delibera_before_fields {
+    width: 578px;
+    float: left;
+}
+
+.home p.delibera-pagina-discussoes {
+    float: right;
+    margin-top: 55px;
+    margin-right: 5px;
+}
+
+p.delibera-pagina-discussoes a {
+   /* border-bottom:2px solid #034ea1;
+    color:#666;*/
+    margin-top: 20px;
+    float: right;
+    text-align:right;
+    text-transform:uppercase;
+    margin-right: 30px;
+    font-family;;
+}
+
+p.delibera-pagina-discussoes a:hover{
+	text-decoration:none;
+}
+
+.delibera-slide, #delibera #ultimos-comentarios .delibera_leia_mais_link { 
+    background:url('images/icone-balao.gif') left 3px no-repeat;
+    color:#fc8d0b !important;
+    display:block;
+    font-size:10px;
+    text-transform:uppercase;
+    margin:10px 0;
+    padding-left:18px;
+}
+
+.delibera-slide:hover {
+    cursor:pointer;
+}
+
+#respond form.delibera_commentform {
+    width:650px;
+}
+
+a#cancel-comment-reply-link {
+    clear:both;
+    display:block;
+}
+
+ /* 
+   vota��o - discuss�o-single (css antigo)
+   ================================================================================*/
+
+.instrucoes-votacao{
+    margin-bottom: 30px;
+}
+
+.delibera_checkbox_voto{
+    
+}
+
+.label-voto{
+    margin-left: 20px;
+    font-size: 16px !important;
+}
+
+ /* 
+   Estilo de todas as discuss�es - discuss�o-single (css antigo)
+   ================================================================================*/
+
+p.nocomments {
+    float:left;
+    text-align:center;
+    font-size:16px;
+    padding-top:20px;
+}
+
+#delibera #ultimas-discussoes .hentry {
+    border-bottom: 1px dotted #ddd;
+    padding: 15px 0;
+}
+
+#delibera #ultimas-discussoes h3 a {
+    color:#0EB8B3;
+    font-size:16px;
+    font-family: 'LucidaSansDemiboldRoman', arial, sans-serif;
+}
+
+#delibera #ultimas-discussoes h3 a:hover {
+    color:#0E97B3 !important;
+}
+
+body.author #content {
+    width:100%;
+}
+
+#delibera .delibera-descricao {
+    margin-bottom: 30px;
+}
+
+#delibera #comentarios .comment-content, .author #comentarios .comment-content {
+    overflow: auto;
+}
+
+#delibera #ultimos-comentarios h4, body.author #ultimos-comentarios h4 {
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#delibera #comentarios h6, .author #comentarios h6 {
+    margin-bottom:5px;  
+    color: #5BB762;
+}
+
+#delibera #ultimos-comentarios .comment, body.author #ultimos-comentarios .comment {
+    border-bottom: 1px solid #eee;
+    clear: both;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+#delibera #ultimos-comentarios .comment-meta, #delibera #ultimos-comentarios .comment-meta, .author #ultimos-comentarios .comment-meta   {
+    font-size:14px;
+    margin-bottom: 10px;
+}
+
+#delibera #ultimos-comentarios .comment-meta a, .author #ultimos-comentarios .comment-meta a {
+    color: #F8A600;
+}
+
+#delibera .author-avatar, .author .author-avatar {
+    float: left; 
+}
+
+#delibera #ultimos-comentarios .author-avatar img, .author #ultimos-comentarios .author-avatar img {
+    border: 3px solid #5BB762;
+    margin-right: 35px;
+}
+
+#delibera #membros .membro {
+    border-bottom: 1px dotted #ddd;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+#delibera #membros a.membro-thumbnail {
+    border: 3px solid #5BB762;
+    display: block;
+    float:left;
+    height: 60px;
+    margin-right: 35px;
+    width: 60px;
+    overflow: hidden;
+}
+
+#delibera #membros .membro-nome {
+    margin-bottom: 10px; 
+}
+
+#delibera #membros .membro-descricao {
+    margin-left: 105px;
+    overflow: auto; 
+}
+
+#delibera #membros .membro-social {
+    text-indent: -9999px;
+}
+
+#delibera #membros .membro-social a {
+    display: block;
+    float: right;
+    height: 16px;
+    margin: 0 5px;
+    width: 16px;
+}
+
+#delibera #membros .membro-social a.twitter {
+    background: url('images/icone-twitter.png');
+}
+
+#delibera #membros .membro-social a.facebook {
+    background: url('images/icone-facebook.png');
+}
+
+form.delibera-edit-comment-form {
+    float:left;
+}
+
+form.delibera-edit-comment-form textarea {
+    padding:5px;
+    font-family: 'LucidaSansRegular',arial, helvetica, sans-serif;
+    border:1px solid #ccc;
+}
+
+form.delibera-edit-comment-form textarea:focus {
+    border:5px solid #ccc;  
+}
+
+span.checkbox-encaminhamento {
+    font-size:11px;
+    margin-top:5px;
+    text-transform:uppercase;
+}
+
+span.submit-edit-comment-button-text {
+    font-size:11px;
+}
+
+span.checkbox-encaminhamento input {
+    margin-right: 7px;
+    margin-top: 4px;
+}
+
+.delibera-comment-body {
+    margin-bottom: 15px;  
+    overflow:hidden;
+}
+
+.delibera-edit-comment-button, .delibera-delete-comment-button {
+    display:inline;
+    color:#FC8D0B;
+    font-size:11px;
+}
+
+.delibera-edit-comment-button:hover, .delibera-delete-comment-button:hover {
+    cursor:pointer;
+    color:#D6690B;
+}
+
+.home a.veja-mais {
+    border-bottom: 2px solid #BB415A;
+    color: #666;
+    text-transform: uppercase;
+    display: block;
+    padding: 17px 0;
+    margin-bottom: 24px;
+}
+
+a.veja-mais {
+    border-bottom: 2px solid #BB415A;
+    color: #666;
+    text-transform: uppercase;
+    display:block;
+    padding: 10px 0;
+}
+
+a.veja-mais:hover {
+    border-bottom: 2px solid #84415A;
+}
+
+.delibera-encaminha-label{
+    font-size: 50px,
+}
+
+input .delibera-encaminha-label {
+    width:0% !important;
+}
+
+/* 
+  upload-form - discuss�o-single
+  ================================================================================*/
+   
+#ecu_uploadform {
+    background:#034ea1;
+    border:1px solid #ccc;
+    color:#fff;
+    font-size:11px;
+    float:right;
+    margin-top:90px;
+    padding:10px;
+    width:300px;
+    border-radius: 10px;
+}
+
+#ecu_uploadform h3 {
+    font-size:16px;
+    text-align:center;
+    color: #a6cf56;
+}
+
+#ecu_uploadform input#file {
+    width:120px;
+}
+
+/* 
+  embed - discuss�o-single
+  ================================================================================*/
+
+#twitcamPlayer { 
+    margin: 0 auto;
+} 
+
+/* 
+  compartilhamento - discuss�o-single
+  ================================================================================*/
+
+.single .pauta .entry-share {
+    float:left;
+    clear:both;
+    margin: 10px;
+    margin-left: 12px;
+    width: 300px !important;
+    background: transparent;
+	box-shadow: none;
+	padding: 0;
+}
+.single .entry-share {
+    float:left;
+    clear:both;
+    margin: 10px;
+    margin-left: 12px;
+    width: 100%;
+}
+
+.single .share-twitter, .single .share-facebook, .single .share-this {
+    width: 128px;
+    float:left;
+}
+
+
+
+.single-pauta .share-twitter, .single-pauta .share-facebook, .single-pauta .share-this {
+    width: 100px;
+    float:left;
+}
+
+
+.single-pauta .share-twitter {
+    margin-right: 20px; 
+}
+
+.single-pauta .share-this {
+    color: #fff !important;
+}
+
+.single-pauta .share-this .stButton .chicklets {
+    color: #4F4F4F;
+}
+
+.single-pauta .entry-respond {
+    margin-top: 10px;
+}
+
+.single-pauta .entry-respond a.comment-reply-link {
+    background-position:right 3px;
+    float: right;
+    text-align: right;
+    padding-right: 22px;
+    padding-top: 0 !important;
+    /*color: #034ea1;*/
+    font-size: 1em;
+    margin-right: 0!important;
+}
+
+#lista-de-pautas .hentry {
+    margin-bottom:35px !important;
+    min-height: 250px;
+    background: #fff;
+}
+  
+/* 
+ tempor�rios - css antigo
+ ================================================================================*/
+
+.nav-next, .nav-previous {
+    display:none;
+}
+
+h3#delibera-comments-title {
+    display:none;
+    background:#f318d7;
+}
+
+.menu-header ul li.menu-item-43 a {
+    border-right:none;
+}
+
+.painel-baseouseem-button-remove {
+    width: 16px;
+    height: 16px;
+    background: url(images/icone-excluir.png);
+    cursor: pointer;
+    float:right;
+}
+
+.painel-baseouseem-item {
+    float:left;
+}
+
+.painel-baseouseem-link {
+    float:left;
+}
+
+.painel-baseouseem-label {
+    float:left;
+}
+
+#coluna-pagina  {
+    min-height: 490px;
+    padding: 23px;
+    border: 1px solid #EEE;
+    font-size: 12px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 22px #ddd;
+}
+
+#coluna-pagina strong {
+    font-family: 'LucidaSansDemiboldRoman', arial, helvetica;
+}
+
+#lista-relatoria {
+    padding: 23px;
+    border: 1px solid #EEE;
+    font-size: 12px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: inset 0 0 22px #A3CCE8;
+    background: #F5F9FC;
+}
+
+/* 
+ hacks - css antigo
+ ================================================================================*/
+
+.last {
+    margin-right:0 !important;
+}
+
+/* 
+ relatores - css antigo
+ ================================================================================*/
+
+.page-about-the-rapporteurs .entry-content img, .page-what-is-the-right-to-housing .entry-content img, .page-what-does-the-rapporteur-do .entry-content img, .page-template-template-pais-php .entry-content img {
+    margin:20px 0;
+    border:2px solid #eee;
+}
+
+/* 
+ contato - css antigo
+ ================================================================================*/
+
+body.page-contato #denuncias {
+    background: #fff;
+}
+
+body.page-contato .wpcf7 {
+    padding:20px;
+    font-size:11px;
+    text-transform:uppercase;
+    background: #e9eeda;
+    margin:20px 0;
+}
+
+body.page-contato .wpcf7 input, textarea {
+    border:1px;
+    padding:5px;
+    width:100%;
+}
+
+body.page-contato input.wpcf7-submit {
+    background: #5BB762;
+    display: block;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+body.page-contato input.wpcf7-submit:hover {
+    cursor:pointer;
+    background:green;
+} 
+
+/* 
+ perfil - css antigo
+ ================================================================================*/
+
+h1.author {
+    background: #e9eeda;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color:#0eb8b3;
+    min-height:20px;
+    margin-bottom:5px;
+    padding:10px;
+}
+
+#author-avatar {
+    float: left;
+    width: 225px;
+}
+
+#author-avatar img {
+    border: 5px solid #FC8D0B;
+}
+
+#author-data{
+    float: left;
+    padding-left:25px;
+    width: 675px;
+}
+
+#author-role {
+    background:url('images/icone-user.png') left 5px no-repeat;
+    padding-left:22px !important;
+    padding-top:3px;
+    float: left;
+    font-size:11px;
+    margin-left:10px;
+    text-transform:uppercase;
+    width: 100px;  
+}
+
+#author-meta, #author-description {
+    padding-left:10px;
+    padding-right:10px;
+    border-bottom:1px solid #e9eeda;
+    color:#4f4f4f;
+    padding-bottom:5px;
+}
+
+#author-meta {
+    overflow:hidden;
+}
+
+#author-url a {
+    background:url('images/link.png') left 5px no-repeat;
+    padding-left:22px !important;
+    padding-top:3px;
+    float: left;
+    font-size:11px;
+    margin-left:10px;
+    text-transform:uppercase;
+    width: 255px;  
+}
+
+#author-description {
+    border-bottom:0;
+    margin-top:18px;
+}
+
+#author-edit a {
+    display:block;
+    float:right;
+}
+
+#entry-author-info {
+    min-height:250px;
+}
+
+#delibera_commentform{
+	margin-left: 20px;
+	clear: both;
+}
+
+.entry-share{
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+}
+
+#lista-de-pautas .entry-prazo{
+	display: block;
+	color: #CD334E !important;
+	font-weight: bold;
+	
+}

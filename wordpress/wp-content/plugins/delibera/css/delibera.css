@@ -1,0 +1,43 @@
+input.button-primary, #delibera-mensagens-notificacoes {
+margin-left:10px;
+}
+ #delibera-mensagens-notificacoes {
+  font-weight:bold;
+ }
+#delibera-mensagens-notificacoes {
+
+}
+a.link-delibera-mensagens {
+text-decoration:none;
+}
+a.active {text-decoration:underline;}
+a#link-delibera-mensagens-pt {
+background:url('../qtranslate/flags/br.png') left bottom no-repeat;
+ padding-left:25px;
+ margin-left:5px;
+ 
+}
+a#link-delibera-mensagens-en {
+background:url('../qtranslate/flags/us.png') left bottom no-repeat;
+ padding-left:25px;
+ margin-left:5px;
+}
+a#link-delibera-mensagens-es {
+background:url('../qtranslate/flags/es.png') left bottom no-repeat;
+ padding-left:25px;
+ margin-left:5px;
+}
+#div-delibera-mensagens-pt .form-table, #div-delibera-mensagens-en .form-table , #div-delibera-mensagens-es .form-table  {
+  background:#eee;
+  margin-top:15px;
+}
+
+.delibera-config-mensagem, .delibera-config-mensagem-assunto
+{
+	width: 600px;
+}
+
+.delibera-config-mensagem
+{
+	height: 140px;
+}

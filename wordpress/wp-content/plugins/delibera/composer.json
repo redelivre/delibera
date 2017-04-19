@@ -1,0 +1,29 @@
+{
+    "name": "ethymos/delibera",
+    "type": "wordpress-plugin",
+    "description": "O Delibera é um plugin para WordPress para democracia online. Ele permite a discussão e deliberação de encaminhamentos relacionados a uma pauta por uma comunidade de usuários.",
+    "keywords": ["plugin", "wordpress", "democracy", "collaboration"],
+    "homepage": "https://github.com/ethymos/delibera",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Marco Antonio Konopacki",
+            "email": "marcoamarelo@gmail.com",
+            "role": "Developer"
+        },
+	{	
+            "name": "Jacson Passold",
+            "email": "jasconp@gmail.com",
+            "role": "Developer"
+        },
+	{
+            "name": "Rodrigo Primo",
+            "email": "rodrigosprimo@gmail.com",
+            "role": "Developer"
+        }	
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "wordpress": ">=3.8"
+    }
+}

@@ -1,0 +1,46 @@
+/*-------------------------------------------------
+    Archive
+-------------------------------------------------*/
+.archive {
+	@extend .container;
+
+	header {
+		padding: 20px 0;
+	}	
+
+	article {		
+		overflow: hidden;		
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid #eee;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		.info {color: $secondary-color;}
+
+		a {			
+			@include fade;
+			display: block;
+			overflow: hidden;
+
+			h3 { 
+				padding: 10px 0;
+			}
+
+			figure { 
+				@include crop(300px, 150px); 
+				@include left;
+				margin-right: 10px;
+			}		
+
+			p {color: #333}
+
+			&:hover {
+				background:#f8f8f8;
+			}
+		}		
+	}
+}
+

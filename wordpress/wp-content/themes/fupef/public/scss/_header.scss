@@ -1,0 +1,31 @@
+/*-------------------------------------------------
+    Header
+-------------------------------------------------*/
+header[role="banner"] {
+	padding: 10px;
+	overflow: hidden;
+
+	a img {margin-top: 10px}
+}
+
+
+/*-------------------------------------------------
+    Navigation
+-------------------------------------------------*/
+nav[role="navigation"] {
+	@include font(normal);
+	font-size: 16px;
+	margin-top: 50px;
+	@include size(35%);
+	@include right;
+
+	a {
+		padding:10px 20px;
+		@include fade;
+
+		&:hover {
+			color:#FFF;
+			background:$secondary-color;
+		}
+	}
+}
